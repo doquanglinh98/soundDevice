@@ -1,15 +1,18 @@
+refer: https://demo.vivathemes.com/bass/
+
 dong 656 html
 
 ----------------------------------------------------------------------------
 check lai: 
 
-<link rel="https://api.w.org/"
+1,<link rel="https://api.w.org/"
 	href="/fonts/wp-json.json" / - dong 438
 
-<!-- <link rel="EditURI" type="application/rsd+xml" title="RSD"
+2.<!-- <link rel="EditURI" type="application/rsd+xml" title="RSD"
 	href="https://demo.vivathemes.com/bass/xmlrpc.php?rsd" /> --> -dong 441
 
-<a href="/" class="custom-logo-link" rel="home" aria-current="page"><img
+3.<a href="/" class="custom-logo-link" rel="home" aria-current="page"><img
 					width="60" height="82" src="/imgs/cropped-favicon-1-192x192.png"
 					class="custom-logo" alt="Bass" decoding="async" /></a> <a href="/"
 					rel="home">
+4. ô chơi nhacj ở dưới: class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" chưa phát dc, gui xấu
