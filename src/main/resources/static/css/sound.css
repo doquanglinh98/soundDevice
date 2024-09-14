@@ -1,4 +1,4 @@
-/*!bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma*/
+ /* !bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma
 .pagination-previous, .pagination-next, .pagination-link, .pagination .page-numbers,
 	.pagination .current, .pagination-ellipsis, .pagination .page-numbers.dots,
 	.file-cta, .file-name, .select select, .textarea, .input, .button,
@@ -251,7 +251,7 @@
 	margin: 0;
 	padding: 0
 }
-/*!minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css*/
+!minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
 	legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -25947,4 +25947,4 @@ a.button.is-large.nav-my-account:hover, .nav-my-account:hover {
 		margin: 0 auto;
 		color: #7a7a7a
 	}
-}
+} */ 
