@@ -15,4 +15,3 @@ check lai:
 					width="60" height="82" src="/imgs/cropped-favicon-1-192x192.png"
 					class="custom-logo" alt="Bass" decoding="async" /></a> <a href="/"
 					rel="home">
-4. ô chơi nhacj ở dưới: class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" chưa phát dc, gui xấu
