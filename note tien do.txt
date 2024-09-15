@@ -18,6 +18,8 @@ check lai:
 					width="60" height="82" src="/imgs/cropped-favicon-1-192x192.png"
 					class="custom-logo" alt="Bass" decoding="async" /></a> <a href="/"
 					rel="home">
+4. bỏ fix cứng height: style="object-fit: cover; height: 241px;"  (<figure class="alignwide wp-block-post-featured-image">
+											<a href="/new-album-coming-out/" target="_self"><img)
 --------------note--------------------
 sinh file log hàng ngày
 backup DB tần suất 1day/1lan
