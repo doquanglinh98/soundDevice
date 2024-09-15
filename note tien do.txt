@@ -1,3 +1,6 @@
+deploy web java lên server sử dụng railway, elephantSQL, github : https://www.youtube.com/watch?v=LPHhPSAusiQ
+using aws: https://www.youtube.com/watch?v=nji0cB3Py1w
+
 refer: https://demo.vivathemes.com/bass/
 
 dong 656 html
@@ -15,3 +18,9 @@ check lai:
 					width="60" height="82" src="/imgs/cropped-favicon-1-192x192.png"
 					class="custom-logo" alt="Bass" decoding="async" /></a> <a href="/"
 					rel="home">
+--------------note--------------------
+sinh file log hàng ngày
+backup DB tần suất 1day/1lan
+
+---
+bỏ cmt dòng 908: sản phẩm
