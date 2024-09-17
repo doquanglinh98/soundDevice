@@ -17,4 +17,6 @@ public class SoundController {
 	public String index() {
 		return "views/home";
 	}
+	
+	
 }
