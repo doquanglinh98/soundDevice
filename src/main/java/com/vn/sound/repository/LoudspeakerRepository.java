@@ -5,17 +5,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.vn.sound.model.LightingEquipment;
 import com.vn.sound.model.Loudspeaker;
 
+import jakarta.persistence.Id;
+
 @Repository
-public interface LoudspeakerRepository extends JpaRepository<Loudspeaker, String> {
+public interface LoudspeakerRepository extends JpaRepository<Loudspeaker, Id> {
 	// find
-	Loudspeaker findByLoudspeakerByID(Long loudspeakerId);
-	List<Loudspeaker> findByLoudspeakerByName(String loudspeakerName);
-	
-	// delete
-	void deleteById(Long Id);
-	
-	// check exits
-	Boolean exitsById(Long Id);
+	Loudspeaker findById(Long Id);
 }

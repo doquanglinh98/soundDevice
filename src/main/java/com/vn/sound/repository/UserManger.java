@@ -5,13 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.vn.sound.model.Loudspeaker;
-import com.vn.sound.model.Microphone;
+import com.vn.sound.model.User;
 
 import jakarta.persistence.Id;
 
 @Repository
-public interface MicrophoneRepository extends JpaRepository<Microphone, Id> {
+public interface UserManger extends JpaRepository<User, Id> {
 	// find
-	Microphone findById(Long Id);
+	User findById(Long Id);
 }

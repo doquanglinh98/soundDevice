@@ -10,18 +10,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 
-	@Column(name = "UserName", nullable = false)
-	private String UserName;
+	@Column(name = "userName", nullable = false)
+	private String userName;
 
-	@Column(name = "PassWord", nullable = false)
-	private String PassWord;
+	@Column(name = "passWord", nullable = false)
+	private String passWord;
 
-	@Column(name = "AuthenCode", nullable = false)
-	private String AuthenCode;
+	@Column(name = "authenCode", nullable = false)
+	private String authenCode;
 }

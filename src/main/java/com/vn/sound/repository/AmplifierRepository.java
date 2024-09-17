@@ -6,17 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.vn.sound.model.Amplifier;
+import com.vn.sound.model.User;
+
+import jakarta.persistence.Id;
 
 @Repository
-public interface AmplifierRepository extends JpaRepository<Amplifier, String> {
+public interface AmplifierRepository extends JpaRepository<Amplifier, Id> {
 	// find
-	Amplifier findByAmplifiersByID(Long amplifiersId);
-	List<Amplifier> findByAmplifiersByName(String amplifiersName);
-	
-	// delete
-	void deleteById(Long Id);
-	
-	// check exits
-	Boolean exitsById(Long Id);
+	Amplifier findById(Long Id);
 	
 }

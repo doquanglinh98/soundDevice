@@ -9,55 +9,55 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Microphone")
+@Table(name = "microphone")
 @Data
 public class Microphone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 
-	@Column(name = "SystemAmplifier", nullable = false)
-	private String SystemAmplifier;
+	@Column(name = "systemAmplifier", nullable = false)
+	private String systemAmplifier;
 
-	@Column(name = "FrequencyResponse")
-	private String FrequencyResponse;
+	@Column(name = "frequencyResponse")
+	private String frequencyResponse;
 
-	@Column(name = "Capacity")
-	private String Capacity;
+	@Column(name = "capacity")
+	private String capacity;
 
-	@Column(name = "NominalImpedance")
-	private String NominalImpedance;
+	@Column(name = "nominalImpedance")
+	private String nominalImpedance;
 
-	@Column(name = "Sensitivity")
-	private String Sensitivity;
+	@Column(name = "sensitivity")
+	private String sensitivity;
 
-	@Column(name = "MaximumSoundPressure")
-	private String MaximumSoundPressure;
+	@Column(name = "maximumSoundPressure")
+	private String maximumSoundPressure;
 
-	@Column(name = "CoverageAngle")
-	private String CoverageAngle;
+	@Column(name = "coverageAngle")
+	private String coverageAngle;
 
-	@Column(name = "Tweeter")
-	private String Tweeter;
+	@Column(name = "tweeter")
+	private String tweeter;
 
-	@Column(name = "Connector")
-	private String Connector;
+	@Column(name = "connector")
+	private String connector;
 
-	@Column(name = "Bracket")
-	private String Bracket;
+	@Column(name = "bracket")
+	private String bracket;
 
-	@Column(name = "Handle")
-	private String Handle;
+	@Column(name = "handle")
+	private String handle;
 
-	@Column(name = "BoxMaterial")
-	private String BoxMaterial;
+	@Column(name = "boxMaterial")
+	private String boxMaterial;
 
-	@Column(name = "PaintTreatment")
-	private String PaintTreatment;
+	@Column(name = "paintTreatment")
+	private String paintTreatment;
 
-	@Column(name = "Weight")
-	private String Weight;
+	@Column(name = "weight")
+	private String weight;
 
-	@Column(name = "Size")
-	private String Size;
+	@Column(name = "size")
+	private String size;
 }
