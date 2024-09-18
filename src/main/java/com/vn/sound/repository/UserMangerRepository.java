@@ -1,16 +1,16 @@
 package com.vn.sound.repository;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.vn.sound.model.User;
 
-import jakarta.persistence.Id;
-
 @Repository
-public interface UserManger extends JpaRepository<User, Id> {
+public interface UserMangerRepository extends JpaRepository<User, Long> {
 	// find
-	User findById(Long Id);
+	Optional<User> findById(Long Id);
+
+	boolean existsByUsernameAndPassword(String username, String password);
 }

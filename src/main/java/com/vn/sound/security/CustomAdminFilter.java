@@ -2,38 +2,53 @@ package com.vn.sound.security;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.filter.GenericFilterBean;
+import jakarta.servlet.http.HttpSession;
 
-public class CustomAdminFilter extends GenericFilterBean {
+public class CustomAdminFilter implements Filter {
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws Exception {
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		HttpServletResponse httpResponse = (HttpServletResponse) response;
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// Initialization code
+	}
 
-		String requestURI = httpRequest.getRequestURI();
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//	@Override
+//	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+//			throws IOException, ServletException {
+//		HttpServletRequest httpRequest = (HttpServletRequest) request;
+//		HttpServletResponse httpResponse = (HttpServletResponse) response;
+//
+//		HttpSession session = (HttpSession) httpRequest.getSession(false);
+//		boolean isAdmin = session != null && session.getAttribute("role") != null
+//				&& session.getAttribute("role").equals("admin");
+//
+//		String requestURI = httpRequest.getRequestURI();
+//		if (requestURI.startsWith("/admin") && !isAdmin) {
+//			// Redirect to login page or access denied page
+//			httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
+//		} else {
+//			// Allow the request to proceed
+//			chain.doFilter(request, response);
+//		}
+//	}
 
-		if (requestURI.startsWith("/admin") && authentication != null && authentication.getAuthorities().stream()
-				.anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
-			chain.doFilter(request, response); // Allow access
-		} else {
-			httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied"); // Deny access
-		}
+	@Override
+	public void destroy() {
+		// Cleanup code
 	}
 
 	@Override
-	public void doFilter(jakarta.servlet.ServletRequest request, jakarta.servlet.ServletResponse response,
-			jakarta.servlet.FilterChain chain) throws IOException, jakarta.servlet.ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		
 	}
-
 }
