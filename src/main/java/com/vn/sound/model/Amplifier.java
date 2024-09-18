@@ -23,6 +23,9 @@ public class Amplifier {
 	@Column(name = "frequencyResponse")
 	private String frequencyResponse;
 
+	@Column(name = "idImg", unique = true)
+	private String idImg;
+
 	@Column(name = "capacity")
 	private String capacity;
 

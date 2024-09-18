@@ -22,6 +22,9 @@ public class LightingEquipment {
 
 	@Column(name = "frequencyResponse")
 	private String frequencyResponse;
+	
+	@Column(name = "idImg")
+	private String idImg;
 
 	@Column(name = "capacity")
 	private String capacity;
