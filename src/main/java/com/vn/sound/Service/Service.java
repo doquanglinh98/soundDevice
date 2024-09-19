@@ -1,0 +1,73 @@
+package com.vn.sound.Service;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vn.sound.common.Utility;
+import com.vn.sound.model.MicroTsc;
+import com.vn.sound.repository.MicroTscRepository;
+
+@org.springframework.stereotype.Service
+public class Service {
+
+	@Autowired
+	private MicroTscRepository microTscRepository;
+
+	public MicroTsc findMicroTscById(Long Id) throws Exception {
+		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
+
+		if (microTscOptional.isEmpty()) {
+			System.out.println("Not found with id: " + Id);
+			throw new NoSuchElementException("Not found with id: " + Id);
+		}
+		MicroTsc microTscTmp = microTscOptional.get();
+		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getFrequencyRangeCha(),
+				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
+				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
+				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
+				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
+				microTscTmp.getOscillationModeReceiverParam(), microTscTmp.getModulation(),
+				microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(), microTscTmp.getPowerSupplyMode(),
+				microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(), microTscTmp.getSpuriousSuppression(),
+				microTscTmp.getMaxOutputElectricalLevel(), microTscTmp.getOutputPower(), microTscTmp.getDirectivity(),
+				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
+				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
+				microTscTmp.getPipeBodyMaterial(), microTscTmp.getBatteryLifeTime());
+
+		return microTsc;
+	}
+
+	public List<MicroTsc> findAllMicroTsc() throws Exception {
+		return microTscRepository.findAll();
+	}
+
+	public String createMicTsc(MicroTsc microTsc) throws Exception {
+		if (!microTscRepository.existsById(microTsc.getId())) {
+			microTscRepository.save(microTsc);
+			return Utility.successMsg(microTsc.getId());
+		} else {
+			return Utility.errMsgCreate(microTsc.getId());
+		}
+	}
+
+	public String editMicTsc(MicroTsc microTsc) throws Exception {
+		if (microTscRepository.existsById(microTsc.getId())) {
+			microTscRepository.save(microTsc);
+			return Utility.editMsg(microTsc.getId());
+		} else {
+			return Utility.errMsg(microTsc.getId());
+		}
+	}
+
+	public String deleteMicTsc(Long Id) throws Exception {
+		if (microTscRepository.existsById(Id)) {
+			microTscRepository.deleteById(Id);
+			return Utility.deleteMsg(Id);
+		} else {
+			return Utility.errMsg(Id);
+		}
+	}
+}

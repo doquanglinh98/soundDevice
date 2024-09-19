@@ -17,9 +17,4 @@ public class RedirectController {
 		return "views/home";
 	}
 
-	@GetMapping("/deny")
-	public String deny() {
-
-		return "views/denyPage";
-	}
 }
