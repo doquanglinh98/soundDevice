@@ -1,6 +1,7 @@
 package com.vn.sound.common;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.vn.sound.model.MicroTsc;
 
 public class Utility {
@@ -40,12 +41,20 @@ public class Utility {
 		return errMsg;
 	}
 
+	public static String deleteMultiMsg(int count) {
+		String errMsg = "{\"result\":\"SUCCESS\",\"message\":\"" + count + " records deleted successfully\"}";
+		return errMsg;
+	}
+
 	public static String jsonStringConverter(Object obj) {
 		Gson gson = new Gson();
 		return gson.toJson(obj);
 	}
 
 	public static MicroTsc convertStringToJson(String msg) {
+		// Gson gson = new GsonBuilder().serializeNulls().create();
+		// MicroTsc convertedObject = gson.fromJson(msg, MicroTsc.class);
+
 		MicroTsc convertedObject = new Gson().fromJson(msg, MicroTsc.class);
 		return convertedObject;
 	}

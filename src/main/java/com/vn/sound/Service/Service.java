@@ -24,11 +24,11 @@ public class Service {
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
-		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getFrequencyRangeCha(),
-				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
-				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
-				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
-				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
+		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(),
+				microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
+				microTscTmp.getSignalToNoiseRatio(), microTscTmp.getTotalHarmonicDistortion(),
+				microTscTmp.getModulationMode(), microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(),
+				microTscTmp.getChannelInterval(), microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
 				microTscTmp.getOscillationModeReceiverParam(), microTscTmp.getModulation(),
 				microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(), microTscTmp.getPowerSupplyMode(),
 				microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(), microTscTmp.getSpuriousSuppression(),
@@ -69,5 +69,16 @@ public class Service {
 		} else {
 			return Utility.errMsg(Id);
 		}
+	}
+
+	public String deleteMultiMicTsc(List<String> records) throws Exception {
+		int count = 0;
+		for (int i = 0; i < records.size(); i++) {
+			if (microTscRepository.existsById(Long.parseLong(records.get(i)))) {
+				microTscRepository.deleteById(Long.parseLong(records.get(i)));
+				count++;
+			}
+		}
+		return Utility.deleteMultiMsg(count);
 	}
 }

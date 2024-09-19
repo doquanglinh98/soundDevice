@@ -9,11 +9,15 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "MicroTsc")
+//@JsonInclude(JsonInclude.Include.ALWAYS)
 public class MicroTsc {
 
 	@Id
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(name = "imgId")
+	private String imgId;
 
 	@Column(name = "frequencyRangeCha")
 	private String frequencyRangeCha;
@@ -100,9 +104,9 @@ public class MicroTsc {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getFrequencyRangeCha() {
 		return frequencyRangeCha;
@@ -320,19 +324,28 @@ public class MicroTsc {
 		this.batteryLifeTime = batteryLifeTime;
 	}
 
+	public String getImgId() {
+		return imgId;
+	}
+
+	public void setImgID(String imgId) {
+		this.imgId = imgId;
+	}
+
 	public MicroTsc() {
 
 	}
 
-	public MicroTsc(Long Id, String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
-			String totalHarmonicDistortion, String modulationMode, String workingDistance, String frequencyBandwidth,
-			String channelInterval, String maxDeviation, String frequencyStability, String oscillationModeReceiverParam,
-			String modulation, String sensitivity, String sensitivityAdjustment, String powerSupplyMode,
-			String antennaAccess, String midFrequence, String spuriousSuppression, String maxOutputElectricalLevel,
-			String outputPower, String directivity, String frequencyResponse, String powerSupply,
-			String oscillationModeTransmitterParam, String transmitterType, String pipeBodyMaterial,
+	public MicroTsc(Long Id, String imgId, String frequencyRangeCha, String frequencyRangeChb,
+			String signalToNoiseRatio, String totalHarmonicDistortion, String modulationMode, String workingDistance,
+			String frequencyBandwidth, String channelInterval, String maxDeviation, String frequencyStability,
+			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
+			String powerSupplyMode, String antennaAccess, String midFrequence, String spuriousSuppression,
+			String maxOutputElectricalLevel, String outputPower, String directivity, String frequencyResponse,
+			String powerSupply, String oscillationModeTransmitterParam, String transmitterType, String pipeBodyMaterial,
 			String batteryLifeTime) {
 		this.id = Id;
+		this.imgId = imgId;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;

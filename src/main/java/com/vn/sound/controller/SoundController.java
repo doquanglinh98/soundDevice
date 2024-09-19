@@ -79,4 +79,14 @@ public class SoundController {
 			return ResponseEntity.ofNullable(Utility.errMsgInvalid());
 		}
 	}
+	
+	@RequestMapping(value = "/manager/micro/delete/multiple", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteMultiMicro(@RequestBody List<String> records) {
+		try {
+			return ResponseEntity.ok(tscService.deleteMultiMicTsc(records));
+		} catch (Exception e) {
+			return ResponseEntity.ofNullable(Utility.errMsgInvalid());
+		}
+	}
 }
