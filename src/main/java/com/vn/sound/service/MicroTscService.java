@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
@@ -40,8 +42,8 @@ public class MicroTscService {
 		return microTsc;
 	}
 
-	public List<MicroTsc> findAllMicroTsc() throws Exception {
-		return microTscRepository.findAll();
+	public Page<MicroTsc> findAllMicroTsc(int page, int size) throws Exception {
+		return microTscRepository.findAll(PageRequest.of(page, size));
 	}
 
 	public String createMicTsc(MicroTsc microTsc) throws Exception {

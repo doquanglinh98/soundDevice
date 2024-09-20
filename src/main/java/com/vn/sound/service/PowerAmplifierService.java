@@ -5,10 +5,11 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.Utility;
-import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.repository.PowerAmplifierRepository;
 
@@ -39,8 +40,8 @@ public class PowerAmplifierService {
 		return powerAmplifier;
 	}
 
-	public List<PowerAmplifier> findAllAmpli() throws Exception {
-		return powerAmplifierRepository.findAll();
+	public Page<PowerAmplifier> findAllAmpli(int page, int size) throws Exception {
+		return powerAmplifierRepository.findAll(PageRequest.of(page, size));
 	}
 
 	public String createAmpli(PowerAmplifier powerAmplifier) throws Exception {
@@ -51,7 +52,7 @@ public class PowerAmplifierService {
 			return Utility.errMsgCreate(powerAmplifier.getId());
 		}
 	}
-	
+
 	public String editAmpliTsc(PowerAmplifier powerAmplifier) throws Exception {
 		if (powerAmplifierRepository.existsById(powerAmplifier.getId())) {
 			powerAmplifierRepository.save(powerAmplifier);
@@ -60,7 +61,7 @@ public class PowerAmplifierService {
 			return Utility.errMsg(powerAmplifier.getId());
 		}
 	}
-	
+
 	public String deleteAmpli(Long Id) throws Exception {
 		if (powerAmplifierRepository.existsById(Id)) {
 			powerAmplifierRepository.deleteById(Id);
@@ -69,7 +70,7 @@ public class PowerAmplifierService {
 			return Utility.errMsg(Id);
 		}
 	}
-	
+
 	public String deleteMultiAmpli(List<String> records) throws Exception {
 		int count = 0;
 		for (int i = 0; i < records.size(); i++) {

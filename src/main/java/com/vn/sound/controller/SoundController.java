@@ -52,9 +52,11 @@ public class SoundController {
 
 	@RequestMapping(value = "/manager/micro/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findAllMicro() {
+	public ResponseEntity<String> findAllMicro(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
 		try {
-			return ResponseEntity.ok(Utility.jsonStringConverter(microTscService.findAllMicroTsc()));
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					microTscService.findAllMicroTsc(Integer.parseInt(page), Integer.parseInt(size))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -116,9 +118,11 @@ public class SoundController {
 
 	@RequestMapping(value = "/manager/ampli/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findAllAmpli() {
+	public ResponseEntity<String> findAllAmpli(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
 		try {
-			return ResponseEntity.ok(Utility.jsonStringConverter(powerAmplifierService.findAllAmpli()));
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					powerAmplifierService.findAllAmpli(Integer.parseInt(page), Integer.parseInt(size))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}

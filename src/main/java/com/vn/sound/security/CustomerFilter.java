@@ -53,6 +53,11 @@ public class CustomerFilter extends HttpFilter {
 					response.getWriter().write(Utility.errMsgUnAuthorize());
 					return; // Stop processing
 				}
+			} else {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				response.setContentType("application/json");
+				response.getWriter().write(Utility.errMsgUnAuthorize());
+				return; // Stop processing
 			}
 		}
 		chain.doFilter(request, response);
