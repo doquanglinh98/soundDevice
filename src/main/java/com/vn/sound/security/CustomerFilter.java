@@ -1,6 +1,8 @@
 package com.vn.sound.security;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,25 +32,23 @@ public class CustomerFilter extends HttpFilter {
 
 	protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// HttpServletRequest request = (HttpServletRequest) req;
-		// HttpServletResponse response = (HttpServletResponse) res;
 		String requestPath = Utility.isNotNull(request.getServletPath()) ? request.getServletPath()
 				: request.getPathInfo();
-		System.out.println("requestPath=" + requestPath);
+		System.out.println("requestPath = " + requestPath);
 		if (requestPath.matches("(/manager/).*")) {
-			if (Utility.isNotNull(request.getParameter("userName"))
-					&& Utility.isNotNull(request.getParameter("passWord"))) {
-				System.out.println("requestPath1");
-				if (userService.isAdmin(requestPath, requestPath)) {
-					System.out.println("requestPath2");
+			final String authorization = request.getHeader("Authorization");
+			if (authorization != null && authorization.toLowerCase().startsWith("basic")) {
+				// Authorization: Basic base64credentials
+				String base64Credentials = authorization.substring("Basic".length()).trim();
+				byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
+				String credentials = new String(credDecoded, StandardCharsets.UTF_8);
+				// credentials = username:password
+				final String[] values = credentials.split(":", 2);
+				if (userService.isAdmin(values[0], values[1])) {
 					chain.doFilter(request, response);
 				} else {
-					System.out.println("loi1");
 					response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
 				}
-			} else {
-				System.out.println("loi2");
-				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
 			}
 		}
 		chain.doFilter(request, response);
