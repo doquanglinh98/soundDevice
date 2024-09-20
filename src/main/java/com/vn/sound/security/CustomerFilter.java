@@ -47,7 +47,11 @@ public class CustomerFilter extends HttpFilter {
 				if (userService.isAdmin(values[0], values[1])) {
 					chain.doFilter(request, response);
 				} else {
-					response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+					// Set the response status and message
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					response.setContentType("application/json");
+					response.getWriter().write(Utility.errMsgUnAuthorize());
+					return; // Stop processing
 				}
 			}
 		}
