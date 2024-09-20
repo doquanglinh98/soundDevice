@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.N9SpeakerSeries;
+import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.service.MicroTscService;
+import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
+import com.vn.sound.service.N9SpeakerSeriesService;
 import com.vn.sound.service.PowerAmplifierService;
-import com.vn.sound.service.UserService;
 
 @Controller
 public class SoundController {
@@ -31,12 +34,10 @@ public class SoundController {
 	private PowerAmplifierService powerAmplifierService;
 
 	@Autowired
-	private UserService userService;
+	private N9SpeakerSeriesService n9SpeakerSeriesService;
 
-	@GetMapping("/manager/login")
-	public String managerLogin() {
-		return "views/login";
-	}
+	@Autowired
+	private N9SpeakerSeriesAllProductsService n9SpeakerSeriesAllProductsService;
 
 	// for Micro
 
@@ -170,15 +171,106 @@ public class SoundController {
 		}
 	}
 
-	@RequestMapping(value = "/admin-login", method = RequestMethod.POST, produces = "application/json")
-	@ResponseBody
-	public ResponseEntity<String> loginManager(@RequestParam(name = "userName") String userName,
-			@RequestParam(name = "passWord") String passWord) {
-		if (userService.isAdmin(userName, passWord)) {
-			return ResponseEntity.ok("login OK");
-		} else {
-			return ResponseEntity.ok("login fail");
-		}
+	// N9 Speaker Series
 
+	@RequestMapping(value = "/manager/n9speaker/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllN9SpeakerSeries() {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(n9SpeakerSeriesService.findAllN9SpeakerSeries()));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9speaker/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createN9Speaker(@RequestBody String n9SpeakerFromClient) {
+		try {
+			N9SpeakerSeries n9SpeakerSeries = Utility.convertStringToJsonN9SpeakerSeries(n9SpeakerFromClient);
+			return ResponseEntity.ok(n9SpeakerSeriesService.createN9SpeakerSeries(n9SpeakerSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9speaker/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editN9Speaker(@RequestBody String n9SpeakerFromClient) {
+		try {
+			N9SpeakerSeries n9SpeakerSeries = Utility.convertStringToJsonN9SpeakerSeries(n9SpeakerFromClient);
+			return ResponseEntity.ok(n9SpeakerSeriesService.editN9SpeakerSeries(n9SpeakerSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9speaker/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteN9Speaker(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(n9SpeakerSeriesService.deleteN9SpeakerSeries(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	// for N9SpeakerSeriesAllProducts
+
+	@RequestMapping(value = "/manager/n9-speaker-series/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable Long Id) {
+		try {
+			return ResponseEntity.ok(Utility
+					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findN9SpeakerSeriesAllProductsById(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsg(Id), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9-speaker-series/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createN9SpeakerSeries(@RequestBody String n9SpeakerSeriesFromClient) {
+		try {
+			N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts = Utility
+					.convertStringToJsonN9SpeakerSeriesAllProducts(n9SpeakerSeriesFromClient);
+			return ResponseEntity
+					.ok(n9SpeakerSeriesAllProductsService.createN9SpeakerSeries(n9SpeakerSeriesAllProducts));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9-speaker-series/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editN9SpeakerSeries(@RequestBody String n9SpeakerSeriesFromClient) {
+		try {
+			N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts = Utility
+					.convertStringToJsonN9SpeakerSeriesAllProducts(n9SpeakerSeriesFromClient);
+			return ResponseEntity.ok(n9SpeakerSeriesAllProductsService.editN9SpeakerSeries(n9SpeakerSeriesAllProducts));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9-speaker-series/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteN9SpeakerSeries(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(n9SpeakerSeriesAllProductsService.deleteN9SpeakerSeries(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/n9-speaker-series/find-by-startwith/{pattern}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable String pattern) {
+		try {
+			return ResponseEntity.ok(Utility
+					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findAllN9SpeakerSeriesByName(pattern)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
 	}
 }

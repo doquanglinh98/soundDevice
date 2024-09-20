@@ -2,6 +2,8 @@ package com.vn.sound.common;
 
 import com.google.gson.Gson;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.N9SpeakerSeries;
+import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 
 public class Utility {
@@ -33,7 +35,7 @@ public class Utility {
 		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Micro table is empty\"}";
 		return errMsg;
 	}
-	
+
 	public static String errMsgUnAuthorize() {
 		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Unauthorized\"}";
 		return errMsg;
@@ -71,6 +73,16 @@ public class Utility {
 
 	public static PowerAmplifier convertStringToJsonAmpli(String msg) {
 		PowerAmplifier convertedObject = new Gson().fromJson(msg, PowerAmplifier.class);
+		return convertedObject;
+	}
+
+	public static N9SpeakerSeries convertStringToJsonN9SpeakerSeries(String msg) {
+		N9SpeakerSeries convertedObject = new Gson().fromJson(msg, N9SpeakerSeries.class);
+		return convertedObject;
+	}
+	
+	public static N9SpeakerSeriesAllProducts convertStringToJsonN9SpeakerSeriesAllProducts(String msg) {
+		N9SpeakerSeriesAllProducts convertedObject = new Gson().fromJson(msg, N9SpeakerSeriesAllProducts.class);
 		return convertedObject;
 	}
 }
