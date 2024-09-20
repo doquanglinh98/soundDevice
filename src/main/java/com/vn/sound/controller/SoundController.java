@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.vn.sound.Service.MicroTscService;
-import com.vn.sound.Service.PowerAmplifierService;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.PowerAmplifier;
+import com.vn.sound.service.MicroTscService;
+import com.vn.sound.service.PowerAmplifierService;
 
 @Controller
 public class SoundController {
@@ -130,4 +130,35 @@ public class SoundController {
 		}
 	}
 
+	@RequestMapping(value = "/manager/ampli/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editAmpli(@RequestBody String ampliFromClient) {
+		try {
+			PowerAmplifier powerAmplifier = Utility.convertStringToJsonAmpli(ampliFromClient);
+			return ResponseEntity.ok(powerAmplifierService.editAmpliTsc(powerAmplifier));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@RequestMapping(value = "/manager/ampli/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteAmpli(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(powerAmplifierService.deleteAmpli(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@RequestMapping(value = "/manager/ampli/delete/multiple", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteMultiAmpli(@RequestBody List<String> records) {
+		try {
+			return ResponseEntity.ok(powerAmplifierService.deleteMultiAmpli(records));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 }

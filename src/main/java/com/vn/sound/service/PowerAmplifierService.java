@@ -1,4 +1,4 @@
-package com.vn.sound.Service;
+package com.vn.sound.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -50,5 +50,34 @@ public class PowerAmplifierService {
 		} else {
 			return Utility.errMsgCreate(powerAmplifier.getId());
 		}
+	}
+	
+	public String editAmpliTsc(PowerAmplifier powerAmplifier) throws Exception {
+		if (powerAmplifierRepository.existsById(powerAmplifier.getId())) {
+			powerAmplifierRepository.save(powerAmplifier);
+			return Utility.editMsg(powerAmplifier.getId());
+		} else {
+			return Utility.errMsg(powerAmplifier.getId());
+		}
+	}
+	
+	public String deleteAmpli(Long Id) throws Exception {
+		if (powerAmplifierRepository.existsById(Id)) {
+			powerAmplifierRepository.deleteById(Id);
+			return Utility.deleteMsg(Id);
+		} else {
+			return Utility.errMsg(Id);
+		}
+	}
+	
+	public String deleteMultiAmpli(List<String> records) throws Exception {
+		int count = 0;
+		for (int i = 0; i < records.size(); i++) {
+			if (powerAmplifierRepository.existsById(Long.parseLong(records.get(i)))) {
+				powerAmplifierRepository.deleteById(Long.parseLong(records.get(i)));
+				count++;
+			}
+		}
+		return Utility.deleteMultiMsg(count);
 	}
 }

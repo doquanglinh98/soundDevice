@@ -1,4 +1,4 @@
-package com.vn.sound.Service;
+package com.vn.sound.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
