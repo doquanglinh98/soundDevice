@@ -51,7 +51,7 @@ public class SoundController {
 		try {
 			return ResponseEntity.ok(Utility.jsonStringConverter(microTscService.findAllMicroTsc()));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class SoundController {
 			MicroTsc microTsc = Utility.convertStringToJson(microTscFromClient);
 			return ResponseEntity.ok(microTscService.createMicTsc(microTsc));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class SoundController {
 			MicroTsc microTsc = Utility.convertStringToJson(microTscFromClient);
 			return ResponseEntity.ok(microTscService.editMicTsc(microTsc));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -83,7 +83,7 @@ public class SoundController {
 		try {
 			return ResponseEntity.ok(microTscService.deleteMicTsc(Long.parseLong(Id)));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
@@ -93,7 +93,7 @@ public class SoundController {
 		try {
 			return ResponseEntity.ok(microTscService.deleteMultiMicTsc(records));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
@@ -115,7 +115,7 @@ public class SoundController {
 		try {
 			return ResponseEntity.ok(Utility.jsonStringConverter(powerAmplifierService.findAllAmpli()));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
@@ -126,7 +126,7 @@ public class SoundController {
 			PowerAmplifier powerAmplifier = Utility.convertStringToJsonAmpli(ampliFromClient);
 			return ResponseEntity.ok(powerAmplifierService.createAmpli(powerAmplifier));
 		} catch (Exception e) {
-			return new ResponseEntity<>(Utility.errMsgAll(), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
 

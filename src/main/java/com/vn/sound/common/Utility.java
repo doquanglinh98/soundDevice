@@ -25,6 +25,7 @@ public class Utility {
 		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Micro table is empty\"}";
 		return errMsg;
 	}
+	
 
 	public static String successMsg(Long Id) {
 		String errMsg = "{\"result\":\"SUCCESS\",\"message\":\"Create record with ID = " + Id + " successfully\"}";
