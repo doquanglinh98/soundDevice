@@ -11,7 +11,7 @@ import com.vn.sound.model.MicroTsc;
 import com.vn.sound.repository.MicroTscRepository;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class MicroTscService {
 
 	@Autowired
 	private MicroTscRepository microTscRepository;

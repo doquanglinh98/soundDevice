@@ -1,8 +1,8 @@
 package com.vn.sound.common;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.PowerAmplifier;
 
 public class Utility {
 
@@ -52,10 +52,12 @@ public class Utility {
 	}
 
 	public static MicroTsc convertStringToJson(String msg) {
-		// Gson gson = new GsonBuilder().serializeNulls().create();
-		// MicroTsc convertedObject = gson.fromJson(msg, MicroTsc.class);
-
 		MicroTsc convertedObject = new Gson().fromJson(msg, MicroTsc.class);
+		return convertedObject;
+	}
+	
+	public static PowerAmplifier convertStringToJsonAmpli(String msg) {
+		PowerAmplifier convertedObject = new Gson().fromJson(msg, PowerAmplifier.class);
 		return convertedObject;
 	}
 }
