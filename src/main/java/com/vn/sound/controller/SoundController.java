@@ -263,12 +263,24 @@ public class SoundController {
 		}
 	}
 
-	@RequestMapping(value = "/manager/n9-speaker-series/find-by-startwith/{pattern}", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/manager/n9-speaker-series/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable String pattern) {
 		try {
 			return ResponseEntity.ok(Utility
 					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findAllN9SpeakerSeriesByName(pattern)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@RequestMapping(value = "/manager/n9-speaker-series/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllProductOfSpeakerSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					n9SpeakerSeriesAllProductsService.findAllProductOfSpeakerSeries(Integer.parseInt(page), Integer.parseInt(size))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}

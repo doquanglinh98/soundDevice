@@ -5,9 +5,12 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.Utility;
+import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.repository.N9SpeakerSeriesAllProductsRepository;
@@ -91,5 +94,9 @@ public class N9SpeakerSeriesAllProductsService {
 	
 	public List<N9SpeakerSeriesAllProducts> findAllN9SpeakerSeriesByName(String name) throws Exception {
 		return n9SpeakerSeriesAllProductsRepository.findN9SpeakerSeriesAllProductsByN9SpeakerSeriesName(name);
+	}
+	
+	public Page<N9SpeakerSeriesAllProducts> findAllProductOfSpeakerSeries(int page, int size) throws Exception {
+		return n9SpeakerSeriesAllProductsRepository.findAll(PageRequest.of(page, size));
 	}
 }
