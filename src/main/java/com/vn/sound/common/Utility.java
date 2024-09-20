@@ -6,6 +6,14 @@ import com.vn.sound.model.PowerAmplifier;
 
 public class Utility {
 
+	public static boolean isNull(Object obj) {
+		return obj == null || obj.toString().trim().equals("");
+	}
+
+	public static boolean isNotNull(Object obj) {
+		return !isNull(obj);
+	}
+
 	public static String errMsg(Long Id) {
 		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Not found data with ID = " + Id + "\"}";
 		return errMsg;
@@ -25,7 +33,6 @@ public class Utility {
 		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Micro table is empty\"}";
 		return errMsg;
 	}
-	
 
 	public static String successMsg(Long Id) {
 		String errMsg = "{\"result\":\"SUCCESS\",\"message\":\"Create record with ID = " + Id + " successfully\"}";
@@ -56,7 +63,7 @@ public class Utility {
 		MicroTsc convertedObject = new Gson().fromJson(msg, MicroTsc.class);
 		return convertedObject;
 	}
-	
+
 	public static PowerAmplifier convertStringToJsonAmpli(String msg) {
 		PowerAmplifier convertedObject = new Gson().fromJson(msg, PowerAmplifier.class);
 		return convertedObject;

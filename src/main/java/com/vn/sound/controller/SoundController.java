@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vn.sound.common.Utility;
@@ -18,15 +19,19 @@ import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.service.MicroTscService;
 import com.vn.sound.service.PowerAmplifierService;
+import com.vn.sound.service.UserService;
 
 @Controller
 public class SoundController {
 
 	@Autowired
 	private MicroTscService microTscService;
-	
+
 	@Autowired
 	private PowerAmplifierService powerAmplifierService;
+
+	@Autowired
+	private UserService userService;
 
 	@GetMapping("/manager/login")
 	public String managerLogin() {
@@ -34,7 +39,7 @@ public class SoundController {
 	}
 
 	// for Micro
-	
+
 	@RequestMapping(value = "/manager/micro/{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findMicroById(@PathVariable Long Id) {
@@ -86,7 +91,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/micro/delete/multiple", method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> deleteMultiMicro(@RequestBody List<String> records) {
@@ -96,9 +101,9 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	// for Power Amplifier
-	
+
 	@RequestMapping(value = "/manager/ampli/{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findAmpliById(@PathVariable Long Id) {
@@ -108,7 +113,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsg(Id), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/ampli/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findAllAmpli() {
@@ -118,7 +123,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/ampli/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createAmpli(@RequestBody String ampliFromClient) {
@@ -140,7 +145,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/ampli/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> deleteAmpli(@PathVariable(name = "Id") String Id) {
@@ -150,7 +155,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/ampli/delete/multiple", method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> deleteMultiAmpli(@RequestBody List<String> records) {
@@ -160,5 +165,16 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
+	@RequestMapping(value = "/admin-login", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> loginManager(@RequestParam(name = "userName") String userName,
+			@RequestParam(name = "passWord") String passWord) {
+		if (userService.isAdmin(userName, passWord)) {
+			return ResponseEntity.ok("login OK");
+		} else {
+			return ResponseEntity.ok("login fail");
+		}
+
+	}
 }
