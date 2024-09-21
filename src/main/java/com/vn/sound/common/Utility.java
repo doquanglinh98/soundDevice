@@ -6,6 +6,12 @@ import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 
+import java.lang.reflect.Field;
+import java.util.Map;
+import java.util.HashMap;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 public class Utility {
 
 	public static boolean isNull(Object obj) {
@@ -66,6 +72,31 @@ public class Utility {
 		return gson.toJson(obj);
 	}
 
+	public static String jsonStringConverterRemoveNullSpeakerSeries(N9SpeakerSeriesAllProducts obj)
+			throws JsonProcessingException {
+		Gson gson = new Gson();
+		return gson.toJson(removeNullFields(obj));
+	}
+
+	public static Map<String, Object> removeNullFields(Object obj) {
+		Map<String, Object> nonNullFields = new HashMap<>();
+		Field[] fields = obj.getClass().getDeclaredFields();
+
+		for (Field field : fields) {
+			field.setAccessible(true);
+			try {
+				Object value = field.get(obj);
+				if (value != null && !value.toString().trim().equals("") && !value.toString().trim().equals("null")) {
+					System.out.println(field.getName() + "=" + value);
+					nonNullFields.put(field.getName(), value);
+				}
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		}
+		return nonNullFields;
+	}
+
 	public static MicroTsc convertStringToJson(String msg) {
 		MicroTsc convertedObject = new Gson().fromJson(msg, MicroTsc.class);
 		return convertedObject;
@@ -80,7 +111,7 @@ public class Utility {
 		N9SpeakerSeries convertedObject = new Gson().fromJson(msg, N9SpeakerSeries.class);
 		return convertedObject;
 	}
-	
+
 	public static N9SpeakerSeriesAllProducts convertStringToJsonN9SpeakerSeriesAllProducts(String msg) {
 		N9SpeakerSeriesAllProducts convertedObject = new Gson().fromJson(msg, N9SpeakerSeriesAllProducts.class);
 		return convertedObject;

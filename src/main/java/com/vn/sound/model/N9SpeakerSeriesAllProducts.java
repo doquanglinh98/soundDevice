@@ -1,5 +1,7 @@
 package com.vn.sound.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,6 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "N9SpeakerSeriesAllProducts")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class N9SpeakerSeriesAllProducts {
 
 	@Id
@@ -164,7 +167,7 @@ public class N9SpeakerSeriesAllProducts {
 
 	@Column(name = "inputAndOutputPart")
 	private String inputAndOutputPart;
-	
+
 	@Column(name = "caseMaterial")
 	private String caseMaterial;
 
@@ -592,18 +595,18 @@ public class N9SpeakerSeriesAllProducts {
 
 	}
 
-	public N9SpeakerSeriesAllProducts(Long id, String imgId, String n9SpeakerSeriesName, String systemDescription, String tweeter,
-			String woofer, String power, String maximumSoundPressure, String coverAngle, String hangingPoint,
-			String hand, String paintTreatment, String LFUnit, String MFUnit, String HFUnit, String frequencyResponse,
-			String inputSensitivity, String maxSPL, String nominalImpedence, String coverRange, String hangingHardware,
-			String handle, String bracketFixedSeat, String connector, String boxMaterial, String netWeight, String size,
-			String categorg, String outputPower, String DSPAccuracy, String dividerPartFIRFilter, String digitalInput,
-			String panel, String maximumHangerNumber, String crossover, String overlay, String sprayPaintProcessing,
-			String overlayAngle, String altoUnit, String transformerConstantPressurePower, String DCImpedance,
-			String qualityControlRange, String anti_magneticEffectTest, String earthquakeDropTest, String dimensions,
-			String category, String maximumOutputPower, String totalHarmonicDistortion,
-			String intermodulationDistortion, String coolingMethod, String DSPPart, String inputAndOutputPart,
-			String caseMaterial) {
+	public N9SpeakerSeriesAllProducts(Long id, String imgId, String n9SpeakerSeriesName, String systemDescription,
+			String tweeter, String woofer, String power, String maximumSoundPressure, String coverAngle,
+			String hangingPoint, String hand, String paintTreatment, String LFUnit, String MFUnit, String HFUnit,
+			String frequencyResponse, String inputSensitivity, String maxSPL, String nominalImpedence,
+			String coverRange, String hangingHardware, String handle, String bracketFixedSeat, String connector,
+			String boxMaterial, String netWeight, String size, String categorg, String outputPower, String DSPAccuracy,
+			String dividerPartFIRFilter, String digitalInput, String panel, String maximumHangerNumber,
+			String crossover, String overlay, String sprayPaintProcessing, String overlayAngle, String altoUnit,
+			String transformerConstantPressurePower, String DCImpedance, String qualityControlRange,
+			String anti_magneticEffectTest, String earthquakeDropTest, String dimensions, String category,
+			String maximumOutputPower, String totalHarmonicDistortion, String intermodulationDistortion,
+			String coolingMethod, String DSPPart, String inputAndOutputPart, String caseMaterial) {
 		this.id = id;
 		this.imgId = imgId;
 		this.n9SpeakerSeriesName = n9SpeakerSeriesName;

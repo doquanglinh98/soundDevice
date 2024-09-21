@@ -222,7 +222,7 @@ public class SoundController {
 	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable Long Id) {
 		try {
 			return ResponseEntity.ok(Utility
-					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findN9SpeakerSeriesAllProductsById(Id)));
+					.jsonStringConverterRemoveNullSpeakerSeries(n9SpeakerSeriesAllProductsService.findN9SpeakerSeriesAllProductsById(Id)));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsg(Id), HttpStatus.BAD_REQUEST);
 		}
