@@ -8,11 +8,21 @@ import com.vn.sound.model.PowerAmplifier;
 
 import java.lang.reflect.Field;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
 
 public class Utility {
+
+	private static int count = 0;
 
 	public static boolean isNull(Object obj) {
 		return obj == null || obj.toString().trim().equals("");
@@ -71,6 +81,13 @@ public class Utility {
 		Gson gson = new Gson();
 		return gson.toJson(obj);
 	}
+	
+	public static String jsonStringConverterRemoveNullField(List<Object> list)
+			throws JsonProcessingException, IllegalArgumentException, IllegalAccessException {
+		Gson gson = new Gson();
+		list.removeAll(Collections.singleton(null));
+		return gson.toJson(list);
+	}
 
 	public static String jsonStringConverterRemoveNullSpeakerSeries(N9SpeakerSeriesAllProducts obj)
 			throws JsonProcessingException {
@@ -87,7 +104,6 @@ public class Utility {
 			try {
 				Object value = field.get(obj);
 				if (value != null && !value.toString().trim().equals("") && !value.toString().trim().equals("null")) {
-					System.out.println(field.getName() + "=" + value);
 					nonNullFields.put(field.getName(), value);
 				}
 			} catch (IllegalAccessException e) {

@@ -221,8 +221,8 @@ public class SoundController {
 	@ResponseBody
 	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable Long Id) {
 		try {
-			return ResponseEntity.ok(Utility
-					.jsonStringConverterRemoveNullSpeakerSeries(n9SpeakerSeriesAllProductsService.findN9SpeakerSeriesAllProductsById(Id)));
+			return ResponseEntity.ok(Utility.jsonStringConverterRemoveNullSpeakerSeries(
+					n9SpeakerSeriesAllProductsService.findN9SpeakerSeriesAllProductsById(Id)));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsg(Id), HttpStatus.BAD_REQUEST);
 		}
@@ -270,17 +270,19 @@ public class SoundController {
 			return ResponseEntity.ok(Utility
 					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findAllN9SpeakerSeriesByName(pattern)));
 		} catch (Exception e) {
+			System.out.println("loi roi=" + e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@RequestMapping(value = "/manager/n9-speaker-series/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findAllProductOfSpeakerSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+	public ResponseEntity<String> findAllProductOfSpeakerSeries(
+			@RequestParam(defaultValue = "0", name = "page") String page,
 			@RequestParam(defaultValue = "10", name = "size") String size) {
 		try {
-			return ResponseEntity.ok(Utility.jsonStringConverter(
-					n9SpeakerSeriesAllProductsService.findAllProductOfSpeakerSeries(Integer.parseInt(page), Integer.parseInt(size))));
+			return ResponseEntity.ok(Utility.jsonStringConverter(n9SpeakerSeriesAllProductsService
+					.findAllProductOfSpeakerSeries(Integer.parseInt(page), Integer.parseInt(size))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
