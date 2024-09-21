@@ -1,5 +1,7 @@
 package com.vn.sound.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,6 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "N9SpeakerSeries")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class N9SpeakerSeries {
 	@Id
 	private Long id;

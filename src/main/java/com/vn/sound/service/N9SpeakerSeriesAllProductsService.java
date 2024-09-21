@@ -10,8 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.Utility;
-import com.vn.sound.model.MicroTsc;
-import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.repository.N9SpeakerSeriesAllProductsRepository;
 
