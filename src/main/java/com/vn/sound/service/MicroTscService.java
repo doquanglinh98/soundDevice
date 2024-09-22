@@ -26,7 +26,7 @@ public class MicroTscService {
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
-		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(),
+		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getMicroName(),
 				microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
 				microTscTmp.getSignalToNoiseRatio(), microTscTmp.getTotalHarmonicDistortion(),
 				microTscTmp.getModulationMode(), microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(),

@@ -19,6 +19,9 @@ public class MicroTsc {
 	@Column(name = "imgId")
 	private String imgId;
 
+	@Column(name = "microName")
+	private String microName;
+	
 	@Column(name = "frequencyRangeCha")
 	private String frequencyRangeCha;
 
@@ -332,11 +335,23 @@ public class MicroTsc {
 		this.imgId = imgId;
 	}
 
+	public String getMicroName() {
+		return microName;
+	}
+
+	public void setMicroName(String microName) {
+		this.microName = microName;
+	}
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
 	public MicroTsc() {
 
 	}
 
-	public MicroTsc(Long Id, String imgId, String frequencyRangeCha, String frequencyRangeChb,
+	public MicroTsc(Long Id, String imgId, String microName, String frequencyRangeCha, String frequencyRangeChb,
 			String signalToNoiseRatio, String totalHarmonicDistortion, String modulationMode, String workingDistance,
 			String frequencyBandwidth, String channelInterval, String maxDeviation, String frequencyStability,
 			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
@@ -346,6 +361,7 @@ public class MicroTsc {
 			String batteryLifeTime) {
 		this.id = Id;
 		this.imgId = imgId;
+		this.microName = microName;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;
