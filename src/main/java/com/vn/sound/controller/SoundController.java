@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.MicroTscSeries;
@@ -87,9 +88,13 @@ public class SoundController {
 	@RequestMapping(value = "/manager/micro/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createMicro(@RequestBody String microTscFromClient) {
+		MicroTsc microTsc = null;
 		try {
-			MicroTsc microTsc = Utility.convertStringToJson(microTscFromClient);
+			microTsc = Utility.convertStringToJson(microTscFromClient);
 			return ResponseEntity.ok(microTscService.createMicTsc(microTsc));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(microTsc.getMicroName().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -164,9 +169,13 @@ public class SoundController {
 	@RequestMapping(value = "/manager/ampli/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createAmpli(@RequestBody String ampliFromClient) {
+		PowerAmplifier powerAmplifier = null;
 		try {
-			PowerAmplifier powerAmplifier = Utility.convertStringToJsonAmpli(ampliFromClient);
+			powerAmplifier = Utility.convertStringToJsonAmpli(ampliFromClient);
 			return ResponseEntity.ok(powerAmplifierService.createAmpli(powerAmplifier));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -220,9 +229,13 @@ public class SoundController {
 	@RequestMapping(value = "/manager/n9speaker/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createN9Speaker(@RequestBody String n9SpeakerFromClient) {
+		N9SpeakerSeries n9SpeakerSeries = null;
 		try {
-			N9SpeakerSeries n9SpeakerSeries = Utility.convertStringToJsonN9SpeakerSeries(n9SpeakerFromClient);
+			n9SpeakerSeries = Utility.convertStringToJsonN9SpeakerSeries(n9SpeakerFromClient);
 			return ResponseEntity.ok(n9SpeakerSeriesService.createN9SpeakerSeries(n9SpeakerSeries));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -265,11 +278,16 @@ public class SoundController {
 	@RequestMapping(value = "/manager/n9-speaker-series/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createN9SpeakerSeries(@RequestBody String n9SpeakerSeriesFromClient) {
+		N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts = null;
 		try {
-			N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts = Utility
+			n9SpeakerSeriesAllProducts = Utility
 					.convertStringToJsonN9SpeakerSeriesAllProducts(n9SpeakerSeriesFromClient);
 			return ResponseEntity
 					.ok(n9SpeakerSeriesAllProductsService.createN9SpeakerSeries(n9SpeakerSeriesAllProducts));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(
+					Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -337,9 +355,13 @@ public class SoundController {
 	@RequestMapping(value = "/manager/micro-tsc-series/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createMicroTscSeries(@RequestBody String microTscSeriesFromClient) {
+		MicroTscSeries microTscSeries = null;
 		try {
-			MicroTscSeries microTscSeries = Utility.convertStringToJsonMicroSeries(microTscSeriesFromClient);
+			microTscSeries = Utility.convertStringToJsonMicroSeries(microTscSeriesFromClient);
 			return ResponseEntity.ok(microTscSeriesService.createMicroTscSeries(microTscSeries));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(microTscSeries.getSeriesName().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -382,10 +404,15 @@ public class SoundController {
 	@RequestMapping(value = "/manager/power-ampli-series/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createPowerAmpliSeries(@RequestBody String powerAmpliSeriesFromClient) {
+		PowerAmplifierSeries powerAmplifierSeries = null;
 		try {
-			PowerAmplifierSeries powerAmplifierSeries = Utility
+			powerAmplifierSeries = Utility
 					.convertStringToJsonAmpliSeries(powerAmpliSeriesFromClient);
 			return ResponseEntity.ok(powerAmplifierSeriesService.createPowerAmplifierSeries(powerAmplifierSeries));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(
+					Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName().toString()),
+					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}

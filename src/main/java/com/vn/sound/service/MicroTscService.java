@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.PowerAmplifier;
@@ -54,7 +55,8 @@ public class MicroTscService {
 	public String createMicTsc(MicroTsc microTsc) throws Exception {
 		if (!microTscRepository.existsById(microTsc.getId())) {
 			if (microTscRepository.existsByMicroName(microTsc.getMicroName())) {
-				return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
+				// return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
+				throw new CustomException("Record name has existed");
 			} else {
 				microTscRepository.save(microTsc);
 				return Utility.successMsg(microTsc.getId());

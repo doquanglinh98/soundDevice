@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.repository.N9SpeakerSeriesAllProductsRepository;
@@ -67,7 +68,8 @@ public class N9SpeakerSeriesAllProductsService {
 		if (!n9SpeakerSeriesAllProductsRepository.existsById(n9SpeakerSeriesAllProducts.getId())) {
 			if (n9SpeakerSeriesAllProductsRepository
 					.existsByN9SpeakerSeriesName(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName())) {
-				return Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+				//return Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+				throw new CustomException("Record name has existed");
 			} else {
 				n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
 				return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
@@ -48,7 +49,8 @@ public class PowerAmplifierService {
 	public String createAmpli(PowerAmplifier powerAmplifier) throws Exception {
 		if (!powerAmplifierRepository.existsById(powerAmplifier.getId())) {
 			if (powerAmplifierRepository.existsByMode(powerAmplifier.getMode())) {
-				return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
+				// return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
+				throw new CustomException("Record name has existed");
 			} else {
 				powerAmplifierRepository.save(powerAmplifier);
 				return Utility.successMsg(powerAmplifier.getId());

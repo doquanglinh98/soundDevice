@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
@@ -28,7 +29,8 @@ public class MicroTscSeriesService {
 	public String createMicroTscSeries(MicroTscSeries miroTscSeries) throws Exception {
 		if (!miroTscSeriesRepository.existsById(miroTscSeries.getId())) {
 			if (miroTscSeriesRepository.existsBySeriesName(miroTscSeries.getSeriesName())) {
-				return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+				//return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+				throw new CustomException("Record name has existed");
 			} else {
 				miroTscSeriesRepository.save(miroTscSeries);
 				return Utility.successMsg(miroTscSeries.getId());

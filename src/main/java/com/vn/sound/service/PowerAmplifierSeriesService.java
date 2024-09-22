@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.PowerAmplifierSeries;
 import com.vn.sound.repository.PowerAmplifierSeriesRepository;
@@ -25,7 +26,8 @@ public class PowerAmplifierSeriesService {
 	public String createPowerAmplifierSeries(PowerAmplifierSeries powerAmplifierSeries) throws Exception {
 		if (!powerAmplifierSeriesRepository.existsById(powerAmplifierSeries.getId())) {
 			if (powerAmplifierSeriesRepository.existsBySeriesName(powerAmplifierSeries.getSeriesName())) {
-				return Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName());
+				//return Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName());
+				throw new CustomException("Record name has existed");
 			} else {
 				powerAmplifierSeriesRepository.save(powerAmplifierSeries);
 				return Utility.successMsg(powerAmplifierSeries.getId());
