@@ -2,9 +2,11 @@ package com.vn.sound.common;
 
 import com.google.gson.Gson;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
+import com.vn.sound.model.PowerAmplifierSeries;
 
 import java.lang.reflect.Field;
 import java.util.Map;
@@ -110,8 +112,18 @@ public class Utility {
 		return convertedObject;
 	}
 
+	public static MicroTscSeries convertStringToJsonMicroSeries(String msg) {
+		MicroTscSeries convertedObject = new Gson().fromJson(msg, MicroTscSeries.class);
+		return convertedObject;
+	}
+	
 	public static PowerAmplifier convertStringToJsonAmpli(String msg) {
 		PowerAmplifier convertedObject = new Gson().fromJson(msg, PowerAmplifier.class);
+		return convertedObject;
+	}
+	
+	public static PowerAmplifierSeries convertStringToJsonAmpliSeries(String msg) {
+		PowerAmplifierSeries convertedObject = new Gson().fromJson(msg, PowerAmplifierSeries.class);
 		return convertedObject;
 	}
 

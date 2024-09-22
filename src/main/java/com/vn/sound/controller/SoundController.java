@@ -15,12 +15,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
+import com.vn.sound.model.PowerAmplifierSeries;
+import com.vn.sound.repository.MicroTscRepository;
+import com.vn.sound.repository.PowerAmplifierSeriesRepository;
+import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
 import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
 import com.vn.sound.service.N9SpeakerSeriesService;
+import com.vn.sound.service.PowerAmplifierSeriesService;
 import com.vn.sound.service.PowerAmplifierService;
 
 @Controller
@@ -37,6 +43,12 @@ public class SoundController {
 
 	@Autowired
 	private N9SpeakerSeriesAllProductsService n9SpeakerSeriesAllProductsService;
+
+	@Autowired
+	private MicroTscSeriesService microTscSeriesService;
+
+	@Autowired
+	private PowerAmplifierSeriesService powerAmplifierSeriesService;
 
 	// for Micro
 
@@ -308,4 +320,97 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
+
+	// for MicroTscSeries
+	@RequestMapping(value = "/manager/micro-tsc-series/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllMicroTscSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					microTscSeriesService.findAllMicroTscSeries(Integer.parseInt(page), Integer.parseInt(size))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/micro-tsc-series/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createMicroTscSeries(@RequestBody String microTscSeriesFromClient) {
+		try {
+			MicroTscSeries microTscSeries = Utility.convertStringToJsonMicroSeries(microTscSeriesFromClient);
+			return ResponseEntity.ok(microTscSeriesService.createMicroTscSeries(microTscSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/micro-tsc-series/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editMicroTscSeries(@RequestBody String microTscSeriesFromClient) {
+		try {
+			MicroTscSeries microTscSeries = Utility.convertStringToJsonMicroSeries(microTscSeriesFromClient);
+			return ResponseEntity.ok(microTscSeriesService.editMicroTscSeries(microTscSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/micro-tsc-series/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteMicroTscSeries(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(microTscSeriesService.deleteMicroTscSeries(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	// for PowerAmplifierSeries
+	@RequestMapping(value = "/manager/power-ampli-series/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllPowerAmpliSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(powerAmplifierSeriesService
+					.findAllPowerAmplifierSeries(Integer.parseInt(page), Integer.parseInt(size))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/power-ampli-series/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createPowerAmpliSeries(@RequestBody String powerAmpliSeriesFromClient) {
+		try {
+			PowerAmplifierSeries powerAmplifierSeries = Utility
+					.convertStringToJsonAmpliSeries(powerAmpliSeriesFromClient);
+			return ResponseEntity.ok(powerAmplifierSeriesService.createPowerAmplifierSeries(powerAmplifierSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/power-ampli-series/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editPowerAmpliSeries(@RequestBody String powerAmpliSeriesFromClient) {
+		try {
+			PowerAmplifierSeries powerAmplifierSeries = Utility
+					.convertStringToJsonAmpliSeries(powerAmpliSeriesFromClient);
+			return ResponseEntity.ok(powerAmplifierSeriesService.editPowerAmplifierSeries(powerAmplifierSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/power-ampli-series/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deletePowerAmpliSeries(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(powerAmplifierSeriesService.deletePowerAmplifierSeries(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 }
