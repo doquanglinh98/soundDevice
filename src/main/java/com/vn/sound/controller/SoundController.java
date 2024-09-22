@@ -62,6 +62,16 @@ public class SoundController {
 		}
 	}
 
+	@RequestMapping(value = "/manager/micro/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findMicroByName(@PathVariable String pattern) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(microTscService.findMicroTscByName(pattern)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 	@RequestMapping(value = "/manager/micro/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createMicro(@RequestBody String microTscFromClient) {

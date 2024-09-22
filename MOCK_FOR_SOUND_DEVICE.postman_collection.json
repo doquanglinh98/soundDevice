@@ -1,0 +1,1120 @@
+{
+	"info": {
+		"_postman_id": "ab58d2c0-9a1f-49cf-925d-dad6dd2a32e0",
+		"name": "MOCK_FOR_SOUND_DEVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12995520",
+		"_collection_link": "https://planetary-moon-873841.postman.co/workspace/e202eccc-0570-4a10-a2bb-a7148b11606d/collection/12995520-ab58d2c0-9a1f-49cf-925d-dad6dd2a32e0?action=share&source=collection_link&creator=12995520"
+	},
+	"item": [
+		{
+			"name": "MICRO",
+			"item": [
+				{
+					"name": "findByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"2"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"imgId\": \"/imgs/mics/mic1.png\",\n    \"microName\": \"TC-1200TS\",\n    \"frequencyRangeCha\": \"640-648MHz\",\n    \"frequencyRangeChb\": \"665-673Mhz\",\n    \"signalToNoiseRatio\": \"150dB\",\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\n    \"modulationMode\": \"Analog\",\n    \"workingDistance\": \"500-1000 metes\",\n    \"frequencyBandwidth\": \"25MHz\",\n    \"channelInterval\": \"300KHz\",\n    \"maxDeviation\": \"+/-45 Khz\",\n    \"frequencyStability\": \"+/- 0.05 %\",\n    \"oscillationModeReceiverParam\": \"PLL\",\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\n    \"antennaAccess\": \"BNC/50 Ohm\",\n    \"midFrequence\": \"110MHz.10.7MHz\",\n    \"spuriousSuppression\": \">= 75 db\",\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\n    \"outputPower\": \"50mW\",\n    \"directivity\": \"Cardioid pickup pattern\",\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n    \"oscillationModeTransmitterParam\": \"PLL\",\n    \"transmitterType\": \"Dynamic microphone\",\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n    \"batteryLifeTime\": \"10~20 hours\"\n}"
+						},
+						{
+							"name": "Default Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"2"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"imgId\": \"/imgs/mics/mic1.png\",\n    \"microName\": \"TC-1200TS\",\n    \"frequencyRangeCha\": \"640-648MHz\",\n    \"frequencyRangeChb\": \"665-673Mhz\",\n    \"signalToNoiseRatio\": \"150dB\",\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\n    \"modulationMode\": \"Analog\",\n    \"workingDistance\": \"500-1000 metes\",\n    \"frequencyBandwidth\": \"25MHz\",\n    \"channelInterval\": \"300KHz\",\n    \"maxDeviation\": \"+/-45 Khz\",\n    \"frequencyStability\": \"+/- 0.05 %\",\n    \"oscillationModeReceiverParam\": \"PLL\",\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\n    \"antennaAccess\": \"BNC/50 Ohm\",\n    \"midFrequence\": \"110MHz.10.7MHz\",\n    \"spuriousSuppression\": \">= 75 db\",\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\n    \"outputPower\": \"50mW\",\n    \"directivity\": \"Cardioid pickup pattern\",\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n    \"oscillationModeTransmitterParam\": \"PLL\",\n    \"transmitterType\": \"Dynamic microphone\",\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n    \"batteryLifeTime\": \"10~20 hours\"\n}"
+						}
+					]
+				},
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/all?page=0&size=15",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"content\": [\n        {\n            \"id\": 2,\n            \"imgId\": \"/imgs/mics/mic1.png\",\n            \"microName\": \"TC-1200TS\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        },\n        {\n            \"id\": 3,\n            \"imgId\": \"/imgs/mics/mic3.png\",\n            \"microName\": \"TC-1200TS\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 15\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"/imgs/mics/mic1.png\",\r\n    \"microName\":\"TC-1200TS\",\r\n    \"frequencyRangeCha\": \"640-648MHz\",\r\n    \"frequencyRangeChb\": \"665-673Mhz\",\r\n    \"signalToNoiseRatio\": \"150dB\",\r\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n    \"modulationMode\": \"Analog\",\r\n    \"workingDistance\": \"500-1000 metes\",\r\n    \"frequencyBandwidth\": \"25MHz\",\r\n    \"channelInterval\": \"300KHz\",\r\n    \"maxDeviation\": \"+/-45 Khz\",\r\n    \"frequencyStability\": \"+/- 0.05 %\",\r\n    \"oscillationModeReceiverParam\": \"PLL\",\r\n    \"modulation\": \"\",\r\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n    \"antennaAccess\": \"BNC/50 Ohm\",\r\n    \"midFrequence\": \"110MHz.10.7MHz\",\r\n    \"spuriousSuppression\": \">= 75 db\",\r\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n    \"outputPower\": \"50mW\",\r\n    \"directivity\": \"Cardioid pickup pattern\",\r\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n    \"oscillationModeTransmitterParam\": \"PLL\",\r\n    \"transmitterType\": \"Dynamic microphone\",\r\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n    \"batteryLifeTime\": \"10~20 hours\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"create"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Create record with ID = 2 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 4,\r\n    \"imgId\": \"/imgs/mics/mic-update-image.png\",\r\n    \"microName\":\"TC-1200TS\",\r\n    \"frequencyRangeCha\": \"640-648MHz\",\r\n    \"frequencyRangeChb\": \"665-673Mhz\",\r\n    \"signalToNoiseRatio\": \"150dB\",\r\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n    \"modulationMode\": \"Analog\",\r\n    \"workingDistance\": \"500-1000 metes\",\r\n    \"frequencyBandwidth\": \"25MHz\",\r\n    \"channelInterval\": \"300KHz\",\r\n    \"maxDeviation\": \"+/-45 Khz\",\r\n    \"frequencyStability\": \"+/- 0.05 %\",\r\n    \"oscillationModeReceiverParam\": \"PLL\",\r\n    \"modulation\": \"\",\r\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n    \"antennaAccess\": \"BNC/50 Ohm\",\r\n    \"midFrequence\": \"110MHz.10.7MHz\",\r\n    \"spuriousSuppression\": \">= 75 db\",\r\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n    \"outputPower\": \"50mW\",\r\n    \"directivity\": \"Cardioid pickup pattern\",\r\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n    \"oscillationModeTransmitterParam\": \"PLL\",\r\n    \"transmitterType\": \"Dynamic microphone\",\r\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n    \"batteryLifeTime\": \"10~20 hours\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"edit"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Edit record with ID = 4 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/manager/micro/delete/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Delete record with ID = 2 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete multiple",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"86\",\r\n    \"3\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/delete/multiple",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"delete",
+										"multiple"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"1 records deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "findBy microName return multiple records",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/micro/find-by-keyword/CID",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"micro",
+										"find-by-keyword",
+										"CID"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"imgId\": \"/imgs/mics/mic-update-image.png\",\n        \"microName\": \"TC-1200TS\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    },\n    {\n        \"id\": 5,\n        \"imgId\": \"/imgs/mics/mic5.png\",\n        \"microName\": \"TC-1200TS_123\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AMPLIFIER",
+			"item": [
+				{
+					"name": "findByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"1"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"imgId\": \"/imgs/amplifiers/amplifier1.png\",\n    \"mode\": \"CID2/400\",\n    \"stereoPower8OHM\": \"400Wx2\",\n    \"stereoPower4OHM\": \"600Wx2\",\n    \"stereoPower2OHM\": \"900Wx2\",\n    \"btl8OHM\": \"1200Wx2\",\n    \"btl4OHM\": \"1600Wx2\",\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n    \"sSourceNRatio\": \">80dB\",\n    \"slewRatio\": \"13V/microSecond\",\n    \"dampingFactor\": \">200\",\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n    \"gWeight\": \"20KG\",\n    \"dimension\": \"500x485x88(2U)\",\n    \"packingSize\": \"599x568x155\"\n}"
+						}
+					]
+				},
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/all?page=0&size=15",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"content\": [\n        {\n            \"id\": 1,\n            \"imgId\": \"/imgs/amplifiers/amplifier1.png\",\n            \"mode\": \"CID2/400\",\n            \"stereoPower8OHM\": \"400Wx2\",\n            \"stereoPower4OHM\": \"600Wx2\",\n            \"stereoPower2OHM\": \"900Wx2\",\n            \"btl8OHM\": \"1200Wx2\",\n            \"btl4OHM\": \"1600Wx2\",\n            \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n            \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n            \"sSourceNRatio\": \">80dB\",\n            \"slewRatio\": \"13V/microSecond\",\n            \"dampingFactor\": \">200\",\n            \"crossTalk\": \">70dB@8ohm 1KHz\",\n            \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n            \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n            \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n            \"gWeight\": \"20KG\",\n            \"dimension\": \"500x485x88(2U)\",\n            \"packingSize\": \"599x568x155\"\n        },\n        {\n            \"id\": 2,\n            \"imgId\": \"/imgs/amplifiers/amplifier2.png\",\n            \"mode\": \"CID2/400\",\n            \"stereoPower8OHM\": \"400Wx2\",\n            \"stereoPower4OHM\": \"600Wx2\",\n            \"stereoPower2OHM\": \"900Wx2\",\n            \"btl8OHM\": \"1200Wx2\",\n            \"btl4OHM\": \"1600Wx2\",\n            \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n            \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n            \"sSourceNRatio\": \">80dB\",\n            \"slewRatio\": \"13V/microSecond\",\n            \"dampingFactor\": \">200\",\n            \"crossTalk\": \">70dB@8ohm 1KHz\",\n            \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n            \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n            \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n            \"gWeight\": \"20KG\",\n            \"dimension\": \"500x485x88(2U)\",\n            \"packingSize\": \"599x568x155\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "findByMode return multiple records",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/find-by-keyword/CID",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"find-by-keyword",
+										"CID"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"imgId\": \"/imgs/amplifiers/amplifier-update-img.png\",\n        \"mode\": \"CID2/400\",\n        \"stereoPower8OHM\": \"400Wx2\",\n        \"stereoPower4OHM\": \"600Wx2\",\n        \"stereoPower2OHM\": \"900Wx2\",\n        \"btl8OHM\": \"1200Wx2\",\n        \"btl4OHM\": \"1600Wx2\",\n        \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n        \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n        \"sSourceNRatio\": \">80dB\",\n        \"slewRatio\": \"13V/microSecond\",\n        \"dampingFactor\": \">200\",\n        \"crossTalk\": \">70dB@8ohm 1KHz\",\n        \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n        \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n        \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n        \"gWeight\": \"20KG\",\n        \"dimension\": \"500x485x88(2U)\",\n        \"packingSize\": \"599x568x155\"\n    },\n    {\n        \"id\": 5,\n        \"imgId\": \"/imgs/amplifiers/amplifier5.png\",\n        \"mode\": \"CID2/400\",\n        \"stereoPower8OHM\": \"400Wx2\",\n        \"stereoPower4OHM\": \"600Wx2\",\n        \"stereoPower2OHM\": \"900Wx2\",\n        \"btl8OHM\": \"1200Wx2\",\n        \"btl4OHM\": \"1600Wx2\",\n        \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n        \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n        \"sSourceNRatio\": \">80dB\",\n        \"slewRatio\": \"13V/microSecond\",\n        \"dampingFactor\": \">200\",\n        \"crossTalk\": \">70dB@8ohm 1KHz\",\n        \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n        \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n        \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n        \"gWeight\": \"20KG\",\n        \"dimension\": \"500x485x88(2U)\",\n        \"packingSize\": \"599x568x155\"\n    },\n    {\n        \"id\": 6,\n        \"imgId\": \"/imgs/amplifiers/amplifier6.png\",\n        \"mode\": \"CID2/400_123\",\n        \"stereoPower8OHM\": \"400Wx2\",\n        \"stereoPower4OHM\": \"600Wx2\",\n        \"stereoPower2OHM\": \"900Wx2\",\n        \"btl8OHM\": \"1200Wx2\",\n        \"btl4OHM\": \"1600Wx2\",\n        \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\n        \"thdPlus\": \"<0.05%@8ohm 1KHz\",\n        \"sSourceNRatio\": \">80dB\",\n        \"slewRatio\": \"13V/microSecond\",\n        \"dampingFactor\": \">200\",\n        \"crossTalk\": \">70dB@8ohm 1KHz\",\n        \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\n        \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\n        \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\n        \"gWeight\": \"20KG\",\n        \"dimension\": \"500x485x88(2U)\",\n        \"packingSize\": \"599x568x155\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1\",\r\n    \"imgId\": \"/imgs/amplifiers/amplifier1.png\",\r\n    \"mode\": \"CID2/400\",\r\n    \"stereoPower8OHM\": \"400Wx2\",\r\n    \"stereoPower4OHM\": \"600Wx2\",\r\n    \"stereoPower2OHM\": \"900Wx2\",\r\n    \"btl8OHM\": \"1200Wx2\",\r\n    \"btl4OHM\": \"1600Wx2\",\r\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n    \"sSourceNRatio\": \">80dB\",\r\n    \"slewRatio\": \"13V/microSecond\",\r\n    \"dampingFactor\": \">200\",\r\n    \"ourputCircuitry\": \"class H\",\r\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\r\n    \"gWeight\": \"20KG\",\r\n    \"dimension\": \"500x485x88(2U)\",\r\n    \"packingSize\": \"599x568x155\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"create"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Create record with ID = 1 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"imgId\": \"/imgs/amplifiers/amplifier-update-img.png\",\r\n    \"mode\": \"CID2/400\",\r\n    \"stereoPower8OHM\": \"400Wx2\",\r\n    \"stereoPower4OHM\": \"600Wx2\",\r\n    \"stereoPower2OHM\": \"900Wx2\",\r\n    \"btl8OHM\": \"1200Wx2\",\r\n    \"btl4OHM\": \"1600Wx2\",\r\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n    \"sSourceNRatio\": \">80dB\",\r\n    \"slewRatio\": \"13V/microSecond\",\r\n    \"dampingFactor\": \">200\",\r\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\r\n    \"gWeight\": \"20KG\",\r\n    \"dimension\": \"500x485x88(2U)\",\r\n    \"packingSize\": \"599x568x155\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"edit"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Edit record with ID = 1 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/manager/ampli/delete/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"Delete record with ID = 2 successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete multiple",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46MTIz",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"86\",\r\n    \"3\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/manager/ampli/delete/multiple",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"manager",
+										"ampli",
+										"delete",
+										"multiple"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"SUCCESS\",\n    \"message\": \"0 records deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "heathCheck",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"info"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://e6e287e8-c4a9-499a-ac54-c270bce6ff28.mock.pstmn.io/info",
+							"protocol": "https",
+							"host": [
+								"e6e287e8-c4a9-499a-ac54-c270bce6ff28",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "App is running!!!"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://e6e287e8-c4a9-499a-ac54-c270bce6ff28.mock.pstmn.io"
+		}
+	]
+}

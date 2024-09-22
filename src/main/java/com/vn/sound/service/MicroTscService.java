@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.repository.MicroTscRepository;
 
 @org.springframework.stereotype.Service
@@ -44,6 +45,10 @@ public class MicroTscService {
 
 	public Page<MicroTsc> findAllMicroTsc(int page, int size) throws Exception {
 		return microTscRepository.findAll(PageRequest.of(page, size));
+	}
+	
+	public List<MicroTsc> findMicroTscByName(String name) throws Exception {
+		return microTscRepository.findMicroTscByName(name); 
 	}
 
 	public String createMicTsc(MicroTsc microTsc) throws Exception {
