@@ -47,8 +47,12 @@ public class PowerAmplifierService {
 
 	public String createAmpli(PowerAmplifier powerAmplifier) throws Exception {
 		if (!powerAmplifierRepository.existsById(powerAmplifier.getId())) {
-			powerAmplifierRepository.save(powerAmplifier);
-			return Utility.successMsg(powerAmplifier.getId());
+			if (powerAmplifierRepository.existsByMode(powerAmplifier.getMode())) {
+				return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
+			} else {
+				powerAmplifierRepository.save(powerAmplifier);
+				return Utility.successMsg(powerAmplifier.getId());
+			}
 		} else {
 			return Utility.errMsgCreate(powerAmplifier.getId());
 		}
@@ -81,8 +85,8 @@ public class PowerAmplifierService {
 			}
 		}
 		return Utility.deleteMultiMsg(count);
-	} 
-	
+	}
+
 	public List<PowerAmplifier> findPowerAmplifierByMode(String mode) throws Exception {
 		return powerAmplifierRepository.findPowerAmplifierByMode(mode);
 	}

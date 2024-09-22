@@ -7,5 +7,5 @@ import com.vn.sound.model.N9SpeakerSeries;
 
 @Repository
 public interface N9SpeakerSeriesRepository extends JpaRepository<N9SpeakerSeries, Long> {
-
+	boolean existsBySeriesName(String seriesName);
 }

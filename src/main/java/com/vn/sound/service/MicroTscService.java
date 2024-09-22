@@ -46,15 +46,19 @@ public class MicroTscService {
 	public Page<MicroTsc> findAllMicroTsc(int page, int size) throws Exception {
 		return microTscRepository.findAll(PageRequest.of(page, size));
 	}
-	
+
 	public List<MicroTsc> findMicroTscByName(String name) throws Exception {
-		return microTscRepository.findMicroTscByName(name); 
+		return microTscRepository.findMicroTscByName(name);
 	}
 
 	public String createMicTsc(MicroTsc microTsc) throws Exception {
 		if (!microTscRepository.existsById(microTsc.getId())) {
-			microTscRepository.save(microTsc);
-			return Utility.successMsg(microTsc.getId());
+			if (microTscRepository.existsByMicroName(microTsc.getMicroName())) {
+				return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
+			} else {
+				microTscRepository.save(microTsc);
+				return Utility.successMsg(microTsc.getId());
+			}
 		} else {
 			return Utility.errMsgCreate(microTsc.getId());
 		}

@@ -65,8 +65,13 @@ public class N9SpeakerSeriesAllProductsService {
 
 	public String createN9SpeakerSeries(N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts) throws Exception {
 		if (!n9SpeakerSeriesAllProductsRepository.existsById(n9SpeakerSeriesAllProducts.getId())) {
-			n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
-			return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());
+			if (n9SpeakerSeriesAllProductsRepository
+					.existsByN9SpeakerSeriesName(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName())) {
+				return Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+			} else {
+				n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
+				return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());
+			}
 		} else {
 			return Utility.errMsgCreate(n9SpeakerSeriesAllProducts.getId());
 		}

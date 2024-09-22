@@ -13,4 +13,6 @@ import com.vn.sound.model.PowerAmplifier;
 public interface PowerAmplifierRepository extends JpaRepository<PowerAmplifier, Long> {
 	@Query("SELECT u FROM PowerAmplifier u WHERE u.mode LIKE %:mode%")
 	List<PowerAmplifier> findPowerAmplifierByMode(@Param("mode") String mode);
+
+	boolean existsByMode(String mode);
 }

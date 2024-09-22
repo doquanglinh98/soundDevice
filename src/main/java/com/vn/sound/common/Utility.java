@@ -36,6 +36,12 @@ public class Utility {
 		return errMsg;
 	}
 
+	public static String errMsgCreateFieldNameExits(String name) {
+		String errMsg = "{\"error\":\"invalid_request\",\"error_description\":\"Record_Name = " + name
+				+ " has existed\"}";
+		return errMsg;
+	}
+
 	public static String errMsgInvalid() {
 		String errMsg = "{\"error\":\"invalid_request\"}";
 		return errMsg;
@@ -116,12 +122,12 @@ public class Utility {
 		MicroTscSeries convertedObject = new Gson().fromJson(msg, MicroTscSeries.class);
 		return convertedObject;
 	}
-	
+
 	public static PowerAmplifier convertStringToJsonAmpli(String msg) {
 		PowerAmplifier convertedObject = new Gson().fromJson(msg, PowerAmplifier.class);
 		return convertedObject;
 	}
-	
+
 	public static PowerAmplifierSeries convertStringToJsonAmpliSeries(String msg) {
 		PowerAmplifierSeries convertedObject = new Gson().fromJson(msg, PowerAmplifierSeries.class);
 		return convertedObject;

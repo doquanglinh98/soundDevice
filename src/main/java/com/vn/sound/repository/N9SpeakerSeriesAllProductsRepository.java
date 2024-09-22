@@ -14,4 +14,5 @@ public interface N9SpeakerSeriesAllProductsRepository extends JpaRepository<N9Sp
 	@Query("SELECT u FROM N9SpeakerSeriesAllProducts u WHERE u.n9SpeakerSeriesName LIKE %:n9SpeakerSeriesName%")
 	List<N9SpeakerSeriesAllProducts> findN9SpeakerSeriesAllProductsByN9SpeakerSeriesName(
 			@Param("n9SpeakerSeriesName") String n9SpeakerSeriesName);
+	boolean existsByN9SpeakerSeriesName(String n9SpeakerSeriesName);
 }

@@ -16,7 +16,7 @@ import com.vn.sound.repository.MicroTscSeriesRepository;
 public class MicroTscSeriesService {
 	@Autowired
 	private MicroTscSeriesRepository miroTscSeriesRepository;
-	
+
 	public Page<MicroTscSeries> findAllMicroTscSeries(int page, int size) throws Exception {
 		return miroTscSeriesRepository.findAll(PageRequest.of(page, size));
 	}
@@ -27,8 +27,12 @@ public class MicroTscSeriesService {
 
 	public String createMicroTscSeries(MicroTscSeries miroTscSeries) throws Exception {
 		if (!miroTscSeriesRepository.existsById(miroTscSeries.getId())) {
-			miroTscSeriesRepository.save(miroTscSeries);
-			return Utility.successMsg(miroTscSeries.getId());
+			if (miroTscSeriesRepository.existsBySeriesName(miroTscSeries.getSeriesName())) {
+				return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+			} else {
+				miroTscSeriesRepository.save(miroTscSeries);
+				return Utility.successMsg(miroTscSeries.getId());
+			}
 		} else {
 			return Utility.errMsgCreate(miroTscSeries.getId());
 		}
@@ -50,8 +54,8 @@ public class MicroTscSeriesService {
 		} else {
 			return Utility.errMsg(Id);
 		}
-	} 
-	
+	}
+
 	/*
 	 * public List<MicroTscSeries> findMicroSeriesByName(String name) throws
 	 * Exception { return

@@ -7,5 +7,5 @@ import com.vn.sound.model.PowerAmplifierSeries;
 
 @Repository
 public interface PowerAmplifierSeriesRepository extends JpaRepository<PowerAmplifierSeries, Long> {
-
+	boolean existsBySeriesName(String seriesName);
 }

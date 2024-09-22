@@ -13,4 +13,6 @@ import com.vn.sound.model.MicroTsc;
 public interface MicroTscRepository extends JpaRepository<MicroTsc, Long> {
 	@Query("SELECT u FROM MicroTsc u WHERE u.microName LIKE %:microName%")
 	List<MicroTsc> findMicroTscByName(@Param("microName") String microName);
+
+	boolean existsByMicroName(String microName);
 }

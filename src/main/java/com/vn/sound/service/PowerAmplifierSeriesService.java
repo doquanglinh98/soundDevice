@@ -24,8 +24,12 @@ public class PowerAmplifierSeriesService {
 
 	public String createPowerAmplifierSeries(PowerAmplifierSeries powerAmplifierSeries) throws Exception {
 		if (!powerAmplifierSeriesRepository.existsById(powerAmplifierSeries.getId())) {
-			powerAmplifierSeriesRepository.save(powerAmplifierSeries);
-			return Utility.successMsg(powerAmplifierSeries.getId());
+			if (powerAmplifierSeriesRepository.existsBySeriesName(powerAmplifierSeries.getSeriesName())) {
+				return Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName());
+			} else {
+				powerAmplifierSeriesRepository.save(powerAmplifierSeries);
+				return Utility.successMsg(powerAmplifierSeries.getId());
+			}
 		} else {
 			return Utility.errMsgCreate(powerAmplifierSeries.getId());
 		}
