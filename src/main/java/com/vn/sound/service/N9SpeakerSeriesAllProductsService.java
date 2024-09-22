@@ -30,7 +30,7 @@ public class N9SpeakerSeriesAllProductsService {
 		N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProductsTmp = n9SpeakerSeriesAllProductsOptional.get();
 		N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts = new N9SpeakerSeriesAllProducts(
 				n9SpeakerSeriesAllProductsTmp.getId(), n9SpeakerSeriesAllProductsTmp.getImgId(),
-				n9SpeakerSeriesAllProductsTmp.getN9SpeakerSeriesName(),
+				n9SpeakerSeriesAllProductsTmp.getDescription(), n9SpeakerSeriesAllProductsTmp.getN9SpeakerSeriesName(),
 				n9SpeakerSeriesAllProductsTmp.getSystemDescription(), n9SpeakerSeriesAllProductsTmp.getTweeter(),
 				n9SpeakerSeriesAllProductsTmp.getWoofer(), n9SpeakerSeriesAllProductsTmp.getPower(),
 				n9SpeakerSeriesAllProductsTmp.getMaximumSoundPressure(), n9SpeakerSeriesAllProductsTmp.getCoverAngle(),
@@ -89,11 +89,11 @@ public class N9SpeakerSeriesAllProductsService {
 			return Utility.errMsg(Id);
 		}
 	}
-	
+
 	public List<N9SpeakerSeriesAllProducts> findAllN9SpeakerSeriesByName(String name) throws Exception {
 		return n9SpeakerSeriesAllProductsRepository.findN9SpeakerSeriesAllProductsByN9SpeakerSeriesName(name);
 	}
-	
+
 	public Page<N9SpeakerSeriesAllProducts> findAllProductOfSpeakerSeries(int page, int size) throws Exception {
 		return n9SpeakerSeriesAllProductsRepository.findAll(PageRequest.of(page, size));
 	}

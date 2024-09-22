@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -117,6 +116,17 @@ public class SoundController {
 		}
 	}
 
+	@RequestMapping(value = "/manager/ampli/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAmpliByMode(@PathVariable String pattern) {
+		try {
+			return ResponseEntity
+					.ok(Utility.jsonStringConverter(powerAmplifierService.findPowerAmplifierByMode(pattern)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 	@RequestMapping(value = "/manager/ampli/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findAllAmpli(@RequestParam(defaultValue = "0", name = "page") String page,
@@ -175,9 +185,11 @@ public class SoundController {
 
 	@RequestMapping(value = "/manager/n9speaker/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findAllN9SpeakerSeries() {
+	public ResponseEntity<String> findAllN9SpeakerSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
 		try {
-			return ResponseEntity.ok(Utility.jsonStringConverter(n9SpeakerSeriesService.findAllN9SpeakerSeries()));
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					n9SpeakerSeriesService.findAllN9SpeakerSeries(Integer.parseInt(page), Integer.parseInt(size))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
@@ -270,7 +282,6 @@ public class SoundController {
 			return ResponseEntity.ok(Utility
 					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findAllN9SpeakerSeriesByName(pattern)));
 		} catch (Exception e) {
-			System.out.println("loi roi=" + e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}

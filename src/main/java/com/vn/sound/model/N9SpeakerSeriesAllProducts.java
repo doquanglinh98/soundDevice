@@ -17,6 +17,9 @@ public class N9SpeakerSeriesAllProducts {
 
 	@Column(name = "imgId")
 	private String imgId;
+	
+	@Column(name = "description")
+	private String description;
 
 	@Column(name = "n9SpeakerSeriesName")
 	private String n9SpeakerSeriesName;
@@ -591,11 +594,19 @@ public class N9SpeakerSeriesAllProducts {
 		return id;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public N9SpeakerSeriesAllProducts() {
 
 	}
 
-	public N9SpeakerSeriesAllProducts(Long id, String imgId, String n9SpeakerSeriesName, String systemDescription,
+	public N9SpeakerSeriesAllProducts(Long id, String imgId, String description, String n9SpeakerSeriesName, String systemDescription,
 			String tweeter, String woofer, String power, String maximumSoundPressure, String coverAngle,
 			String hangingPoint, String hand, String paintTreatment, String LFUnit, String MFUnit, String HFUnit,
 			String frequencyResponse, String inputSensitivity, String maxSPL, String nominalImpedence,
@@ -609,6 +620,7 @@ public class N9SpeakerSeriesAllProducts {
 			String coolingMethod, String DSPPart, String inputAndOutputPart, String caseMaterial) {
 		this.id = id;
 		this.imgId = imgId;
+		this.description = description;
 		this.n9SpeakerSeriesName = n9SpeakerSeriesName;
 		this.systemDescription = systemDescription;
 		this.tweeter = tweeter;

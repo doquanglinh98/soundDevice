@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.Utility;
+import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.repository.PowerAmplifierRepository;
 
@@ -80,5 +81,9 @@ public class PowerAmplifierService {
 			}
 		}
 		return Utility.deleteMultiMsg(count);
+	} 
+	
+	public List<PowerAmplifier> findPowerAmplifierByMode(String mode) throws Exception {
+		return powerAmplifierRepository.findPowerAmplifierByMode(mode);
 	}
 }

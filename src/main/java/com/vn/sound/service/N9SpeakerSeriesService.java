@@ -3,6 +3,8 @@ package com.vn.sound.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.Utility;
@@ -15,13 +17,13 @@ public class N9SpeakerSeriesService {
 	@Autowired
 	private N9SpeakerSeriesRepository n9SpeakerSeriesRepository;
 
-//	public Page<N9SpeakerSeries> findAllN9SpeakerSeries(int page, int size) throws Exception {
-//		return n9SpeakerSeriesRepository.findAll(PageRequest.of(page, size));
-//	}
-
-	public List<N9SpeakerSeries> findAllN9SpeakerSeries() throws Exception {
-		return n9SpeakerSeriesRepository.findAll();
+	public Page<N9SpeakerSeries> findAllN9SpeakerSeries(int page, int size) throws Exception {
+		return n9SpeakerSeriesRepository.findAll(PageRequest.of(page, size));
 	}
+
+//	public List<N9SpeakerSeries> findAllN9SpeakerSeries() throws Exception {
+//		return n9SpeakerSeriesRepository.findAll();
+//	}
 
 	public String createN9SpeakerSeries(N9SpeakerSeries n9SpeakerSeries) throws Exception {
 		if (!n9SpeakerSeriesRepository.existsById(n9SpeakerSeries.getId())) {
