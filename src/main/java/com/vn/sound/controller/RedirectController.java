@@ -35,8 +35,8 @@ public class RedirectController {
 
 	@RequestMapping(value = "/admin-login", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> loginManager(@RequestParam(name = "userName") String userName,
-			@RequestParam(name = "passWord") String passWord) {
+	public ResponseEntity<String> loginManager(@RequestParam(name = "username") String userName,
+			@RequestParam(name = "password") String passWord) {
 		if (userService.isAdmin(userName, passWord)) {
 			return ResponseEntity.ok("login OK");
 		} else {
