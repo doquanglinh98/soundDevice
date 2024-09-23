@@ -54,9 +54,12 @@ public class SoundController {
 	@RequestMapping(value = "/manager/micro/{Id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findMicroById(@PathVariable Long Id) {
+		Long ref = System.currentTimeMillis();
+		Utility.logging(ref, this.getClass().getSimpleName(), "findMicroById", "Find Micro with ID = " + Id);
 		try {
-			return ResponseEntity.ok(Utility.jsonStringConverter(microTscService.findMicroTscById(Id)));
+			return ResponseEntity.ok(Utility.jsonStringConverter(microTscService.findMicroTscById(ref, Id)));
 		} catch (Exception e) {
+			Utility.logging(ref, this.getClass().getSimpleName(), "findMicroById", "Exception when find object = " + e);
 			return new ResponseEntity<>(Utility.errMsg(Id), HttpStatus.BAD_REQUEST);
 		}
 	}

@@ -66,7 +66,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}
@@ -136,6 +135,7 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -147,7 +147,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"total\": 2,\n    \"content\": [\n        {\n            \"id\": 2,\n            \"imgId\": \"/imgs/mics/mic1.png\",\n            \"microName\": \"TC-1200TS\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        },\n        {\n            \"id\": 3,\n            \"imgId\": \"/imgs/mics/mic3.png\",\n            \"microName\": \"TC-1200TS\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 15\n    }\n}"
+							"body": "{\n    \"total\": 3,\n    \"content\": [\n        {\n            \"id\": 2,\n            \"imgId\": \"/imgs/mics/mic1.png\",\n            \"microName\": \"TC-209ST\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        },\n        {\n            \"id\": 4,\n            \"imgId\": \"/imgs/mics/mic1.png\",\n            \"microName\": \"TC-3000ST\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        },\n        {\n            \"id\": 5,\n            \"imgId\": \"/imgs/mics/mic1.png\",\n            \"microName\": \"TC-208ST\",\n            \"frequencyRangeCha\": \"640-648MHz\",\n            \"frequencyRangeChb\": \"665-673Mhz\",\n            \"signalToNoiseRatio\": \"150dB\",\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\n            \"modulationMode\": \"Analog\",\n            \"workingDistance\": \"500-1000 metes\",\n            \"frequencyBandwidth\": \"25MHz\",\n            \"channelInterval\": \"300KHz\",\n            \"maxDeviation\": \"+/-45 Khz\",\n            \"frequencyStability\": \"+/- 0.05 %\",\n            \"oscillationModeReceiverParam\": \"PLL\",\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\n            \"antennaAccess\": \"BNC/50 Ohm\",\n            \"midFrequence\": \"110MHz.10.7MHz\",\n            \"spuriousSuppression\": \">= 75 db\",\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\n            \"outputPower\": \"50mW\",\n            \"directivity\": \"Cardioid pickup pattern\",\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n            \"oscillationModeTransmitterParam\": \"PLL\",\n            \"transmitterType\": \"Dynamic microphone\",\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n            \"batteryLifeTime\": \"10~20 hours\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 10\n    }\n}"
 						}
 					]
 				},
@@ -215,6 +215,7 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -294,6 +295,7 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -365,6 +367,7 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -445,6 +448,7 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -495,7 +499,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://0776f5a4-afec-4066-89ae-8830a69c83ce.mock.pstmn.io/manager/micro/find-by-keyword/CID",
+									"raw": "https://0776f5a4-afec-4066-89ae-8830a69c83ce.mock.pstmn.io/manager/micro/find-by-keyword/TC-2",
 									"protocol": "https",
 									"host": [
 										"0776f5a4-afec-4066-89ae-8830a69c83ce",
@@ -507,10 +511,11 @@
 										"manager",
 										"micro",
 										"find-by-keyword",
-										"CID"
+										"TC-2"
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
@@ -522,7 +527,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 4,\n        \"imgId\": \"/imgs/mics/mic-update-image.png\",\n        \"microName\": \"TC-1200TS\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    },\n    {\n        \"id\": 5,\n        \"imgId\": \"/imgs/mics/mic5.png\",\n        \"microName\": \"TC-1200TS_123\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    }\n]"
+							"body": "[\n    {\n        \"id\": 2,\n        \"imgId\": \"/imgs/mics/mic1.png\",\n        \"microName\": \"TC-209ST\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    },\n    {\n        \"id\": 5,\n        \"imgId\": \"/imgs/mics/mic1.png\",\n        \"microName\": \"TC-208ST\",\n        \"frequencyRangeCha\": \"640-648MHz\",\n        \"frequencyRangeChb\": \"665-673Mhz\",\n        \"signalToNoiseRatio\": \"150dB\",\n        \"totalHarmonicDistortion\": \"< 0.5 %\",\n        \"modulationMode\": \"Analog\",\n        \"workingDistance\": \"500-1000 metes\",\n        \"frequencyBandwidth\": \"25MHz\",\n        \"channelInterval\": \"300KHz\",\n        \"maxDeviation\": \"+/-45 Khz\",\n        \"frequencyStability\": \"+/- 0.05 %\",\n        \"oscillationModeReceiverParam\": \"PLL\",\n        \"sensitivity\": \"12 dBuV(80dB S/N)\",\n        \"sensitivityAdjustment\": \"12~32 dBuV\",\n        \"powerSupplyMode\": \"DC 12V, 850A input\",\n        \"antennaAccess\": \"BNC/50 Ohm\",\n        \"midFrequence\": \"110MHz.10.7MHz\",\n        \"spuriousSuppression\": \">= 75 db\",\n        \"maxOutputElectricalLevel\": \"+ 10dBv\",\n        \"outputPower\": \"50mW\",\n        \"directivity\": \"Cardioid pickup pattern\",\n        \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\n        \"powerSupply\": \"2*AA 1.5V alkli batteries\",\n        \"oscillationModeTransmitterParam\": \"PLL\",\n        \"transmitterType\": \"Dynamic microphone\",\n        \"pipeBodyMaterial\": \"Zic aluminum alloy\",\n        \"batteryLifeTime\": \"10~20 hours\"\n    }\n]"
 						}
 					]
 				}
@@ -1844,13 +1849,13 @@
 											}
 										],
 										"url": {
-											"raw": "{{url}}/manager/speakers-series/all?page=0&size=5",
+											"raw": "{{url}}/manager/micro-tsc-series/all?page=0&size=5",
 											"host": [
 												"{{url}}"
 											],
 											"path": [
 												"manager",
-												"speakers-series",
+												"micro-tsc-series",
 												"all"
 											],
 											"query": [
@@ -1877,7 +1882,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"total\": 1,\n    \"content\": [\n        {\n            \"id\": 3,\n            \"seriesName\": \"TC-72 Series\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 5\n    }\n}"
+									"body": "{\n    \"total\": 2,\n    \"content\": [\n        {\n            \"id\": 3,\n            \"seriesName\": \"TC-2\"\n        },\n        {\n            \"id\": 4,\n            \"seriesName\": \"TC-3\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"orders\": []\n        },\n        \"pageNumber\": 0,\n        \"pageSize\": 5\n    }\n}"
 								}
 							]
 						},
@@ -1939,7 +1944,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": 4,\n    \"seriesName\": \"TC-7 Series\"\n}"
+									"body": "{\n    \"id\": 4,\n    \"seriesName\": \"TC-3\"\n}"
 								}
 							]
 						},
@@ -1984,7 +1989,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\":\"1\",\r\n    \"seriesName\":\"TC Series\"\r\n}",
+											"raw": "{\r\n    \"id\":\"1\",\r\n    \"seriesName\":\"TC-99\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1992,13 +1997,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/manager/speakers-series/create",
+											"raw": "{{url}}/manager/micro-tsc-series/create",
 											"host": [
 												"{{url}}"
 											],
 											"path": [
 												"manager",
-												"speakers-series",
+												"micro-tsc-series",
 												"create"
 											]
 										}
@@ -2060,7 +2065,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\":\"3\",\r\n    \"seriesName\":\"TC-72 Series\"\r\n}",
+											"raw": "{\r\n    \"id\":\"3\",\r\n    \"seriesName\":\"TC-72\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"

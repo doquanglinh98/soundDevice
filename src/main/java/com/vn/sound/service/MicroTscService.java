@@ -20,17 +20,16 @@ public class MicroTscService {
 	@Autowired
 	private MicroTscRepository microTscRepository;
 
-	public MicroTsc findMicroTscById(Long Id) throws Exception {
+	public MicroTsc findMicroTscById(Long ref, Long Id) throws Exception {
 		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
 
 		if (microTscOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById", "Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
 		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getMicroName(),
-				microTscTmp.getFrequencyQuantity(),
-				microTscTmp.getFrequencyRangeCha(),
+				microTscTmp.getFrequencyQuantity(), microTscTmp.getFrequencyRangeCha(),
 				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
 				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
 				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
@@ -42,7 +41,8 @@ public class MicroTscService {
 				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
 				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
 				microTscTmp.getPipeBodyMaterial(), microTscTmp.getBatteryLifeTime());
-
+		Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
+				"Detail of micro : " + Utility.jsonStringConverter(microTsc));
 		return microTsc;
 	}
 
