@@ -38,7 +38,7 @@ public class N9SpeakerSeriesAllProductsService {
 				n9SpeakerSeriesAllProductsTmp.getHangingPoint(), n9SpeakerSeriesAllProductsTmp.getHand(),
 				n9SpeakerSeriesAllProductsTmp.getPaintTreatment(), n9SpeakerSeriesAllProductsTmp.getLFUnit(),
 				n9SpeakerSeriesAllProductsTmp.getMFUnit(), n9SpeakerSeriesAllProductsTmp.getHFUnit(),
-				n9SpeakerSeriesAllProductsTmp.getFrequencyResponse(),
+				n9SpeakerSeriesAllProductsTmp.getUnit(), n9SpeakerSeriesAllProductsTmp.getFrequencyResponse(),
 				n9SpeakerSeriesAllProductsTmp.getInputSensitivity(), n9SpeakerSeriesAllProductsTmp.getMaxSPL(),
 				n9SpeakerSeriesAllProductsTmp.getNominalImpedence(), n9SpeakerSeriesAllProductsTmp.getCoverRange(),
 				n9SpeakerSeriesAllProductsTmp.getHangingHardware(), n9SpeakerSeriesAllProductsTmp.getHandle(),
@@ -68,7 +68,8 @@ public class N9SpeakerSeriesAllProductsService {
 		if (!n9SpeakerSeriesAllProductsRepository.existsById(n9SpeakerSeriesAllProducts.getId())) {
 			if (n9SpeakerSeriesAllProductsRepository
 					.existsByN9SpeakerSeriesName(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName())) {
-				//return Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+				// return
+				// Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
 				throw new CustomException("Record name has existed");
 			} else {
 				n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
