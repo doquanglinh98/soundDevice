@@ -1,5 +1,8 @@
 package com.vn.sound.service;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,14 +23,23 @@ public class N9SpeakerSeriesService {
 		return n9SpeakerSeriesRepository.findAll(PageRequest.of(page, size));
 	}
 
-//	public List<N9SpeakerSeries> findAllN9SpeakerSeries() throws Exception {
-//		return n9SpeakerSeriesRepository.findAll();
-//	}
+	public N9SpeakerSeries findSpeakerSeriesById(Long Id) throws Exception {
+		Optional<N9SpeakerSeries> n9SpeakerSeriesOptional = n9SpeakerSeriesRepository.findById(Id);
+
+		if (n9SpeakerSeriesOptional.isEmpty()) {
+			System.out.println("Not found with id: " + Id);
+			throw new NoSuchElementException("Not found with id: " + Id);
+		}
+		N9SpeakerSeries n9SpeakerSeriesTmp = n9SpeakerSeriesOptional.get();
+		N9SpeakerSeries n9SpeakerSeries = new N9SpeakerSeries(n9SpeakerSeriesTmp.getId(), n9SpeakerSeriesTmp.getImgId(),
+				n9SpeakerSeriesTmp.getSeriesName());
+		return n9SpeakerSeries;
+	}
 
 	public String createN9SpeakerSeries(N9SpeakerSeries n9SpeakerSeries) throws Exception {
 		if (!n9SpeakerSeriesRepository.existsById(n9SpeakerSeries.getId())) {
 			if (n9SpeakerSeriesRepository.existsBySeriesName(n9SpeakerSeries.getSeriesName())) {
-				//return Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName());
+				// return Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName());
 				throw new CustomException("Record name has existed");
 			} else {
 				n9SpeakerSeriesRepository.save(n9SpeakerSeries);

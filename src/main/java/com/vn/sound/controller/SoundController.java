@@ -214,7 +214,18 @@ public class SoundController {
 
 	// N9 Speaker Series
 
-	@RequestMapping(value = "/manager/n9speaker/all", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/manager/speakers-series/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findSpeakersSeriesById(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity
+					.ok(Utility.jsonStringConverter(n9SpeakerSeriesService.findSpeakerSeriesById(Long.parseLong(Id))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/speakers-series/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> findAllN9SpeakerSeries(@RequestParam(defaultValue = "0", name = "page") String page,
 			@RequestParam(defaultValue = "10", name = "size") String size) {
@@ -226,7 +237,7 @@ public class SoundController {
 		}
 	}
 
-	@RequestMapping(value = "/manager/n9speaker/create", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/manager/speakers-series/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createN9Speaker(@RequestBody String n9SpeakerFromClient) {
 		N9SpeakerSeries n9SpeakerSeries = null;
@@ -241,7 +252,7 @@ public class SoundController {
 		}
 	}
 
-	@RequestMapping(value = "/manager/n9speaker/edit", method = RequestMethod.PUT, produces = "application/json")
+	@RequestMapping(value = "/manager/speakers-series/edit", method = RequestMethod.PUT, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> editN9Speaker(@RequestBody String n9SpeakerFromClient) {
 		try {
@@ -252,7 +263,7 @@ public class SoundController {
 		}
 	}
 
-	@RequestMapping(value = "/manager/n9speaker/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@RequestMapping(value = "/manager/speakers-series/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> deleteN9Speaker(@PathVariable(name = "Id") String Id) {
 		try {
@@ -317,7 +328,7 @@ public class SoundController {
 
 	@RequestMapping(value = "/manager/n9-speaker-series/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findN9SpeakerSeriesById(@PathVariable String pattern) {
+	public ResponseEntity<String> findN9SpeakerSeriesByName(@PathVariable String pattern) {
 		try {
 			return ResponseEntity.ok(Utility
 					.jsonStringConverter(n9SpeakerSeriesAllProductsService.findAllN9SpeakerSeriesByName(pattern)));
@@ -406,8 +417,7 @@ public class SoundController {
 	public ResponseEntity<String> createPowerAmpliSeries(@RequestBody String powerAmpliSeriesFromClient) {
 		PowerAmplifierSeries powerAmplifierSeries = null;
 		try {
-			powerAmplifierSeries = Utility
-					.convertStringToJsonAmpliSeries(powerAmpliSeriesFromClient);
+			powerAmplifierSeries = Utility.convertStringToJsonAmpliSeries(powerAmpliSeriesFromClient);
 			return ResponseEntity.ok(powerAmplifierSeriesService.createPowerAmplifierSeries(powerAmplifierSeries));
 		} catch (CustomException e) {
 			return new ResponseEntity<>(
