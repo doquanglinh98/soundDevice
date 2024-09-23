@@ -18,7 +18,7 @@ public class N9SpeakerSeriesAllProducts {
 	@Column(name = "imgId")
 	private String imgId;
 
-	@Column(name = "description")
+	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
 	@Column(name = "n9SpeakerSeriesName")
