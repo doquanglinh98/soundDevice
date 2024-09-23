@@ -1,28 +1,3 @@
 deploy web java lên server sử dụng railway, elephantSQL, github : https://www.youtube.com/watch?v=LPHhPSAusiQ
 using aws: https://www.youtube.com/watch?v=nji0cB3Py1w
-
-refer: https://demo.vivathemes.com/bass/
-
-dong 656 html
-
-----------------------------------------------------------------------------
-check lai: 
-
-1,<link rel="https://api.w.org/"
-	href="/fonts/wp-json.json" / - dong 438
-
-2.<!-- <link rel="EditURI" type="application/rsd+xml" title="RSD"
-	href="https://demo.vivathemes.com/bass/xmlrpc.php?rsd" /> --> -dong 441
-
-3.<a href="/" class="custom-logo-link" rel="home" aria-current="page"><img
-					width="60" height="82" src="/imgs/cropped-favicon-1-192x192.png"
-					class="custom-logo" alt="Bass" decoding="async" /></a> <a href="/"
-					rel="home">
-4. bỏ fix cứng height: style="object-fit: cover; height: 241px;"  (<figure class="alignwide wp-block-post-featured-image">
-											<a href="/new-album-coming-out/" target="_self"><img)
---------------note--------------------
-sinh file log hàng ngày
-backup DB tần suất 1day/1lan
-
----
-bỏ cmt dòng 908: sản phẩm
+use jdk17 to build

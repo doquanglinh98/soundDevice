@@ -21,8 +21,6 @@ import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
-import com.vn.sound.repository.MicroTscRepository;
-import com.vn.sound.repository.PowerAmplifierSeriesRepository;
 import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
 import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
@@ -363,6 +361,17 @@ public class SoundController {
 		}
 	}
 
+	@RequestMapping(value = "/manager/micro-tsc-series/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findMicroSeriesById(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity
+					.ok(Utility.jsonStringConverter(microTscSeriesService.findMicroSeriesById(Long.parseLong(Id))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 	@RequestMapping(value = "/manager/micro-tsc-series/create", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ResponseEntity<String> createMicroTscSeries(@RequestBody String microTscSeriesFromClient) {
@@ -407,6 +416,17 @@ public class SoundController {
 		try {
 			return ResponseEntity.ok(Utility.jsonStringConverter(powerAmplifierSeriesService
 					.findAllPowerAmplifierSeries(Integer.parseInt(page), Integer.parseInt(size))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/power-ampli-series/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAmpliSeriesById(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(
+					Utility.jsonStringConverter(powerAmplifierSeriesService.findAmpliSeriesById(Long.parseLong(Id))));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}

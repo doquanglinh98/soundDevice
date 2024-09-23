@@ -1,6 +1,8 @@
 package com.vn.sound.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,7 +12,6 @@ import org.springframework.stereotype.Service;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTscSeries;
-import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.repository.MicroTscSeriesRepository;
 
 @Service
@@ -22,14 +23,23 @@ public class MicroTscSeriesService {
 		return miroTscSeriesRepository.findAll(PageRequest.of(page, size));
 	}
 
-//	public List<MicroTscSeries> findAllMicroTscSeries() throws Exception {
-//		return miroTscSeriesRepository.findAll();
-//	}
+	public MicroTscSeries findMicroSeriesById(Long Id) throws Exception {
+		Optional<MicroTscSeries> microSeriesOptional = miroTscSeriesRepository.findById(Id);
+
+		if (microSeriesOptional.isEmpty()) {
+			System.out.println("Not found with id: " + Id);
+			throw new NoSuchElementException("Not found with id: " + Id);
+		}
+		MicroTscSeries microTscSeriesTmp = microSeriesOptional.get();
+		MicroTscSeries microTscSeries = new MicroTscSeries(microTscSeriesTmp.getId(),
+				microTscSeriesTmp.getSeriesName());
+		return microTscSeries;
+	}
 
 	public String createMicroTscSeries(MicroTscSeries miroTscSeries) throws Exception {
 		if (!miroTscSeriesRepository.existsById(miroTscSeries.getId())) {
 			if (miroTscSeriesRepository.existsBySeriesName(miroTscSeries.getSeriesName())) {
-				//return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+				// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
 				throw new CustomException("Record name has existed");
 			} else {
 				miroTscSeriesRepository.save(miroTscSeries);

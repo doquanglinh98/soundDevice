@@ -4,7 +4,7 @@
 		"name": "PERSONAL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12995520",
-		"_collection_link": "https://web.postman.co/workspace/0722~e202eccc-0570-4a10-a2bb-a7148b11606d/collection/12995520-bb1c4da7-2a3d-4892-986e-979ef153e151?source=collection_link"
+		"_collection_link": "https://planetary-moon-873841.postman.co/workspace/0722~e202eccc-0570-4a10-a2bb-a7148b11606d/collection/12995520-bb1c4da7-2a3d-4892-986e-979ef153e151?action=share&source=collection_link&creator=12995520"
 	},
 	"item": [
 		{
@@ -611,215 +611,6 @@
 			]
 		},
 		{
-			"name": "SERIES",
-			"item": [
-				{
-					"name": "SPEAKERS SERIES",
-					"item": [
-						{
-							"name": "FIND ALL",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/all",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"manager",
-										"speakers-series",
-										"all"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "FIND BY ID",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"manager",
-										"speakers-series",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "CREATE",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"6\",\r\n    \"imgId\":\"/img/HK_series.png\",\r\n    \"seriesName\":\"HK Series\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/create",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"manager",
-										"speakers-series",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "EDIT",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"3\",\r\n    \"imgId\":\"/img/M_series_update.png\",\r\n    \"seriesName\":\"M Series\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/edit",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"manager",
-										"speakers-series",
-										"edit"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/delete/5",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"manager",
-										"speakers-series",
-										"delete",
-										"5"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "N9 SPEAKERS",
 			"item": [
 				{
@@ -880,7 +671,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2\",\r\n    \"imgId\": \"/imgs/speakers/LR701.png\",\r\n    \"description\": \"LR701 is a line array active system from Lifeng Audio that is small in size, easy to transport and has powerful performance. Its build-in dual-channel hight-efficiency power amplifier module can also provide particularlygenerous dynamic reproduction capabilities at high level.\",\r\n    \"n9SpeakerSeriesName\": \"LR701\",\r\n    \"systemDescription\": \"4*4 Inch full range speakers\",\r\n    \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n    \"coverAngle\": \"120°x20° (H x V)\",\r\n    \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n    \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n    \"sensitivity\": \"97dB/W/M\",\r\n    \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n    \"nominalImpedance\": \"8 ohm\",\r\n    \"boxMaterial\": \"Aluminum alloy\",\r\n    \"netWeight\": \"6.5kg\",\r\n    \"size\": \"137x182x477mm\"\r\n}",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"imgId\": \"/imgs/speakers/LR700.png\",\r\n    \"descreption\": \"LR700 is a line array active system from Lifeng Audio that is small in size, easy to transport and has powerful performance. Its build-in dual-channel hight-efficiency power amplifier module can also provide particularlygenerous dynamic reproduction capabilities at high level.\",\r\n    \"n9SpeakerSeriesName\": \"LR700\",\r\n    \"systemDescription\": \"4*4 Inch full range speakers\",\r\n    \"tweeter\": \"\",\r\n    \"woofer\": \"\",\r\n    \"power\": \"\",\r\n    \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n    \"coverAngle\": \"120°x20° (H x V)\",\r\n    \"hangingPoint\": \"\",\r\n    \"hand\": \"\",\r\n    \"paintTreatment\": \"\",\r\n    \"LFUnit\": \"\",\r\n    \"MFUnit\": \"\",\r\n    \"HFUnit\": \"\",\r\n    \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n    \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n    \"sensitivity\": \"97dB/W/M\",\r\n    \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n    \"nominalImpedance\": \"8 ohm\",\r\n    \"inputSensitivity\": \"\",\r\n    \"maxSPL\": \"\",\r\n    \"nominalImpedence\": \"\",\r\n    \"coverRange\": \"\",\r\n    \"hangingHardware\": \"\",\r\n    \"handle\": \"\",\r\n    \"bracketFixedSeat\": \"\",\r\n    \"connector\": \"\",\r\n    \"boxMaterial\": \"Aluminum alloy\",\r\n    \"netWeight\": \"6.5kg\",\r\n    \"size\": \"137x182x477mm\",\r\n    \"categorg\": \"\",\r\n    \"outputPower\": \"\",\r\n    \"DSPAccuracy\": \"\",\r\n    \"dividerPartFIRFilter\": \"\",\r\n    \"digitalInput\": \"\",\r\n    \"panel\": \"\",\r\n    \"maximumHangerNumber\": \"\",\r\n    \"crossover\": \"\",\r\n    \"overlay\": \"\",\r\n    \"sprayPaintProcessing\": \"\",\r\n    \"overlayAngle\": \"\",\r\n    \"altoUnit\": \"\",\r\n    \"transformerConstantPressurePower\": \"\",\r\n    \"DCImpedance\": \"\",\r\n    \"qualityControlRange\": \"\",\r\n    \"anti_magneticEffectTest\": \"\",\r\n    \"earthquakeDropTest\": \"\",\r\n    \"dimensions\": \"\",\r\n    \"category\": \"\",\r\n    \"maximumOutputPower\": \"\",\r\n    \"totalHarmonicDistortion\": \"\",\r\n    \"intermodulationDistortion\": \"\",\r\n    \"coolingMethod\": \"\",\r\n    \"DSPPart\": \"\",\r\n    \"inputAndOutputPart\": \"\",\r\n    \"caseMaterial\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1079,6 +870,653 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "SERIES",
+			"item": [
+				{
+					"name": "SPEAKERS SERIES",
+					"item": [
+						{
+							"name": "FIND ALL",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/speakers-series/all?page=0&size=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"speakers-series",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND BY ID",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/speakers-series/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"speakers-series",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"6\",\r\n    \"imgId\":\"/img/HK_series.png\",\r\n    \"seriesName\":\"HK Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/speakers-series/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"speakers-series",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"3\",\r\n    \"imgId\":\"/img/M_series_update.png\",\r\n    \"seriesName\":\"M Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/speakers-series/edit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"speakers-series",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/speakers-series/delete/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"speakers-series",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MICRO SERIES",
+					"item": [
+						{
+							"name": "FIND ALL",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/micro-tsc-series/all?page=0&size=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"micro-tsc-series",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND BY ID",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/micro-tsc-series/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"micro-tsc-series",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"4\",\r\n    \"seriesName\":\"TC-7 Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/micro-tsc-series/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"micro-tsc-series",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"3\",\r\n    \"seriesName\":\"TC-72 Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/micro-tsc-series/edit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"micro-tsc-series",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/micro-tsc-series/delete/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"micro-tsc-series",
+										"delete",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AMPLI SERIES",
+					"item": [
+						{
+							"name": "FIND ALL",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/power-ampli-series/all?page=0&size=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"power-ampli-series",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND BY ID",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/power-ampli-series/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"power-ampli-series",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2\",\r\n    \"seriesName\":\"JX Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/power-ampli-series/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"power-ampli-series",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EDIT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2\",\r\n    \"seriesName\":\"JX1 Series\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/manager/power-ampli-series/edit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"power-ampli-series",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/manager/power-ampli-series/delete/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"manager",
+										"power-ampli-series",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
