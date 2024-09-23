@@ -21,9 +21,12 @@ public class MicroTsc {
 
 	@Column(name = "microName")
 	private String microName;
-	
+
 	@Column(name = "frequencyRangeCha")
 	private String frequencyRangeCha;
+
+	@Column(name = "frequencyQuantity")
+	private String frequencyQuantity;
 
 	@Column(name = "frequencyRangeChb")
 	private String frequencyRangeChb;
@@ -347,21 +350,30 @@ public class MicroTsc {
 		this.imgId = imgId;
 	}
 
+	public String getFrequencyQuantity() {
+		return frequencyQuantity;
+	}
+
+	public void setFrequencyQuantity(String frequencyQuantity) {
+		this.frequencyQuantity = frequencyQuantity;
+	}
+
 	public MicroTsc() {
 
 	}
 
-	public MicroTsc(Long Id, String imgId, String microName, String frequencyRangeCha, String frequencyRangeChb,
-			String signalToNoiseRatio, String totalHarmonicDistortion, String modulationMode, String workingDistance,
-			String frequencyBandwidth, String channelInterval, String maxDeviation, String frequencyStability,
-			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
-			String powerSupplyMode, String antennaAccess, String midFrequence, String spuriousSuppression,
-			String maxOutputElectricalLevel, String outputPower, String directivity, String frequencyResponse,
-			String powerSupply, String oscillationModeTransmitterParam, String transmitterType, String pipeBodyMaterial,
-			String batteryLifeTime) {
+	public MicroTsc(Long Id, String imgId, String microName, String frequencyQuantity, String frequencyRangeCha,
+			String frequencyRangeChb, String signalToNoiseRatio, String totalHarmonicDistortion, String modulationMode,
+			String workingDistance, String frequencyBandwidth, String channelInterval, String maxDeviation,
+			String frequencyStability, String oscillationModeReceiverParam, String modulation, String sensitivity,
+			String sensitivityAdjustment, String powerSupplyMode, String antennaAccess, String midFrequence,
+			String spuriousSuppression, String maxOutputElectricalLevel, String outputPower, String directivity,
+			String frequencyResponse, String powerSupply, String oscillationModeTransmitterParam,
+			String transmitterType, String pipeBodyMaterial, String batteryLifeTime) {
 		this.id = Id;
 		this.imgId = imgId;
 		this.microName = microName;
+		this.frequencyQuantity = frequencyQuantity;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;

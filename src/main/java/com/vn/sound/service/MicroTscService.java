@@ -29,10 +29,12 @@ public class MicroTscService {
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
 		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getMicroName(),
-				microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
-				microTscTmp.getSignalToNoiseRatio(), microTscTmp.getTotalHarmonicDistortion(),
-				microTscTmp.getModulationMode(), microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(),
-				microTscTmp.getChannelInterval(), microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
+				microTscTmp.getFrequencyQuantity(),
+				microTscTmp.getFrequencyRangeCha(),
+				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
+				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
+				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
+				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
 				microTscTmp.getOscillationModeReceiverParam(), microTscTmp.getModulation(),
 				microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(), microTscTmp.getPowerSupplyMode(),
 				microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(), microTscTmp.getSpuriousSuppression(),
