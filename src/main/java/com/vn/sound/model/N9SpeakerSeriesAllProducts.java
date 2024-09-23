@@ -66,6 +66,15 @@ public class N9SpeakerSeriesAllProducts {
 	@Column(name = "frequencyResponse")
 	private String frequencyResponse;
 
+	@Column(name = "sensitivity")
+	private String sensitivity;
+
+	@Column(name = "ratedPower")
+	private String ratedPower;
+
+	@Column(name = "nominalImpedance")
+	private String nominalImpedance;
+
 	@Column(name = "inputSensitivity")
 	private String inputSensitivity;
 
@@ -613,6 +622,30 @@ public class N9SpeakerSeriesAllProducts {
 		this.description = description;
 	}
 
+	public String getSensitivity() {
+		return sensitivity;
+	}
+
+	public void setSensitivity(String sensitivity) {
+		this.sensitivity = sensitivity;
+	}
+
+	public String getRatedPower() {
+		return ratedPower;
+	}
+
+	public void setRatedPower(String ratedPower) {
+		this.ratedPower = ratedPower;
+	}
+
+	public String getNominalImpedance() {
+		return nominalImpedance;
+	}
+
+	public void setNominalImpedance(String nominalImpedance) {
+		this.nominalImpedance = nominalImpedance;
+	}
+
 	public N9SpeakerSeriesAllProducts() {
 
 	}
@@ -620,16 +653,16 @@ public class N9SpeakerSeriesAllProducts {
 	public N9SpeakerSeriesAllProducts(Long id, String imgId, String description, String n9SpeakerSeriesName,
 			String systemDescription, String tweeter, String woofer, String power, String maximumSoundPressure,
 			String coverAngle, String hangingPoint, String hand, String paintTreatment, String LFUnit, String MFUnit,
-			String HFUnit, String unit, String frequencyResponse, String inputSensitivity, String maxSPL,
-			String nominalImpedence, String coverRange, String hangingHardware, String handle, String bracketFixedSeat,
-			String connector, String boxMaterial, String netWeight, String size, String categorg, String outputPower,
-			String DSPAccuracy, String dividerPartFIRFilter, String digitalInput, String panel,
-			String maximumHangerNumber, String crossover, String overlay, String sprayPaintProcessing,
-			String overlayAngle, String altoUnit, String transformerConstantPressurePower, String DCImpedance,
-			String qualityControlRange, String anti_magneticEffectTest, String earthquakeDropTest, String dimensions,
-			String category, String maximumOutputPower, String totalHarmonicDistortion,
-			String intermodulationDistortion, String coolingMethod, String DSPPart, String inputAndOutputPart,
-			String caseMaterial) {
+			String HFUnit, String unit, String frequencyResponse, String sensitivity, String ratedPower,
+			String nominalImpedance, String inputSensitivity, String maxSPL, String nominalImpedence, String coverRange,
+			String hangingHardware, String handle, String bracketFixedSeat, String connector, String boxMaterial,
+			String netWeight, String size, String categorg, String outputPower, String DSPAccuracy,
+			String dividerPartFIRFilter, String digitalInput, String panel, String maximumHangerNumber,
+			String crossover, String overlay, String sprayPaintProcessing, String overlayAngle, String altoUnit,
+			String transformerConstantPressurePower, String DCImpedance, String qualityControlRange,
+			String anti_magneticEffectTest, String earthquakeDropTest, String dimensions, String category,
+			String maximumOutputPower, String totalHarmonicDistortion, String intermodulationDistortion,
+			String coolingMethod, String DSPPart, String inputAndOutputPart, String caseMaterial) {
 		this.id = id;
 		this.imgId = imgId;
 		this.description = description;
@@ -648,6 +681,9 @@ public class N9SpeakerSeriesAllProducts {
 		this.HFUnit = HFUnit;
 		this.unit = unit;
 		this.frequencyResponse = frequencyResponse;
+		this.sensitivity = sensitivity;
+		this.ratedPower = ratedPower;
+		this.nominalImpedance = nominalImpedance;
 		this.inputSensitivity = inputSensitivity;
 		this.maxSPL = maxSPL;
 		this.nominalImpedence = nominalImpedence;

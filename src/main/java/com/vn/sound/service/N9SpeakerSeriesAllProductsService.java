@@ -39,6 +39,8 @@ public class N9SpeakerSeriesAllProductsService {
 				n9SpeakerSeriesAllProductsTmp.getPaintTreatment(), n9SpeakerSeriesAllProductsTmp.getLFUnit(),
 				n9SpeakerSeriesAllProductsTmp.getMFUnit(), n9SpeakerSeriesAllProductsTmp.getHFUnit(),
 				n9SpeakerSeriesAllProductsTmp.getUnit(), n9SpeakerSeriesAllProductsTmp.getFrequencyResponse(),
+				n9SpeakerSeriesAllProductsTmp.getSensitivity(), n9SpeakerSeriesAllProductsTmp.getRatedPower(),
+				n9SpeakerSeriesAllProductsTmp.getNominalImpedance(),
 				n9SpeakerSeriesAllProductsTmp.getInputSensitivity(), n9SpeakerSeriesAllProductsTmp.getMaxSPL(),
 				n9SpeakerSeriesAllProductsTmp.getNominalImpedence(), n9SpeakerSeriesAllProductsTmp.getCoverRange(),
 				n9SpeakerSeriesAllProductsTmp.getHangingHardware(), n9SpeakerSeriesAllProductsTmp.getHandle(),
