@@ -1,5 +1,12 @@
 package com.vn.sound.common;
 
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.MicroTscSeries;
@@ -8,28 +15,24 @@ import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
 
-import java.lang.reflect.Field;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 public class Utility {
 
-	public static void logging(Long referenceId, String className, String functionName, String message) {
-		final Logger logger = LoggerFactory.getLogger(className);
-		logger.info("[" + referenceId + "] [" + functionName + "] " + message);
+//	public static void logging(Long referenceId, String className, String functionName, String message) {
+//		final Logger logger = LoggerFactory.getLogger(className);
+//		logger.info("[" + referenceId + "] [" + functionName + "] " + message);
+//	}
+//
+//	public static void loggError(Long referenceId, String className, String functionName, String message) {
+//		final Logger logger = LoggerFactory.getLogger(className);
+//		logger.error("[" + referenceId + "] [" + functionName + "] " + message);
+//	}
+//	
+	public static void logMessage(long txnRef, String message) {
+		Log4j.tranx("REF=" + txnRef + ", MSG=" + Utility.maskSensitiveData(message), null);
 	}
 
-	public static void loggError(Long referenceId, String className, String functionName, String message) {
-		final Logger logger = LoggerFactory.getLogger(className);
-		logger.error("[" + referenceId + "] [" + functionName + "] " + message);
+	public static void logError(long txnRef, String message, Throwable exception) {
+		Log4j.tranx("REF=" + txnRef + ", ERR=" + message, exception);
 	}
 
 	public static boolean isNull(Object obj) {
@@ -156,4 +159,72 @@ public class Utility {
 		N9SpeakerSeriesAllProducts convertedObject = new Gson().fromJson(msg, N9SpeakerSeriesAllProducts.class);
 		return convertedObject;
 	}
+
+	public static String maskSensitiveField(String sensitiveData) {
+		if (isNull(sensitiveData)) {
+			return null;
+		}
+		String masked;
+		int length = sensitiveData.length();
+		if (length > 19) {
+			masked = "xxxxxxxxxxxxxxxx";
+		} else if (length > 10) {
+			String firstSix = sensitiveData.substring(0, 6);
+			String lastFour = sensitiveData.substring(length - 4, length);
+			String middleMasked = "";
+			for (int i = 0; i < length - 10; i++) {
+				middleMasked += "x";
+			}
+			masked = firstSix + middleMasked + lastFour;
+		} else if (length > 6) {
+			String firstSix = sensitiveData.substring(0, 4);
+			String lastFour = sensitiveData.substring(length - 2, length);
+			String middleMasked = "";
+			for (int i = 0; i < length - 6; i++) {
+				middleMasked += "x";
+			}
+			masked = firstSix + middleMasked + lastFour;
+		} else {
+			masked = sensitiveData;
+		}
+		System.out.println(masked);
+		return masked;
+	}
+
+	public static String maskSensitiveData(String input) {
+		String output = input;
+		if (!isNull(output)) {
+			String maskedPwd = maskSensitiveField(getJsonFieldValue("password", input));
+
+			if (isNotNull(maskedPwd)) {
+				output = replacePatternInJsonString(output, "password", maskedPwd);
+			}
+		}
+		return output;
+	}
+
+	public static String replacePatternInJsonString(String input, String pattern, String replacement) {
+		String jsonFieldName = "\"" + pattern + "\"";
+		int startStr = 0;
+		int endStr = input.length();
+		int index = input.indexOf(jsonFieldName);
+		int startValueIndex = input.indexOf("\"", index + jsonFieldName.length());
+		int endValueIndex = input.indexOf("\"", startValueIndex + 1);
+		String prefix = input.substring(startStr, startValueIndex + 1);
+		String suffix = input.substring(endValueIndex, endStr);
+		return prefix + replacement + suffix;
+	}
+
+	public static String getJsonFieldValue(String jsonFieldName, String resp) {
+		jsonFieldName = "\"" + jsonFieldName + "\"";
+		String jsonFieldValue = null;
+		int index = resp.indexOf(jsonFieldName);
+		if (index != -1) {
+			int startIndex = resp.indexOf("\"", index + jsonFieldName.length());
+			int endIndex = resp.indexOf("\"", startIndex + 1);
+			jsonFieldValue = resp.substring(startIndex + 1, endIndex);
+		}
+		return jsonFieldValue;
+	}
+
 }

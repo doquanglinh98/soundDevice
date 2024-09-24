@@ -24,8 +24,8 @@ public class MicroTscService {
 		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
 
 		if (microTscOptional.isEmpty()) {
-			Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById", "Not found with id: " + Id);
-			throw new NoSuchElementException("Not found with id: " + Id);
+			//Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById", "Not found with id: " + Id);
+			throw new NullPointerException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
 		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getMicroName(),
@@ -41,8 +41,9 @@ public class MicroTscService {
 				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
 				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
 				microTscTmp.getPipeBodyMaterial(), microTscTmp.getBatteryLifeTime());
-		Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
-				"Detail of micro : " + Utility.jsonStringConverter(microTsc));
+//		Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
+//				"Detail of micro : " + Utility.jsonStringConverter(microTsc));
+		Utility.logMessage(ref, "Detail of micro : " + Utility.jsonStringConverter(microTsc));
 		return microTsc;
 	}
 

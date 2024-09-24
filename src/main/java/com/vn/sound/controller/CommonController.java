@@ -22,7 +22,7 @@ public class CommonController {
 	@GetMapping("/info")
 	ResponseEntity<String> inf() {
 		Long ref = System.currentTimeMillis();
-		Utility.logging(ref, this.getClass().getSimpleName(), "inf", "Health check!!!");
+		Utility.logMessage(ref, "Health check!!!");
 		return new ResponseEntity<>("App is running!", HttpStatus.OK);
 	}
 
@@ -40,14 +40,10 @@ public class CommonController {
 	@ResponseBody
 	public ResponseEntity<String> loginManager(@RequestParam(name = "username") String userName,
 			@RequestParam(name = "password") String passWord) {
-		Long ref = System.currentTimeMillis();
-		Utility.logging(ref, this.getClass().getSimpleName(), "loginManager", "Start login manager page.");
+		// Long ref = System.currentTimeMillis();
 		if (userService.isAdmin(userName, passWord)) {
-			Utility.logging(ref, this.getClass().getSimpleName(), "loginManager", "Login successfully.");
 			return ResponseEntity.ok("login OK");
 		} else {
-			Utility.logging(ref, this.getClass().getSimpleName(), "loginManager",
-					"Login failuare : invalid username/password");
 			return ResponseEntity.ok("login fail");
 		}
 	}
