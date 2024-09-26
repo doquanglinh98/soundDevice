@@ -61,7 +61,32 @@ public class N9SpeakerSeriesAllProductsService {
 				n9SpeakerSeriesAllProductsTmp.getTotalHarmonicDistortion(),
 				n9SpeakerSeriesAllProductsTmp.getIntermodulationDistortion(),
 				n9SpeakerSeriesAllProductsTmp.getCoolingMethod(), n9SpeakerSeriesAllProductsTmp.getDSPPart(),
-				n9SpeakerSeriesAllProductsTmp.getInputAndOutputPart(), n9SpeakerSeriesAllProductsTmp.getCaseMaterial());
+				n9SpeakerSeriesAllProductsTmp.getInputAndOutputPart(), n9SpeakerSeriesAllProductsTmp.getCaseMaterial(),
+				n9SpeakerSeriesAllProductsTmp.getModel(), n9SpeakerSeriesAllProductsTmp.getNormalImpedance(),
+				n9SpeakerSeriesAllProductsTmp.getSprayPaintingTreatment(), n9SpeakerSeriesAllProductsTmp.getWeight(),
+				n9SpeakerSeriesAllProductsTmp.getOutput4ohm(), n9SpeakerSeriesAllProductsTmp.getOutput8ohm(),
+				n9SpeakerSeriesAllProductsTmp.getDigitalOutput(), n9SpeakerSeriesAllProductsTmp.getChannelNumber(),
+				n9SpeakerSeriesAllProductsTmp.getTHD(), n9SpeakerSeriesAllProductsTmp.getsSourceNRatio(),
+				n9SpeakerSeriesAllProductsTmp.getDampingFactor(), n9SpeakerSeriesAllProductsTmp.getCperatingRange(),
+				n9SpeakerSeriesAllProductsTmp.getPowerCurrent(), n9SpeakerSeriesAllProductsTmp.getAngleIncrements(),
+				n9SpeakerSeriesAllProductsTmp.getHorizontal(), n9SpeakerSeriesAllProductsTmp.getFullFrequencyUnit(),
+				n9SpeakerSeriesAllProductsTmp.getConversionEfficiency(),
+				n9SpeakerSeriesAllProductsTmp.getInputImpedance(), n9SpeakerSeriesAllProductsTmp.getOutputImpedance(),
+				n9SpeakerSeriesAllProductsTmp.getMainPowerSupply(),
+				n9SpeakerSeriesAllProductsTmp.getFrequencyResponseRange(), n9SpeakerSeriesAllProductsTmp.getPowerFR(),
+				n9SpeakerSeriesAllProductsTmp.getAMPFrequencyLoad(), n9SpeakerSeriesAllProductsTmp.getStereo8ohm(),
+				n9SpeakerSeriesAllProductsTmp.getStereo4ohm(), n9SpeakerSeriesAllProductsTmp.getSlewRate(),
+				n9SpeakerSeriesAllProductsTmp.getDynamicRange(), n9SpeakerSeriesAllProductsTmp.getVoltageGain(),
+				n9SpeakerSeriesAllProductsTmp.getOutputCircuitDesign(),
+				n9SpeakerSeriesAllProductsTmp.getPowerSelection(), n9SpeakerSeriesAllProductsTmp.getInputVoltage(),
+				n9SpeakerSeriesAllProductsTmp.getSpeakerSpecifications(), n9SpeakerSeriesAllProductsTmp.getColor(),
+				n9SpeakerSeriesAllProductsTmp.getWaterproof(), n9SpeakerSeriesAllProductsTmp.getUnitConfigure(),
+				n9SpeakerSeriesAllProductsTmp.getInstallationOpeningSize(),
+				n9SpeakerSeriesAllProductsTmp.getMaximumOuterDiameter(),
+				n9SpeakerSeriesAllProductsTmp.getWithstandPower(), n9SpeakerSeriesAllProductsTmp.getPaintingTreatment(),
+				n9SpeakerSeriesAllProductsTmp.getSuspensionPoint(), n9SpeakerSeriesAllProductsTmp.getGain()
+
+		);
 
 		return n9SpeakerSeriesAllProducts;
 	}

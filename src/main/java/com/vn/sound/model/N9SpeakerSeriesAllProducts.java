@@ -186,6 +186,132 @@ public class N9SpeakerSeriesAllProducts {
 	@Column(name = "caseMaterial")
 	private String caseMaterial;
 
+	// add
+	@Column(name = "model")
+	private String model;
+
+	@Column(name = "normalImpedance")
+	private String normalImpedance;
+
+	@Column(name = "sprayPaintingTreatment")
+	private String sprayPaintingTreatment;
+
+	@Column(name = "weight")
+	private String weight;
+
+	@Column(name = "output4ohm")
+	private String output4ohm;
+
+	@Column(name = "output8ohm")
+	private String output8ohm;
+
+	@Column(name = "digitalOutput")
+	private String digitalOutput;
+
+	@Column(name = "channelNumber")
+	private String channelNumber;
+
+	@Column(name = "THD")
+	private String THD;
+
+	@Column(name = "sSourceNRatio")
+	private String sSourceNRatio;
+
+	@Column(name = "dampingFactor")
+	private String dampingFactor;
+
+	@Column(name = "cperatingRange")
+	private String cperatingRange;
+
+	@Column(name = "powerCurrent")
+	private String powerCurrent;
+
+	@Column(name = "angleIncrements")
+	private String angleIncrements;
+
+	@Column(name = "horizontal")
+	private String horizontal;
+
+	@Column(name = "fullFrequencyUnit")
+	private String fullFrequencyUnit;
+
+	@Column(name = "conversionEfficiency")
+	private String conversionEfficiency;
+
+	@Column(name = "inputImpedance")
+	private String inputImpedance;
+
+	@Column(name = "outputImpedance")
+	private String outputImpedance;
+
+	@Column(name = "mainPowerSupply")
+	private String mainPowerSupply;
+
+	@Column(name = "frequencyResponseRange")
+	private String frequencyResponseRange;
+
+	@Column(name = "powerFR")
+	private String powerFR;
+
+	@Column(name = "AMPFrequencyLoad")
+	private String AMPFrequencyLoad;
+
+	@Column(name = "stereo8ohm")
+	private String stereo8ohm;
+
+	@Column(name = "stereo4ohm")
+	private String stereo4ohm;
+
+	@Column(name = "slewRate")
+	private String slewRate;
+
+	@Column(name = "dynamicRange")
+	private String dynamicRange;
+
+	@Column(name = "voltageGain")
+	private String voltageGain;
+
+	@Column(name = "outputCircuitDesign")
+	private String outputCircuitDesign;
+
+	@Column(name = "powerSelection")
+	private String powerSelection;
+
+	@Column(name = "inputVoltage")
+	private String inputVoltage;
+
+	@Column(name = "speakerSpecifications")
+	private String speakerSpecifications;
+
+	@Column(name = "color")
+	private String color;
+
+	@Column(name = "waterproof")
+	private String waterproof;
+
+	@Column(name = "unitConfigure")
+	private String unitConfigure;
+
+	@Column(name = "installationOpeningSize")
+	private String installationOpeningSize;
+
+	@Column(name = "maximumOuterDiameter")
+	private String maximumOuterDiameter;
+
+	@Column(name = "withstandPower")
+	private String withstandPower;
+
+	@Column(name = "paintingTreatment")
+	private String paintingTreatment;
+
+	@Column(name = "suspensionPoint")
+	private String suspensionPoint;
+
+	@Column(name = "gain")
+	private String gain;
+
+// setter getter
+
 	public String getImgId() {
 		return imgId;
 	}
@@ -646,6 +772,334 @@ public class N9SpeakerSeriesAllProducts {
 		this.nominalImpedance = nominalImpedance;
 	}
 
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getNormalImpedance() {
+		return normalImpedance;
+	}
+
+	public void setNormalImpedance(String normalImpedance) {
+		this.normalImpedance = normalImpedance;
+	}
+
+	public String getSprayPaintingTreatment() {
+		return sprayPaintingTreatment;
+	}
+
+	public void setSprayPaintingTreatment(String sprayPaintingTreatment) {
+		this.sprayPaintingTreatment = sprayPaintingTreatment;
+	}
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+
+	public String getOutput4ohm() {
+		return output4ohm;
+	}
+
+	public void setOutput4ohm(String output4ohm) {
+		this.output4ohm = output4ohm;
+	}
+
+	public String getOutput8ohm() {
+		return output8ohm;
+	}
+
+	public void setOutput8ohm(String output8ohm) {
+		this.output8ohm = output8ohm;
+	}
+
+	public String getDigitalOutput() {
+		return digitalOutput;
+	}
+
+	public void setDigitalOutput(String digitalOutput) {
+		this.digitalOutput = digitalOutput;
+	}
+
+	public String getChannelNumber() {
+		return channelNumber;
+	}
+
+	public void setChannelNumber(String channelNumber) {
+		this.channelNumber = channelNumber;
+	}
+
+	public String getTHD() {
+		return THD;
+	}
+
+	public void setTHD(String tHD) {
+		THD = tHD;
+	}
+
+	public String getsSourceNRatio() {
+		return sSourceNRatio;
+	}
+
+	public void setsSourceNRatio(String sSourceNRatio) {
+		this.sSourceNRatio = sSourceNRatio;
+	}
+
+	public String getDampingFactor() {
+		return dampingFactor;
+	}
+
+	public void setDampingFactor(String dampingFactor) {
+		this.dampingFactor = dampingFactor;
+	}
+
+	public String getCperatingRange() {
+		return cperatingRange;
+	}
+
+	public void setCperatingRange(String cperatingRange) {
+		this.cperatingRange = cperatingRange;
+	}
+
+	public String getPowerCurrent() {
+		return powerCurrent;
+	}
+
+	public void setPowerCurrent(String powerCurrent) {
+		this.powerCurrent = powerCurrent;
+	}
+
+	public String getAngleIncrements() {
+		return angleIncrements;
+	}
+
+	public void setAngleIncrements(String angleIncrements) {
+		this.angleIncrements = angleIncrements;
+	}
+
+	public String getHorizontal() {
+		return horizontal;
+	}
+
+	public void setHorizontal(String horizontal) {
+		this.horizontal = horizontal;
+	}
+
+	public String getFullFrequencyUnit() {
+		return fullFrequencyUnit;
+	}
+
+	public void setFullFrequencyUnit(String fullFrequencyUnit) {
+		this.fullFrequencyUnit = fullFrequencyUnit;
+	}
+
+	public String getConversionEfficiency() {
+		return conversionEfficiency;
+	}
+
+	public void setConversionEfficiency(String conversionEfficiency) {
+		this.conversionEfficiency = conversionEfficiency;
+	}
+
+	public String getInputImpedance() {
+		return inputImpedance;
+	}
+
+	public void setInputImpedance(String inputImpedance) {
+		this.inputImpedance = inputImpedance;
+	}
+
+	public String getOutputImpedance() {
+		return outputImpedance;
+	}
+
+	public void setOutputImpedance(String outputImpedance) {
+		this.outputImpedance = outputImpedance;
+	}
+
+	public String getMainPowerSupply() {
+		return mainPowerSupply;
+	}
+
+	public void setMainPowerSupply(String mainPowerSupply) {
+		this.mainPowerSupply = mainPowerSupply;
+	}
+
+	public String getFrequencyResponseRange() {
+		return frequencyResponseRange;
+	}
+
+	public void setFrequencyResponseRange(String frequencyResponseRange) {
+		this.frequencyResponseRange = frequencyResponseRange;
+	}
+
+	public String getPowerFR() {
+		return powerFR;
+	}
+
+	public void setPowerFR(String powerFR) {
+		this.powerFR = powerFR;
+	}
+
+	public String getAMPFrequencyLoad() {
+		return AMPFrequencyLoad;
+	}
+
+	public void setAMPFrequencyLoad(String aMPFrequencyLoad) {
+		AMPFrequencyLoad = aMPFrequencyLoad;
+	}
+
+	public String getStereo8ohm() {
+		return stereo8ohm;
+	}
+
+	public void setStereo8ohm(String stereo8ohm) {
+		this.stereo8ohm = stereo8ohm;
+	}
+
+	public String getStereo4ohm() {
+		return stereo4ohm;
+	}
+
+	public void setStereo4ohm(String stereo4ohm) {
+		this.stereo4ohm = stereo4ohm;
+	}
+
+	public String getSlewRate() {
+		return slewRate;
+	}
+
+	public void setSlewRate(String slewRate) {
+		this.slewRate = slewRate;
+	}
+
+	public String getDynamicRange() {
+		return dynamicRange;
+	}
+
+	public void setDynamicRange(String dynamicRange) {
+		this.dynamicRange = dynamicRange;
+	}
+
+	public String getVoltageGain() {
+		return voltageGain;
+	}
+
+	public void setVoltageGain(String voltageGain) {
+		this.voltageGain = voltageGain;
+	}
+
+	public String getOutputCircuitDesign() {
+		return outputCircuitDesign;
+	}
+
+	public void setOutputCircuitDesign(String outputCircuitDesign) {
+		this.outputCircuitDesign = outputCircuitDesign;
+	}
+
+	public String getPowerSelection() {
+		return powerSelection;
+	}
+
+	public void setPowerSelection(String powerSelection) {
+		this.powerSelection = powerSelection;
+	}
+
+	public String getInputVoltage() {
+		return inputVoltage;
+	}
+
+	public void setInputVoltage(String inputVoltage) {
+		this.inputVoltage = inputVoltage;
+	}
+
+	public String getSpeakerSpecifications() {
+		return speakerSpecifications;
+	}
+
+	public void setSpeakerSpecifications(String speakerSpecifications) {
+		this.speakerSpecifications = speakerSpecifications;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getWaterproof() {
+		return waterproof;
+	}
+
+	public void setWaterproof(String waterproof) {
+		this.waterproof = waterproof;
+	}
+
+	public String getUnitConfigure() {
+		return unitConfigure;
+	}
+
+	public void setUnitConfigure(String unitConfigure) {
+		this.unitConfigure = unitConfigure;
+	}
+
+	public String getInstallationOpeningSize() {
+		return installationOpeningSize;
+	}
+
+	public void setInstallationOpeningSize(String installationOpeningSize) {
+		this.installationOpeningSize = installationOpeningSize;
+	}
+
+	public String getMaximumOuterDiameter() {
+		return maximumOuterDiameter;
+	}
+
+	public void setMaximumOuterDiameter(String maximumOuterDiameter) {
+		this.maximumOuterDiameter = maximumOuterDiameter;
+	}
+
+	public String getWithstandPower() {
+		return withstandPower;
+	}
+
+	public void setWithstandPower(String withstandPower) {
+		this.withstandPower = withstandPower;
+	}
+
+	public String getPaintingTreatment() {
+		return paintingTreatment;
+	}
+
+	public void setPaintingTreatment(String paintingTreatment) {
+		this.paintingTreatment = paintingTreatment;
+	}
+
+	public String getSuspensionPoint() {
+		return suspensionPoint;
+	}
+
+	public void setSuspensionPoint(String suspensionPoint) {
+		this.suspensionPoint = suspensionPoint;
+	}
+
+	public String getGain() {
+		return gain;
+	}
+
+	public void setGain(String gain) {
+		this.gain = gain;
+	}
+
 	public N9SpeakerSeriesAllProducts() {
 
 	}
@@ -662,7 +1116,17 @@ public class N9SpeakerSeriesAllProducts {
 			String transformerConstantPressurePower, String DCImpedance, String qualityControlRange,
 			String anti_magneticEffectTest, String earthquakeDropTest, String dimensions, String category,
 			String maximumOutputPower, String totalHarmonicDistortion, String intermodulationDistortion,
-			String coolingMethod, String DSPPart, String inputAndOutputPart, String caseMaterial) {
+			String coolingMethod, String DSPPart, String inputAndOutputPart, String caseMaterial, String model,
+			String normalImpedance, String sprayPaintingTreatment, String weight, String output4ohm, String output8ohm,
+			String digitalOutput, String channelNumber, String THD, String sSourceNRatio, String dampingFactor,
+			String cperatingRange, String powerCurrent, String angleIncrements, String horizontal,
+			String fullFrequencyUnit, String conversionEfficiency, String inputImpedance, String outputImpedance,
+			String mainPowerSupply, String frequencyResponseRange, String powerFR, String AMPFrequencyLoad,
+			String stereo8ohm, String stereo4ohm, String slewRate, String dynamicRange, String voltageGain,
+			String outputCircuitDesign, String powerSelection, String inputVoltage, String speakerSpecifications,
+			String color, String waterproof, String unitConfigure, String installationOpeningSize,
+			String maximumOuterDiameter, String withstandPower, String paintingTreatment, String suspensionPoint,
+			String gain) {
 		this.id = id;
 		this.imgId = imgId;
 		this.description = description;
@@ -721,5 +1185,46 @@ public class N9SpeakerSeriesAllProducts {
 		this.DSPPart = DSPPart;
 		this.inputAndOutputPart = inputAndOutputPart;
 		this.caseMaterial = caseMaterial;
+		this.model = model;
+		this.normalImpedance = normalImpedance;
+		this.sprayPaintingTreatment = sprayPaintingTreatment;
+		this.weight = weight;
+		this.output4ohm = output4ohm;
+		this.output8ohm = output8ohm;
+		this.digitalOutput = digitalOutput;
+		this.channelNumber = channelNumber;
+		this.THD = THD;
+		this.sSourceNRatio = sSourceNRatio;
+		this.dampingFactor = dampingFactor;
+		this.cperatingRange = cperatingRange;
+		this.powerCurrent = powerCurrent;
+		this.angleIncrements = angleIncrements;
+		this.horizontal = horizontal;
+		this.fullFrequencyUnit = fullFrequencyUnit;
+		this.conversionEfficiency = conversionEfficiency;
+		this.inputImpedance = inputImpedance;
+		this.outputImpedance = outputImpedance;
+		this.mainPowerSupply = mainPowerSupply;
+		this.frequencyResponseRange = frequencyResponseRange;
+		this.powerFR = powerFR;
+		this.AMPFrequencyLoad = AMPFrequencyLoad;
+		this.stereo8ohm = stereo8ohm;
+		this.stereo4ohm = stereo4ohm;
+		this.slewRate = slewRate;
+		this.dynamicRange = dynamicRange;
+		this.voltageGain = voltageGain;
+		this.outputCircuitDesign = outputCircuitDesign;
+		this.powerSelection = powerSelection;
+		this.inputVoltage = inputVoltage;
+		this.speakerSpecifications = speakerSpecifications;
+		this.color = color;
+		this.waterproof = waterproof;
+		this.unitConfigure = unitConfigure;
+		this.installationOpeningSize = installationOpeningSize;
+		this.maximumOuterDiameter = maximumOuterDiameter;
+		this.withstandPower = withstandPower;
+		this.paintingTreatment = paintingTreatment;
+		this.suspensionPoint = suspensionPoint;
+		this.gain = gain;
 	}
 }
