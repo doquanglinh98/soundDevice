@@ -14,10 +14,10 @@ public class MicroTscSeries {
 	@Id
 	private Long id;
 
-	@Column(name = "seriesName")
+	@Column(name = "seriesName", length = 60)
 	private String seriesName;
 
-	@Column(name = "imgId")
+	@Column(name = "imgId", length = 60)
 	private String imgId;
 
 	public String getSeriesName() {

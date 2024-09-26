@@ -15,85 +15,85 @@ public class PowerAmplifier {
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "imgId")
+	@Column(name = "imgId", length = 60)
 	private String imgId;
 
-	@Column(name = "model")
+	@Column(name = "model", length = 60)
 	private String model;
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
-	@Column(name = "mode")
+	@Column(name = "mode", length = 60)
 	private String mode;
 
-	@Column(name = "stereoPower8OHM")
+	@Column(name = "stereoPower8OHM", length = 60)
 	private String stereoPower8OHM;
 
-	@Column(name = "stereoPower4OHM")
+	@Column(name = "stereoPower4OHM", length = 60)
 	private String stereoPower4OHM;
 
-	@Column(name = "stereoPower2OHM")
+	@Column(name = "stereoPower2OHM", length = 60)
 	private String stereoPower2OHM;
 
-	@Column(name = "btl8OHM")
+	@Column(name = "btl8OHM", length = 60)
 	private String btl8OHM;
 
-	@Column(name = "btl4OHM")
+	@Column(name = "btl4OHM", length = 60)
 	private String btl4OHM;
 
-	@Column(name = "frequencyResponse")
+	@Column(name = "frequencyResponse", length = 60)
 	private String frequencyResponse;
 
-	@Column(name = "thdPlus")
+	@Column(name = "thdPlus", length = 60)
 	private String thdPlus;
 
-	@Column(name = "sSourceNRatio")
+	@Column(name = "sSourceNRatio", length = 60)
 	private String sSourceNRatio;
 
-	@Column(name = "slewRatio")
+	@Column(name = "slewRatio", length = 60)
 	private String slewRatio;
 
-	@Column(name = "dampingFactor")
+	@Column(name = "dampingFactor", length = 60)
 	private String dampingFactor;
 
-	@Column(name = "outputCircuitry")
+	@Column(name = "outputCircuitry", length = 60)
 	private String outputCircuitry;
 
-	@Column(name = "crossTalk")
+	@Column(name = "crossTalk", length = 60)
 	private String crossTalk;
 
-	@Column(name = "inputImpedance")
+	@Column(name = "inputImpedance", length = 60)
 	private String inputImpedance;
 
-	@Column(name = "inputSensitivity")
+	@Column(name = "inputSensitivity", length = 60)
 	private String inputSensitivity;
 
-	@Column(name = "protect")
+	@Column(name = "protect", length = 60)
 	private String protect;
 
-	@Column(name = "gWeight")
+	@Column(name = "gWeight", length = 60)
 	private String gWeight;
 
-	@Column(name = "dimension")
+	@Column(name = "dimension", length = 60)
 	private String dimension;
 
-	@Column(name = "packingSize")
+	@Column(name = "packingSize", length = 60)
 	private String packingSize;
 
-	@Column(name = "gain")
+	@Column(name = "gain", length = 60)
 	private String gain;
 
-	@Column(name = "optionalGian")
+	@Column(name = "optionalGian", length = 60)
 	private String optionalGian;
 
-	@Column(name = "degreeOfSeparation")
+	@Column(name = "degreeOfSeparation", length = 60)
 	private String degreeOfSeparation;
 
-	@Column(name = "dissipateHeat")
+	@Column(name = "dissipateHeat", length = 60)
 	private String dissipateHeat;
 
-	@Column(name = "appearanceVolume")
+	@Column(name = "appearanceVolume", length = 60)
 	private String appearanceVolume;
 
 	public String getImgId() {

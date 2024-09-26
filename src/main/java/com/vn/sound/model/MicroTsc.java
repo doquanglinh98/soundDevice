@@ -16,109 +16,109 @@ public class MicroTsc {
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "imgId")
+	@Column(name = "imgId", length = 60)
 	private String imgId;
 
-	@Column(name = "microName")
+	@Column(name = "microName", length = 60)
 	private String microName;
 
-	@Column(name = "model")
+	@Column(name = "model", length = 60)
 	private String model;
 
-	@Column(name = "channels")
+	@Column(name = "channels", length = 60)
 	private String channels;
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
-	@Column(name = "frequencyRangeCha")
+	@Column(name = "frequencyRangeCha", length = 60)
 	private String frequencyRangeCha;
 
-	@Column(name = "frequencyQuantity")
+	@Column(name = "frequencyQuantity", length = 60)
 	private String frequencyQuantity;
 
-	@Column(name = "frequencyRangeChb")
+	@Column(name = "frequencyRangeChb", length = 60)
 	private String frequencyRangeChb;
 
-	@Column(name = "sSourceNRatio")
+	@Column(name = "sSourceNRatio", length = 60)
 	private String sSourceNRatio;
 
-	@Column(name = "signalToNoiseRatio")
+	@Column(name = "signalToNoiseRatio", length = 60)
 	private String signalToNoiseRatio;
 
-	@Column(name = "totalHarmonicDistortion")
+	@Column(name = "totalHarmonicDistortion", length = 60)
 	private String totalHarmonicDistortion;
 
-	@Column(name = "modulationMode")
+	@Column(name = "modulationMode", length = 60)
 	private String modulationMode;
 
-	@Column(name = "workingDistance")
+	@Column(name = "workingDistance", length = 60)
 	private String workingDistance;
 
-	@Column(name = "frequencyBandwidth")
+	@Column(name = "frequencyBandwidth", length = 60)
 	private String frequencyBandwidth;
 
-	@Column(name = "channelInterval")
+	@Column(name = "channelInterval", length = 60)
 	private String channelInterval;
 
-	@Column(name = "maxDeviation")
+	@Column(name = "maxDeviation", length = 60)
 	private String maxDeviation;
 
-	@Column(name = "frequencyStability")
+	@Column(name = "frequencyStability", length = 60)
 	private String frequencyStability;
 
-	@Column(name = "oscillationModeReceiverParam")
+	@Column(name = "oscillationModeReceiverParam", length = 60)
 	private String oscillationModeReceiverParam;
 
-	@Column(name = "modulation")
+	@Column(name = "modulation", length = 60)
 	private String modulation;
 
-	@Column(name = "oscillationMode")
+	@Column(name = "oscillationMode", length = 60)
 	private String oscillationMode;
 
-	@Column(name = "sensitivity")
+	@Column(name = "sensitivity", length = 60)
 	private String sensitivity;
 
-	@Column(name = "sensitivityAdjustment")
+	@Column(name = "sensitivityAdjustment", length = 60)
 	private String sensitivityAdjustment;
 
-	@Column(name = "powerSupplyMode")
+	@Column(name = "powerSupplyMode", length = 60)
 	private String powerSupplyMode;
 
-	@Column(name = "antennaAccess")
+	@Column(name = "antennaAccess", length = 60)
 	private String antennaAccess;
 
-	@Column(name = "midFrequence")
+	@Column(name = "midFrequence", length = 60)
 	private String midFrequence;
 
-	@Column(name = "spuriousSuppression")
+	@Column(name = "spuriousSuppression", length = 60)
 	private String spuriousSuppression;
 
-	@Column(name = "maxOutputElectricalLevel")
+	@Column(name = "maxOutputElectricalLevel", length = 60)
 	private String maxOutputElectricalLevel;
 
-	@Column(name = "outputPower")
+	@Column(name = "outputPower", length = 60)
 	private String outputPower;
 
-	@Column(name = "directivity")
+	@Column(name = "directivity", length = 60)
 	private String directivity;
 
-	@Column(name = "frequencyResponse")
+	@Column(name = "frequencyResponse", length = 60)
 	private String frequencyResponse;
 
-	@Column(name = "powerSupply")
+	@Column(name = "powerSupply", length = 60)
 	private String powerSupply;
 
-	@Column(name = "oscillationModeTransmitterParam")
+	@Column(name = "oscillationModeTransmitterParam", length = 60)
 	private String oscillationModeTransmitterParam;
 
-	@Column(name = "transmitterType")
+	@Column(name = "transmitterType", length = 60)
 	private String transmitterType;
 
-	@Column(name = "pipeBodyMaterial")
+	@Column(name = "pipeBodyMaterial", length = 60)
 	private String pipeBodyMaterial;
 
-	@Column(name = "batteryLifeTime")
+	@Column(name = "batteryLifeTime", length = 60)
 	private String batteryLifeTime;
 
 	public Long getId() {
