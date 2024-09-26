@@ -1,7 +1,6 @@
 package com.vn.sound.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
-import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.repository.MicroTscRepository;
 
 @org.springframework.stereotype.Service
@@ -24,25 +22,25 @@ public class MicroTscService {
 		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
 
 		if (microTscOptional.isEmpty()) {
-			//Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById", "Not found with id: " + Id);
+			// Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
+			// "Not found with id: " + Id);
 			throw new NullPointerException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
-		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getMicroName(),
+		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getModel(),
+				microTscTmp.getDescription(), microTscTmp.getMicroName(), microTscTmp.getsSourceNRatio(),
 				microTscTmp.getFrequencyQuantity(), microTscTmp.getFrequencyRangeCha(),
 				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
 				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
 				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
-				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
+				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(), microTscTmp.getOscillationMode(),
 				microTscTmp.getOscillationModeReceiverParam(), microTscTmp.getModulation(),
 				microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(), microTscTmp.getPowerSupplyMode(),
 				microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(), microTscTmp.getSpuriousSuppression(),
 				microTscTmp.getMaxOutputElectricalLevel(), microTscTmp.getOutputPower(), microTscTmp.getDirectivity(),
 				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
 				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
-				microTscTmp.getPipeBodyMaterial(), microTscTmp.getBatteryLifeTime());
-//		Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
-//				"Detail of micro : " + Utility.jsonStringConverter(microTsc));
+				microTscTmp.getPipeBodyMaterial(), microTscTmp.getChannels(), microTscTmp.getBatteryLifeTime());
 		Utility.logMessage(ref, "Detail of micro : " + Utility.jsonStringConverter(microTsc));
 		return microTsc;
 	}

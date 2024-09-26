@@ -22,6 +22,15 @@ public class MicroTsc {
 	@Column(name = "microName")
 	private String microName;
 
+	@Column(name = "model")
+	private String model;
+
+	@Column(name = "channels")
+	private String channels;
+
+	@Column(name = "description", columnDefinition = "LONGTEXT")
+	private String description;
+
 	@Column(name = "frequencyRangeCha")
 	private String frequencyRangeCha;
 
@@ -30,6 +39,9 @@ public class MicroTsc {
 
 	@Column(name = "frequencyRangeChb")
 	private String frequencyRangeChb;
+
+	@Column(name = "sSourceNRatio")
+	private String sSourceNRatio;
 
 	@Column(name = "signalToNoiseRatio")
 	private String signalToNoiseRatio;
@@ -60,6 +72,9 @@ public class MicroTsc {
 
 	@Column(name = "modulation")
 	private String modulation;
+
+	@Column(name = "oscillationMode")
+	private String oscillationMode;
 
 	@Column(name = "sensitivity")
 	private String sensitivity;
@@ -358,22 +373,66 @@ public class MicroTsc {
 		this.frequencyQuantity = frequencyQuantity;
 	}
 
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getChannels() {
+		return channels;
+	}
+
+	public void setChannels(String channels) {
+		this.channels = channels;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getsSourceNRatio() {
+		return sSourceNRatio;
+	}
+
+	public void setsSourceNRatio(String sSourceNRatio) {
+		this.sSourceNRatio = sSourceNRatio;
+	}
+
+	public String getOscillationMode() {
+		return oscillationMode;
+	}
+
+	public void setOscillationMode(String oscillationMode) {
+		this.oscillationMode = oscillationMode;
+	}
+
 	public MicroTsc() {
 
 	}
 
-	public MicroTsc(Long Id, String imgId, String microName, String frequencyQuantity, String frequencyRangeCha,
-			String frequencyRangeChb, String signalToNoiseRatio, String totalHarmonicDistortion, String modulationMode,
-			String workingDistance, String frequencyBandwidth, String channelInterval, String maxDeviation,
-			String frequencyStability, String oscillationModeReceiverParam, String modulation, String sensitivity,
-			String sensitivityAdjustment, String powerSupplyMode, String antennaAccess, String midFrequence,
-			String spuriousSuppression, String maxOutputElectricalLevel, String outputPower, String directivity,
-			String frequencyResponse, String powerSupply, String oscillationModeTransmitterParam,
-			String transmitterType, String pipeBodyMaterial, String batteryLifeTime) {
+	public MicroTsc(Long Id, String imgId, String model, String description, String microName, String frequencyQuantity,
+			String sSourceNRatio, String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
+			String totalHarmonicDistortion, String modulationMode, String workingDistance, String frequencyBandwidth,
+			String channelInterval, String maxDeviation, String frequencyStability, String oscillationMode,
+			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
+			String powerSupplyMode, String antennaAccess, String midFrequence, String spuriousSuppression,
+			String maxOutputElectricalLevel, String outputPower, String directivity, String frequencyResponse,
+			String powerSupply, String oscillationModeTransmitterParam, String transmitterType, String pipeBodyMaterial,
+			String channels, String batteryLifeTime) {
 		this.id = Id;
 		this.imgId = imgId;
+		this.model = model;
+		this.description = description;
 		this.microName = microName;
 		this.frequencyQuantity = frequencyQuantity;
+		this.sSourceNRatio = sSourceNRatio;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;
@@ -384,6 +443,7 @@ public class MicroTsc {
 		this.channelInterval = channelInterval;
 		this.maxDeviation = maxDeviation;
 		this.frequencyStability = frequencyStability;
+		this.oscillationMode = oscillationMode;
 		this.oscillationModeReceiverParam = oscillationModeReceiverParam;
 		this.modulation = modulation;
 		this.sensitivity = sensitivity;
@@ -400,6 +460,7 @@ public class MicroTsc {
 		this.oscillationModeTransmitterParam = oscillationModeTransmitterParam;
 		this.transmitterType = transmitterType;
 		this.pipeBodyMaterial = pipeBodyMaterial;
+		this.channels = channels;
 		this.batteryLifeTime = batteryLifeTime;
 	}
 
