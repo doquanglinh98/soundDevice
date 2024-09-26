@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
-import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.PowerAmplifierSeries;
 import com.vn.sound.repository.PowerAmplifierSeriesRepository;
 
@@ -32,7 +31,7 @@ public class PowerAmplifierSeriesService {
 		}
 		PowerAmplifierSeries powerAmplifierSeriesTmp = powerAmplifierSeriesOptional.get();
 		PowerAmplifierSeries powerAmplifierSeries = new PowerAmplifierSeries(powerAmplifierSeriesTmp.getId(),
-				powerAmplifierSeriesTmp.getSeriesName());
+				powerAmplifierSeriesTmp.getSeriesName(), powerAmplifierSeriesTmp.getImgId());
 		return powerAmplifierSeries;
 	}
 

@@ -1,6 +1,5 @@
 package com.vn.sound.service;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -31,8 +30,8 @@ public class MicroTscSeriesService {
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MicroTscSeries microTscSeriesTmp = microSeriesOptional.get();
-		MicroTscSeries microTscSeries = new MicroTscSeries(microTscSeriesTmp.getId(),
-				microTscSeriesTmp.getSeriesName());
+		MicroTscSeries microTscSeries = new MicroTscSeries(microTscSeriesTmp.getId(), microTscSeriesTmp.getSeriesName(),
+				microTscSeriesTmp.getImgId());
 		return microTscSeries;
 	}
 

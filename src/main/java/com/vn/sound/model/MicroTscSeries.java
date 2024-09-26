@@ -17,6 +17,9 @@ public class MicroTscSeries {
 	@Column(name = "seriesName")
 	private String seriesName;
 
+	@Column(name = "imgId")
+	private String imgId;
+
 	public String getSeriesName() {
 		return seriesName;
 	}
@@ -29,12 +32,21 @@ public class MicroTscSeries {
 		return id;
 	}
 
+	public String getImgId() {
+		return imgId;
+	}
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
 	public MicroTscSeries() {
 
 	}
 
-	public MicroTscSeries(Long id, String seriesName) {
+	public MicroTscSeries(Long id, String seriesName, String imgId) {
 		this.id = id;
 		this.seriesName = seriesName;
+		this.imgId = imgId;
 	}
 }

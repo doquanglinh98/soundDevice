@@ -14,6 +14,9 @@ public class PowerAmplifierSeries {
 	@Id
 	private Long id;
 
+	@Column(name = "imgId")
+	private String imgId;
+
 	@Column(name = "seriesName")
 	private String seriesName;
 
@@ -29,12 +32,21 @@ public class PowerAmplifierSeries {
 		return id;
 	}
 
+	public String getImgId() {
+		return imgId;
+	}
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
 	public PowerAmplifierSeries() {
 
 	}
 
-	public PowerAmplifierSeries(Long id, String seriesName) {
+	public PowerAmplifierSeries(Long id, String seriesName, String imgId) {
 		this.id = id;
 		this.seriesName = seriesName;
+		this.imgId = imgId;
 	}
 }
