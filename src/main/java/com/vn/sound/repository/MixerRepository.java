@@ -1,0 +1,18 @@
+package com.vn.sound.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.vn.sound.model.Mixer;
+
+@Repository
+public interface MixerRepository extends JpaRepository<Mixer, Long> {
+	@Query("SELECT u FROM Mixer u WHERE u.modelMixer LIKE %:modelMixer%")
+	List<Mixer> findMixerByModelMixer(@Param("modelMixer") String modelMixer);
+
+	boolean existsByModelMixer(String modelMixer);
+}

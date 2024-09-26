@@ -17,12 +17,14 @@ import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.MicroTscSeries;
+import com.vn.sound.model.Mixer;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
 import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
+import com.vn.sound.service.MixerService;
 import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
 import com.vn.sound.service.N9SpeakerSeriesService;
 import com.vn.sound.service.PowerAmplifierSeriesService;
@@ -48,6 +50,9 @@ public class SoundController {
 
 	@Autowired
 	private PowerAmplifierSeriesService powerAmplifierSeriesService;
+
+	@Autowired
+	private MixerService mixerService;
 
 	// for Micro
 
@@ -468,6 +473,75 @@ public class SoundController {
 	public ResponseEntity<String> deletePowerAmpliSeries(@PathVariable(name = "Id") String Id) {
 		try {
 			return ResponseEntity.ok(powerAmplifierSeriesService.deletePowerAmplifierSeries(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	// for Mixer
+	@RequestMapping(value = "/manager/mixer/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllMixer(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
+		try {
+			return ResponseEntity.ok(Utility
+					.jsonStringConverter(mixerService.findAllMixer(Integer.parseInt(page), Integer.parseInt(size))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findMixerId(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(mixerService.findMixerById(Long.parseLong(Id))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createMixer(@RequestBody String mixerFromClient) {
+		Mixer mixer = null;
+		try {
+			mixer = Utility.convertStringToJsonMixer(mixerFromClient);
+			return ResponseEntity.ok(mixerService.createMixer(mixer));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(mixer.getModelMixer().toString()),
+					HttpStatus.BAD_REQUEST);
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editMixer(@RequestBody String mixerFromClient) {
+		try {
+			Mixer mixer = Utility.convertStringToJsonMixer(mixerFromClient);
+			return ResponseEntity.ok(mixerService.editMixer(mixer));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteMixer(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(mixerService.deleteMixer(Long.parseLong(Id)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findMixerByModel(@PathVariable String pattern) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(mixerService.findMixerByModel(pattern)));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
