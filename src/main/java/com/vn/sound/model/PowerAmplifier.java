@@ -69,8 +69,8 @@ public class PowerAmplifier {
 	@Column(name = "inputSensitivity", length = 60)
 	private String inputSensitivity;
 
-	@Column(name = "protect", length = 60)
-	private String protect;
+	@Column(name = "protectPowerAmplifier", length = 60)
+	private String protectPowerAmplifier;
 
 	@Column(name = "gWeight", length = 60)
 	private String gWeight;
@@ -224,12 +224,12 @@ public class PowerAmplifier {
 		this.inputSensitivity = inputSensitivity;
 	}
 
-	public String getProtect() {
-		return protect;
+	public String getProtectPowerAmplifier() {
+		return protectPowerAmplifier;
 	}
 
-	public void setProtect(String protect) {
-		this.protect = protect;
+	public void setProtectPowerAmplifier(String protectPowerAmplifier) {
+		this.protectPowerAmplifier = protectPowerAmplifier;
 	}
 
 	public String getgWeight() {
@@ -323,7 +323,7 @@ public class PowerAmplifier {
 	public PowerAmplifier(Long Id, String imgId, String model, String description, String mode, String stereoPower8OHM,
 			String stereoPower4OHM, String stereoPower2OHM, String btl8OHM, String btl4OHM, String frequencyResponse,
 			String thdPlus, String sSourceNRatio, String slewRatio, String dampingFactor, String outputCircuitry,
-			String crossTalk, String inputImpedance, String inputSensitivity, String protect, String gWeight,
+			String crossTalk, String inputImpedance, String inputSensitivity, String protectPowerAmplifier, String gWeight,
 			String dimension, String packingSize, String gain, String optionalGian, String degreeOfSeparation,
 			String dissipateHeat, String appearanceVolume) {
 		this.id = Id;
@@ -345,7 +345,7 @@ public class PowerAmplifier {
 		this.crossTalk = crossTalk;
 		this.inputImpedance = inputImpedance;
 		this.inputSensitivity = inputSensitivity;
-		this.protect = protect;
+		this.protectPowerAmplifier = protectPowerAmplifier;
 		this.gWeight = gWeight;
 		this.dimension = dimension;
 		this.packingSize = packingSize;

@@ -35,7 +35,7 @@ public class PowerAmplifierService {
 				powerAmplifierTmp.getsSourceNRatio(), powerAmplifierTmp.getSlewRatio(),
 				powerAmplifierTmp.getDampingFactor(), powerAmplifierTmp.getOutputCircuitry(),
 				powerAmplifierTmp.getCrossTalk(), powerAmplifierTmp.getInputImpedance(),
-				powerAmplifierTmp.getInputSensitivity(), powerAmplifierTmp.getProtect(), powerAmplifierTmp.getgWeight(),
+				powerAmplifierTmp.getInputSensitivity(), powerAmplifierTmp.getProtectPowerAmplifier(), powerAmplifierTmp.getgWeight(),
 				powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize(), powerAmplifierTmp.getGain(),
 				powerAmplifierTmp.getOptionalGian(), powerAmplifierTmp.getDegreeOfSeparation(),
 				powerAmplifierTmp.getDissipateHeat(), powerAmplifierTmp.getAppearanceVolume());
