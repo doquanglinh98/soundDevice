@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
-import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.repository.PowerAmplifierRepository;
 
@@ -29,15 +28,17 @@ public class PowerAmplifierService {
 		}
 		PowerAmplifier powerAmplifierTmp = powerAmplifierOptional.get();
 		PowerAmplifier powerAmplifier = new PowerAmplifier(powerAmplifierTmp.getId(), powerAmplifierTmp.getImgId(),
-				powerAmplifierTmp.getMode(), powerAmplifierTmp.getStereoPower8OHM(),
-				powerAmplifierTmp.getStereoPower4OHM(), powerAmplifierTmp.getStereoPower2OHM(),
-				powerAmplifierTmp.getBtl8OHM(), powerAmplifierTmp.getBtl4OHM(),
+				powerAmplifierTmp.getModel(), powerAmplifierTmp.getDescription(), powerAmplifierTmp.getMode(),
+				powerAmplifierTmp.getStereoPower8OHM(), powerAmplifierTmp.getStereoPower4OHM(),
+				powerAmplifierTmp.getStereoPower2OHM(), powerAmplifierTmp.getBtl8OHM(), powerAmplifierTmp.getBtl4OHM(),
 				powerAmplifierTmp.getFrequencyResponse(), powerAmplifierTmp.getThdPlus(),
 				powerAmplifierTmp.getsSourceNRatio(), powerAmplifierTmp.getSlewRatio(),
 				powerAmplifierTmp.getDampingFactor(), powerAmplifierTmp.getOutputCircuitry(),
 				powerAmplifierTmp.getCrossTalk(), powerAmplifierTmp.getInputImpedance(),
 				powerAmplifierTmp.getInputSensitivity(), powerAmplifierTmp.getProtect(), powerAmplifierTmp.getgWeight(),
-				powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize());
+				powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize(), powerAmplifierTmp.getGain(),
+				powerAmplifierTmp.getOptionalGian(), powerAmplifierTmp.getDegreeOfSeparation(),
+				powerAmplifierTmp.getDissipateHeat(), powerAmplifierTmp.getAppearanceVolume());
 
 		return powerAmplifier;
 	}

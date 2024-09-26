@@ -18,6 +18,12 @@ public class PowerAmplifier {
 	@Column(name = "imgId")
 	private String imgId;
 
+	@Column(name = "model")
+	private String model;
+
+	@Column(name = "description", columnDefinition = "LONGTEXT")
+	private String description;
+
 	@Column(name = "mode")
 	private String mode;
 
@@ -74,6 +80,21 @@ public class PowerAmplifier {
 
 	@Column(name = "packingSize")
 	private String packingSize;
+
+	@Column(name = "gain")
+	private String gain;
+
+	@Column(name = "optionalGian")
+	private String optionalGian;
+
+	@Column(name = "degreeOfSeparation")
+	private String degreeOfSeparation;
+
+	@Column(name = "dissipateHeat")
+	private String dissipateHeat;
+
+	@Column(name = "appearanceVolume")
+	private String appearanceVolume;
 
 	public String getImgId() {
 		return imgId;
@@ -239,17 +260,76 @@ public class PowerAmplifier {
 		return id;
 	}
 
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getGain() {
+		return gain;
+	}
+
+	public void setGain(String gain) {
+		this.gain = gain;
+	}
+
+	public String getOptionalGian() {
+		return optionalGian;
+	}
+
+	public void setOptionalGian(String optionalGian) {
+		this.optionalGian = optionalGian;
+	}
+
+	public String getDegreeOfSeparation() {
+		return degreeOfSeparation;
+	}
+
+	public void setDegreeOfSeparation(String degreeOfSeparation) {
+		this.degreeOfSeparation = degreeOfSeparation;
+	}
+
+	public String getDissipateHeat() {
+		return dissipateHeat;
+	}
+
+	public void setDissipateHeat(String dissipateHeat) {
+		this.dissipateHeat = dissipateHeat;
+	}
+
+	public String getAppearanceVolume() {
+		return appearanceVolume;
+	}
+
+	public void setAppearanceVolume(String appearanceVolume) {
+		this.appearanceVolume = appearanceVolume;
+	}
+
 	public PowerAmplifier() {
 
 	}
 
-	public PowerAmplifier(Long Id, String imgId, String mode, String stereoPower8OHM, String stereoPower4OHM,
-			String stereoPower2OHM, String btl8OHM, String btl4OHM, String frequencyResponse, String thdPlus,
-			String sSourceNRatio, String slewRatio, String dampingFactor, String outputCircuitry, String crossTalk,
-			String inputImpedance, String inputSensitivity, String protect, String gWeight, String dimension,
-			String packingSize) {
+	public PowerAmplifier(Long Id, String imgId, String model, String description, String mode, String stereoPower8OHM,
+			String stereoPower4OHM, String stereoPower2OHM, String btl8OHM, String btl4OHM, String frequencyResponse,
+			String thdPlus, String sSourceNRatio, String slewRatio, String dampingFactor, String outputCircuitry,
+			String crossTalk, String inputImpedance, String inputSensitivity, String protect, String gWeight,
+			String dimension, String packingSize, String gain, String optionalGian, String degreeOfSeparation,
+			String dissipateHeat, String appearanceVolume) {
 		this.id = Id;
 		this.imgId = imgId;
+		this.model = model;
+		this.description = description;
 		this.mode = mode;
 		this.stereoPower8OHM = stereoPower8OHM;
 		this.stereoPower4OHM = stereoPower4OHM;
@@ -269,6 +349,11 @@ public class PowerAmplifier {
 		this.gWeight = gWeight;
 		this.dimension = dimension;
 		this.packingSize = packingSize;
+		this.gain = gain;
+		this.optionalGian = optionalGian;
+		this.degreeOfSeparation = degreeOfSeparation;
+		this.dissipateHeat = dissipateHeat;
+		this.appearanceVolume = appearanceVolume;
 	}
 
 }
