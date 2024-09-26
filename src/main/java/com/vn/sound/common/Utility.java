@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.model.Mixer;
+import com.vn.sound.model.MixerSeries;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
@@ -151,6 +152,11 @@ public class Utility {
 		return convertedObject;
 	}
 
+	public static MixerSeries convertStringToJsonMixerSeries(String msg) {
+		MixerSeries convertedObject = new Gson().fromJson(msg, MixerSeries.class);
+		return convertedObject;
+	}
+	
 	public static Mixer convertStringToJsonMixer(String msg) {
 		Mixer convertedObject = new Gson().fromJson(msg, Mixer.class);
 		return convertedObject;

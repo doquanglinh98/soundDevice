@@ -18,12 +18,14 @@ import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
 import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.model.Mixer;
+import com.vn.sound.model.MixerSeries;
 import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
 import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
+import com.vn.sound.service.MixerSeriesService;
 import com.vn.sound.service.MixerService;
 import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
 import com.vn.sound.service.N9SpeakerSeriesService;
@@ -53,6 +55,9 @@ public class SoundController {
 
 	@Autowired
 	private MixerService mixerService;
+
+	@Autowired
+	private MixerSeriesService mixerSeriesService;
 
 	// for Micro
 
@@ -542,6 +547,66 @@ public class SoundController {
 	public ResponseEntity<String> findMixerByModel(@PathVariable String pattern) {
 		try {
 			return ResponseEntity.ok(Utility.jsonStringConverter(mixerService.findMixerByModel(pattern)));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	// for MixerSeries
+	@RequestMapping(value = "/manager/mixer-series/all", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findAllMixerSeries(@RequestParam(defaultValue = "0", name = "page") String page,
+			@RequestParam(defaultValue = "10", name = "size") String size) {
+		try {
+			return ResponseEntity.ok(Utility.jsonStringConverter(
+					mixerSeriesService.findAllMixerSeries(Integer.parseInt(page), Integer.parseInt(size))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer-series/{Id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> findMixerSeriesById(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity
+					.ok(Utility.jsonStringConverter(mixerSeriesService.findMixerSeriesById(Long.parseLong(Id))));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer-series/create", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> createMixerSeries(@RequestBody String mixerSeriesFromClient) {
+		MixerSeries mixerSeries = null;
+		try {
+			mixerSeries = Utility.convertStringToJsonMixerSeries(mixerSeriesFromClient);
+			return ResponseEntity.ok(mixerSeriesService.createMixerSeries(mixerSeries));
+		} catch (CustomException e) {
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(mixerSeries.getSeriesName().toString()),
+					HttpStatus.BAD_REQUEST);
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer-series/edit", method = RequestMethod.PUT, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> editMixerSeries(@RequestBody String mixerSeriesFromClient) {
+		try {
+			MixerSeries mixerSeries = Utility.convertStringToJsonMixerSeries(mixerSeriesFromClient);
+			return ResponseEntity.ok(mixerSeriesService.editMixerSeries(mixerSeries));
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/manager/mixer-series/delete/{Id}", method = RequestMethod.DELETE, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> deleteMixerSeries(@PathVariable(name = "Id") String Id) {
+		try {
+			return ResponseEntity.ok(mixerSeriesService.deleteMixerSeries(Long.parseLong(Id)));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
