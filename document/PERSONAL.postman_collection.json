@@ -57,7 +57,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -79,12 +79,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/all",
+							"raw": "http://localhost:8088/manager/micro/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8088",
 							"path": [
 								"manager",
 								"micro",
