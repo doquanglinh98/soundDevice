@@ -16,109 +16,109 @@ public class MicroTsc {
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "imgId", length = 60)
+	@Column(name = "imgId", length = 150)
 	private String imgId;
 
-	@Column(name = "microName", length = 60)
+	@Column(name = "microName", length = 150)
 	private String microName;
 
-	@Column(name = "model", length = 60)
+	@Column(name = "model", length = 150)
 	private String model;
 
-	@Column(name = "channels", length = 60)
+	@Column(name = "channels", length = 150)
 	private String channels;
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
-	@Column(name = "frequencyRangeCha", length = 60)
+	@Column(name = "frequencyRangeCha", length = 150)
 	private String frequencyRangeCha;
 
-	@Column(name = "frequencyQuantity", length = 60)
+	@Column(name = "frequencyQuantity", length = 150)
 	private String frequencyQuantity;
 
-	@Column(name = "frequencyRangeChb", length = 60)
+	@Column(name = "frequencyRangeChb", length = 150)
 	private String frequencyRangeChb;
 
-	@Column(name = "sSourceNRatio", length = 60)
+	@Column(name = "sSourceNRatio", length = 150)
 	private String sSourceNRatio;
 
-	@Column(name = "signalToNoiseRatio", length = 60)
+	@Column(name = "signalToNoiseRatio", length = 150)
 	private String signalToNoiseRatio;
 
-	@Column(name = "totalHarmonicDistortion", length = 60)
+	@Column(name = "totalHarmonicDistortion", length = 150)
 	private String totalHarmonicDistortion;
 
-	@Column(name = "modulationMode", length = 60)
+	@Column(name = "modulationMode", length = 150)
 	private String modulationMode;
 
-	@Column(name = "workingDistance", length = 60)
+	@Column(name = "workingDistance", length = 150)
 	private String workingDistance;
 
-	@Column(name = "frequencyBandwidth", length = 60)
+	@Column(name = "frequencyBandwidth", length = 150)
 	private String frequencyBandwidth;
 
-	@Column(name = "channelInterval", length = 60)
+	@Column(name = "channelInterval", length = 150)
 	private String channelInterval;
 
-	@Column(name = "maxDeviation", length = 60)
+	@Column(name = "maxDeviation", length = 150)
 	private String maxDeviation;
 
-	@Column(name = "frequencyStability", length = 60)
+	@Column(name = "frequencyStability", length = 150)
 	private String frequencyStability;
 
-	@Column(name = "oscillationModeReceiverParam", length = 60)
+	@Column(name = "oscillationModeReceiverParam", length = 150)
 	private String oscillationModeReceiverParam;
 
-	@Column(name = "modulation", length = 60)
+	@Column(name = "modulation", length = 150)
 	private String modulation;
 
-	@Column(name = "oscillationMode", length = 60)
+	@Column(name = "oscillationMode", length = 150)
 	private String oscillationMode;
 
-	@Column(name = "sensitivity", length = 60)
+	@Column(name = "sensitivity", length = 150)
 	private String sensitivity;
 
-	@Column(name = "sensitivityAdjustment", length = 60)
+	@Column(name = "sensitivityAdjustment", length = 150)
 	private String sensitivityAdjustment;
 
-	@Column(name = "powerSupplyMode", length = 60)
+	@Column(name = "powerSupplyMode", length = 150)
 	private String powerSupplyMode;
 
-	@Column(name = "antennaAccess", length = 60)
+	@Column(name = "antennaAccess", length = 150)
 	private String antennaAccess;
 
-	@Column(name = "midFrequence", length = 60)
+	@Column(name = "midFrequence", length = 150)
 	private String midFrequence;
 
-	@Column(name = "spuriousSuppression", length = 60)
+	@Column(name = "spuriousSuppression", length = 150)
 	private String spuriousSuppression;
 
-	@Column(name = "maxOutputElectricalLevel", length = 60)
+	@Column(name = "maxOutputElectricalLevel", length = 150)
 	private String maxOutputElectricalLevel;
 
-	@Column(name = "outputPower", length = 60)
+	@Column(name = "outputPower", length = 150)
 	private String outputPower;
 
-	@Column(name = "directivity", length = 60)
+	@Column(name = "directivity", length = 150)
 	private String directivity;
 
-	@Column(name = "frequencyResponse", length = 60)
+	@Column(name = "frequencyResponse", length = 150)
 	private String frequencyResponse;
 
-	@Column(name = "powerSupply", length = 60)
+	@Column(name = "powerSupply", length = 150)
 	private String powerSupply;
 
-	@Column(name = "oscillationModeTransmitterParam", length = 60)
+	@Column(name = "oscillationModeTransmitterParam", length = 150)
 	private String oscillationModeTransmitterParam;
 
-	@Column(name = "transmitterType", length = 60)
+	@Column(name = "transmitterType", length = 150)
 	private String transmitterType;
 
-	@Column(name = "pipeBodyMaterial", length = 60)
+	@Column(name = "pipeBodyMaterial", length = 150)
 	private String pipeBodyMaterial;
 
-	@Column(name = "batteryLifeTime", length = 60)
+	@Column(name = "batteryLifeTime", length = 150)
 	private String batteryLifeTime;
 
 	public Long getId() {

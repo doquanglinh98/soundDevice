@@ -14,40 +14,40 @@ public class Mixer {
 	@Id
 	private Long id;
 
-	@Column(name = "imgId", length = 60)
+	@Column(name = "imgId", length = 150)
 	private String imgId;
 
-	@Column(name = "modelMixer", length = 60)
+	@Column(name = "modelMixer", length = 150)
 	private String modelMixer;
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
-	@Column(name = "channel", length = 60)
+	@Column(name = "channel", length = 150)
 	private String channel;
 
-	@Column(name = "channelEQ", length = 60)
+	@Column(name = "channelEQ", length = 150)
 	private String channelEQ;
 
-	@Column(name = "AUX", length = 60)
+	@Column(name = "AUX", length = 150)
 	private String AUX;
 
-	@Column(name = "returnMixer", length = 60)
+	@Column(name = "returnMixer", length = 150)
 	private String returnMixer;
 
-	@Column(name = "effects", length = 60)
+	@Column(name = "effects", length = 150)
 	private String effects;
 
-	@Column(name = "mainOut", length = 60)
+	@Column(name = "mainOut", length = 150)
 	private String mainOut;
 
-	@Column(name = "groupsMixer", length = 60)
+	@Column(name = "groupsMixer", length = 150)
 	private String groupsMixer;
 
-	@Column(name = "phantomPower", length = 60)
+	@Column(name = "phantomPower", length = 150)
 	private String phantomPower;
 
-	@Column(name = "usbPlayer", length = 60)
+	@Column(name = "usbPlayer", length = 150)
 	private String usbPlayer;
 
 	public String getImgId() {

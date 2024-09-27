@@ -15,299 +15,299 @@ public class N9SpeakerSeriesAllProducts {
 	@Id
 	private Long id;
 
-	@Column(name = "imgId", length = 60)
+	@Column(name = "imgId", length = 150)
 	private String imgId;
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
 
-	@Column(name = "n9SpeakerSeriesName", length = 40)
+	@Column(name = "n9SpeakerSeriesName", length = 100)
 	private String n9SpeakerSeriesName;
 
-	@Column(name = "systemDescription", length = 100)
+	@Column(name = "systemDescription", length = 200)
 	private String systemDescription;
 
-	@Column(name = "tweeter", length = 100)
+	@Column(name = "tweeter", length = 150)
 	private String tweeter;
 
-	@Column(name = "woofer", length = 100)
+	@Column(name = "woofer", length = 150)
 	private String woofer;
 
-	@Column(name = "power", length = 100)
+	@Column(name = "power", length = 150)
 	private String power;
 
-	@Column(name = "maximumSoundPressure", length = 100)
+	@Column(name = "maximumSoundPressure", length = 150)
 	private String maximumSoundPressure;
 
-	@Column(name = "coverAngle", length = 100)
+	@Column(name = "coverAngle", length = 150)
 	private String coverAngle;
 
-	@Column(name = "hangingPoint", length = 100)
+	@Column(name = "hangingPoint", length = 150)
 	private String hangingPoint;
 
-	@Column(name = "hand", length = 100)
+	@Column(name = "hand", length = 150)
 	private String hand;
 
-	@Column(name = "paintTreatment", length = 100)
+	@Column(name = "paintTreatment", length = 150)
 	private String paintTreatment;
 
-	@Column(name = "LFUnit", length = 100)
+	@Column(name = "LFUnit", length = 150)
 	private String LFUnit;
 
-	@Column(name = "MFUnit", length = 100)
+	@Column(name = "MFUnit", length = 150)
 	private String MFUnit;
 
-	@Column(name = "HFUnit", length = 100)
+	@Column(name = "HFUnit", length = 150)
 	private String HFUnit;
 
 	@Column(name = "unit", length = 150)
 	private String unit;
 
-	@Column(name = "frequencyResponse", length = 100)
+	@Column(name = "frequencyResponse", length = 150)
 	private String frequencyResponse;
 
-	@Column(name = "sensitivity", length = 100)
+	@Column(name = "sensitivity", length = 150)
 	private String sensitivity;
 
-	@Column(name = "ratedPower", length = 100)
+	@Column(name = "ratedPower", length = 150)
 	private String ratedPower;
 
-	@Column(name = "nominalImpedance", length = 100)
+	@Column(name = "nominalImpedance", length = 150)
 	private String nominalImpedance;
 
-	@Column(name = "inputSensitivity", length = 100)
+	@Column(name = "inputSensitivity", length = 150)
 	private String inputSensitivity;
 
-	@Column(name = "maxSPL", length = 100)
+	@Column(name = "maxSPL", length = 150)
 	private String maxSPL;
 
-	@Column(name = "nominalImpedence", length = 100)
+	@Column(name = "nominalImpedence", length = 150)
 	private String nominalImpedence;
 
-	@Column(name = "coverRange", length = 100)
+	@Column(name = "coverRange", length = 150)
 	private String coverRange;
 
-	@Column(name = "hangingHardware", length = 100)
+	@Column(name = "hangingHardware", length = 150)
 	private String hangingHardware;
 
-	@Column(name = "handle", length = 100)
+	@Column(name = "handle", length = 150)
 	private String handle;
 
-	@Column(name = "bracketFixedSeat", length = 100)
+	@Column(name = "bracketFixedSeat", length = 150)
 	private String bracketFixedSeat;
 
-	@Column(name = "connector", length = 100)
+	@Column(name = "connector", length = 150)
 	private String connector;
 
-	@Column(name = "boxMaterial", length = 100)
+	@Column(name = "boxMaterial", length = 150)
 	private String boxMaterial;
 
-	@Column(name = "netWeight", length = 100)
+	@Column(name = "netWeight", length = 150)
 	private String netWeight;
 
-	@Column(name = "size", length = 100)
+	@Column(name = "size", length = 150)
 	private String size;
 
-	@Column(name = "categorg", length = 100)
+	@Column(name = "categorg", length = 150)
 	private String categorg;
 
-	@Column(name = "outputPower", length = 100)
+	@Column(name = "outputPower", length = 150)
 	private String outputPower;
 
-	@Column(name = "DSPAccuracy", length = 100)
+	@Column(name = "DSPAccuracy", length = 150)
 	private String DSPAccuracy;
 
-	@Column(name = "dividerPartFIRFilter", length = 100)
+	@Column(name = "dividerPartFIRFilter", length = 150)
 	private String dividerPartFIRFilter;
 
-	@Column(name = "digitalInput", length = 100)
+	@Column(name = "digitalInput", length = 150)
 	private String digitalInput;
 
-	@Column(name = "panel", length = 100)
+	@Column(name = "panel", length = 150)
 	private String panel;
 
-	@Column(name = "maximumHangerNumber", length = 100)
+	@Column(name = "maximumHangerNumber", length = 150)
 	private String maximumHangerNumber;
 
-	@Column(name = "crossover", length = 100)
+	@Column(name = "crossover", length = 150)
 	private String crossover;
 
-	@Column(name = "overlay", length = 100)
+	@Column(name = "overlay", length = 150)
 	private String overlay;
 
-	@Column(name = "sprayPaintProcessing", length = 100)
+	@Column(name = "sprayPaintProcessing", length = 150)
 	private String sprayPaintProcessing;
 
-	@Column(name = "overlayAngle", length = 100)
+	@Column(name = "overlayAngle", length = 150)
 	private String overlayAngle;
 
-	@Column(name = "altoUnit", length = 100)
+	@Column(name = "altoUnit", length = 150)
 	private String altoUnit;
 
-	@Column(name = "transformerConstantPressurePower", length = 100)
+	@Column(name = "transformerConstantPressurePower", length = 150)
 	private String transformerConstantPressurePower;
 
-	@Column(name = "DCImpedance", length = 100)
+	@Column(name = "DCImpedance", length = 150)
 	private String DCImpedance;
 
-	@Column(name = "qualityControlRange", length = 100)
+	@Column(name = "qualityControlRange", length = 150)
 	private String qualityControlRange;
 
-	@Column(name = "anti_magneticEffectTest", length = 100)
+	@Column(name = "anti_magneticEffectTest", length = 150)
 	private String anti_magneticEffectTest;
 
-	@Column(name = "earthquakeDropTest", length = 100)
+	@Column(name = "earthquakeDropTest", length = 150)
 	private String earthquakeDropTest;
 
-	@Column(name = "dimensions", length = 100)
+	@Column(name = "dimensions", length = 150)
 	private String dimensions;
 
-	@Column(name = "category", length = 100)
+	@Column(name = "category", length = 150)
 	private String category;
 
-	@Column(name = "maximumOutputPower", length = 100)
+	@Column(name = "maximumOutputPower", length = 150)
 	private String maximumOutputPower;
 
-	@Column(name = "totalHarmonicDistortion", length = 100)
+	@Column(name = "totalHarmonicDistortion", length = 150)
 	private String totalHarmonicDistortion;
 
-	@Column(name = "intermodulationDistortion", length = 100)
+	@Column(name = "intermodulationDistortion", length = 150)
 	private String intermodulationDistortion;
 
-	@Column(name = "coolingMethod", length = 100)
+	@Column(name = "coolingMethod", length = 150)
 	private String coolingMethod;
 
-	@Column(name = "DSPPart", length = 100)
+	@Column(name = "DSPPart", length = 150)
 	private String DSPPart;
 
-	@Column(name = "inputAndOutputPart", length = 100)
+	@Column(name = "inputAndOutputPart", length = 150)
 	private String inputAndOutputPart;
 
-	@Column(name = "caseMaterial", length = 100)
+	@Column(name = "caseMaterial", length = 150)
 	private String caseMaterial;
 
 	// add
-	@Column(name = "model", length = 100)
+	@Column(name = "model", length = 150)
 	private String model;
 
-	@Column(name = "normalImpedance", length = 100)
+	@Column(name = "normalImpedance", length = 150)
 	private String normalImpedance;
 
-	@Column(name = "sprayPaintingTreatment", length = 100)
+	@Column(name = "sprayPaintingTreatment", length = 150)
 	private String sprayPaintingTreatment;
 
-	@Column(name = "weight", length = 100)
+	@Column(name = "weight", length = 150)
 	private String weight;
 
-	@Column(name = "output4ohm", length = 100)
+	@Column(name = "output4ohm", length = 150)
 	private String output4ohm;
 
-	@Column(name = "output8ohm", length = 100)
+	@Column(name = "output8ohm", length = 150)
 	private String output8ohm;
 
-	@Column(name = "digitalOutput", length = 100)
+	@Column(name = "digitalOutput", length = 150)
 	private String digitalOutput;
 
-	@Column(name = "channelNumber", length = 100)
+	@Column(name = "channelNumber", length = 150)
 	private String channelNumber;
 
-	@Column(name = "THD", length = 100)
+	@Column(name = "THD", length = 150)
 	private String THD;
 
-	@Column(name = "sSourceNRatio", length = 100)
+	@Column(name = "sSourceNRatio", length = 150)
 	private String sSourceNRatio;
 
-	@Column(name = "dampingFactor", length = 100)
+	@Column(name = "dampingFactor", length = 150)
 	private String dampingFactor;
 
-	@Column(name = "cperatingRange", length = 100)
+	@Column(name = "cperatingRange", length = 150)
 	private String cperatingRange;
 
-	@Column(name = "powerCurrent", length = 100)
+	@Column(name = "powerCurrent", length = 150)
 	private String powerCurrent;
 
-	@Column(name = "angleIncrements", length = 100)
+	@Column(name = "angleIncrements", length = 150)
 	private String angleIncrements;
 
-	@Column(name = "horizontal", length = 100)
+	@Column(name = "horizontal", length = 150)
 	private String horizontal;
 
-	@Column(name = "fullFrequencyUnit", length = 100)
+	@Column(name = "fullFrequencyUnit", length = 150)
 	private String fullFrequencyUnit;
 
-	@Column(name = "conversionEfficiency", length = 100)
+	@Column(name = "conversionEfficiency", length = 150)
 	private String conversionEfficiency;
 
-	@Column(name = "inputImpedance", length = 100)
+	@Column(name = "inputImpedance", length = 150)
 	private String inputImpedance;
 
-	@Column(name = "outputImpedance", length = 100)
+	@Column(name = "outputImpedance", length = 150)
 	private String outputImpedance;
 
-	@Column(name = "mainPowerSupply", length = 100)
+	@Column(name = "mainPowerSupply", length = 150)
 	private String mainPowerSupply;
 
-	@Column(name = "frequencyResponseRange", length = 100)
+	@Column(name = "frequencyResponseRange", length = 150)
 	private String frequencyResponseRange;
 
-	@Column(name = "powerFR", length = 100)
+	@Column(name = "powerFR", length = 150)
 	private String powerFR;
 
-	@Column(name = "AMPFrequencyLoad", length = 100)
+	@Column(name = "AMPFrequencyLoad", length = 150)
 	private String AMPFrequencyLoad;
 
-	@Column(name = "stereo8ohm", length = 100)
+	@Column(name = "stereo8ohm", length = 150)
 	private String stereo8ohm;
 
-	@Column(name = "stereo4ohm", length = 100)
+	@Column(name = "stereo4ohm", length = 150)
 	private String stereo4ohm;
 
-	@Column(name = "slewRate", length = 100)
+	@Column(name = "slewRate", length = 150)
 	private String slewRate;
 
-	@Column(name = "dynamicRange", length = 100)
+	@Column(name = "dynamicRange", length = 150)
 	private String dynamicRange;
 
-	@Column(name = "voltageGain", length = 100)
+	@Column(name = "voltageGain", length = 150)
 	private String voltageGain;
 
-	@Column(name = "outputCircuitDesign", length = 100)
+	@Column(name = "outputCircuitDesign", length = 150)
 	private String outputCircuitDesign;
 
-	@Column(name = "powerSelection", length = 100)
+	@Column(name = "powerSelection", length = 150)
 	private String powerSelection;
 
-	@Column(name = "inputVoltage", length = 100)
+	@Column(name = "inputVoltage", length = 150)
 	private String inputVoltage;
 
-	@Column(name = "speakerSpecifications", length = 100)
+	@Column(name = "speakerSpecifications", length = 150)
 	private String speakerSpecifications;
 
-	@Column(name = "color", length = 100)
+	@Column(name = "color", length = 150)
 	private String color;
 
-	@Column(name = "waterproof", length = 100)
+	@Column(name = "waterproof", length = 150)
 	private String waterproof;
 
-	@Column(name = "unitConfigure", length = 100)
+	@Column(name = "unitConfigure", length = 150)
 	private String unitConfigure;
 
-	@Column(name = "installationOpeningSize", length = 100)
+	@Column(name = "installationOpeningSize", length = 150)
 	private String installationOpeningSize;
 
-	@Column(name = "maximumOuterDiameter", length = 100)
+	@Column(name = "maximumOuterDiameter", length = 150)
 	private String maximumOuterDiameter;
 
-	@Column(name = "withstandPower", length = 100)
+	@Column(name = "withstandPower", length = 150)
 	private String withstandPower;
 
-	@Column(name = "paintingTreatment", length = 100)
+	@Column(name = "paintingTreatment", length = 150)
 	private String paintingTreatment;
 
-	@Column(name = "suspensionPoint", length = 100)
+	@Column(name = "suspensionPoint", length = 150)
 	private String suspensionPoint;
 
-	@Column(name = "gain", length = 100)
+	@Column(name = "gain", length = 150)
 	private String gain;
 
 // setter getter
