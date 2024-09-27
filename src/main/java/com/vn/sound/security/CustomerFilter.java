@@ -36,6 +36,14 @@ public class CustomerFilter extends HttpFilter {
 				: request.getPathInfo();
 		System.out.println("requestPath = " + requestPath);
 		if (requestPath.matches("(/manager/).*")) {
+			if ((requestPath.contains("/micro/") || requestPath.contains("/mixer/") || requestPath.contains("/ampli/")
+					|| requestPath.contains("/n9-speaker-series/") || requestPath.contains("/speakers-series/")
+					|| requestPath.contains("/micro-tsc-series/") || requestPath.contains("/power-ampli-series/")
+					|| requestPath.contains("/mixer-series/")) && request.getMethod().equals("GET")) {
+				response.setHeader("Access-Control-Allow-Origin", "*");
+				chain.doFilter(request, response);
+				return; // Stop processing
+			}
 			final String authorization = request.getHeader("Authorization");
 			if (authorization != null && authorization.toLowerCase().startsWith("basic")) {
 				// Authorization: Basic base64credentials
@@ -45,6 +53,7 @@ public class CustomerFilter extends HttpFilter {
 				// credentials = username:password
 				final String[] values = credentials.split(":", 2);
 				if (userService.isAdmin(values[0], values[1])) {
+					response.setHeader("Access-Control-Allow-Origin", "*");
 					chain.doFilter(request, response);
 				} else {
 					// Set the response status and message
@@ -60,6 +69,7 @@ public class CustomerFilter extends HttpFilter {
 				return; // Stop processing
 			}
 		}
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		chain.doFilter(request, response);
 	}
 
