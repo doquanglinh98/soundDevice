@@ -3,9 +3,13 @@ package com.vn.sound.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +32,9 @@ import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
 import com.vn.sound.service.MixerSeriesService;
@@ -628,7 +635,7 @@ public class SoundController {
 	@PostMapping("/upload/n9-speakers")
 	public ResponseEntity<String> uploadFileN9Speakers(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload="+System.getProperty("user.dir"));
+		System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_N9Speakers);
@@ -641,12 +648,30 @@ public class SoundController {
 			file.transferTo(newFile);
 
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
-			System.out.println("msg="+message);
+			System.out.println("msg=" + message);
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
 			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
-			System.out.println("msg="+message);
+			System.out.println("msg=" + message);
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	// map path from browser to resource server
+	@GetMapping("/imgs/Speakers/{filename:.+}")
+	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
+		try {
+			Path file = Paths.get(Constant.uploadDir_N9Speakers).resolve(filename);
+			Resource resource = new UrlResource(file.toUri());
+
+			if (resource.exists() || resource.isReadable()) {
+				return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).contentType(MediaType.IMAGE_PNG)
+						.body(resource);
+			} else {
+				return ResponseEntity.notFound().build();
+			}
+		} catch (Exception e) {
+			return ResponseEntity.internalServerError().build();
 		}
 	}
 }
