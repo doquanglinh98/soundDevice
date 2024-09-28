@@ -7,12 +7,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
@@ -23,6 +26,8 @@ import com.vn.sound.model.N9SpeakerSeries;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
+import java.io.File;
+import java.io.IOException;
 import com.vn.sound.service.MicroTscSeriesService;
 import com.vn.sound.service.MicroTscService;
 import com.vn.sound.service.MixerSeriesService;
@@ -619,4 +624,29 @@ public class SoundController {
 		}
 	}
 
+	// upload images
+	@PostMapping("/upload/n9-speakers")
+	public ResponseEntity<String> uploadFileN9Speakers(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload="+System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_N9Speakers);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_N9Speakers + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			System.out.println("msg="+message);
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			System.out.println("msg="+message);
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
 }

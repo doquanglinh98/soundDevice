@@ -97,6 +97,7 @@ public class CustomerFilter extends HttpFilter {
 		response.addHeader("Access-Control-Expose-Headers",
 				"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
 		response.addHeader("Access-Control-Allow-Credentials", "true");
+		System.out.println("requestPath = " + requestPath);
 		chain.doFilter(request, response);
 	}
 
