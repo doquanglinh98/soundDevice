@@ -18,12 +18,10 @@ public class MicroTscService {
 	@Autowired
 	private MicroTscRepository microTscRepository;
 
-	public MicroTsc findMicroTscById(Long ref, Long Id) throws Exception {
+	public MicroTsc findMicroTscById(Long Id) throws Exception {
 		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
 
 		if (microTscOptional.isEmpty()) {
-			// Utility.logging(ref, this.getClass().getSimpleName(), "findMicroTscById",
-			// "Not found with id: " + Id);
 			throw new NullPointerException("Not found with id: " + Id);
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
@@ -41,7 +39,6 @@ public class MicroTscService {
 				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
 				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
 				microTscTmp.getPipeBodyMaterial(), microTscTmp.getChannels(), microTscTmp.getBatteryLifeTime());
-		Utility.logMessage(ref, "Detail of micro : " + Utility.jsonStringConverter(microTsc));
 		return microTsc;
 	}
 

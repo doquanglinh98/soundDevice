@@ -34,13 +34,12 @@ public class CustomerFilter extends HttpFilter {
 			throws IOException, ServletException {
 		String requestPath = Utility.isNotNull(request.getServletPath()) ? request.getServletPath()
 				: request.getPathInfo();
-		System.out.println("requestPath = " + requestPath);
 		if (requestPath.matches("(/manager/).*")) {
 			if ((requestPath.contains("/micro/") || requestPath.contains("/mixer/") || requestPath.contains("/ampli/")
 					|| requestPath.contains("/n9-speaker-series/") || requestPath.contains("/speakers-series/")
 					|| requestPath.contains("/micro-tsc-series/") || requestPath.contains("/power-ampli-series/")
-					|| requestPath.contains("/mixer-series/") || requestPath.contains("/count/"))
-					&& request.getMethod().equals("GET")) {
+					|| requestPath.contains("/mixer-series/") || requestPath.contains("/count/")
+					|| requestPath.contains("/login")) && request.getMethod().equals("GET")) {
 				response.setHeader("Access-Control-Allow-Origin", "*");
 				response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
 				response.addHeader("Access-Control-Allow-Headers",
