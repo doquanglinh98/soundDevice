@@ -104,7 +104,6 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(microTsc.getMicroName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
-			System.out.println("loi roi="+e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
