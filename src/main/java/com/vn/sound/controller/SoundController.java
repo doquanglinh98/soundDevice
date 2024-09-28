@@ -612,4 +612,15 @@ public class SoundController {
 		}
 	}
 
+	@RequestMapping(value = "/manager/count/product", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> countProduct() {
+		try {
+			return ResponseEntity.ok(n9SpeakerSeriesAllProductsService.countProduct());
+		} catch (Exception e) {
+			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+
 }

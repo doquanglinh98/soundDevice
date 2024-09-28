@@ -39,12 +39,15 @@ public class CustomerFilter extends HttpFilter {
 			if ((requestPath.contains("/micro/") || requestPath.contains("/mixer/") || requestPath.contains("/ampli/")
 					|| requestPath.contains("/n9-speaker-series/") || requestPath.contains("/speakers-series/")
 					|| requestPath.contains("/micro-tsc-series/") || requestPath.contains("/power-ampli-series/")
-					|| requestPath.contains("/mixer-series/")) && request.getMethod().equals("GET")) {
+					|| requestPath.contains("/mixer-series/") || requestPath.contains("/count/"))
+					&& request.getMethod().equals("GET")) {
 				response.setHeader("Access-Control-Allow-Origin", "*");
-		        response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
-		        response.addHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-		        response.addHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
-		        response.addHeader("Access-Control-Allow-Credentials", "true");
+				response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
+				response.addHeader("Access-Control-Allow-Headers",
+						"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+				response.addHeader("Access-Control-Expose-Headers",
+						"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
+				response.addHeader("Access-Control-Allow-Credentials", "true");
 				chain.doFilter(request, response);
 				return; // Stop processing
 			}
@@ -58,10 +61,12 @@ public class CustomerFilter extends HttpFilter {
 				final String[] values = credentials.split(":", 2);
 				if (userService.isAdmin(values[0], values[1])) {
 					response.setHeader("Access-Control-Allow-Origin", "*");
-			        response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
-			        response.addHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-			        response.addHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
-			        response.addHeader("Access-Control-Allow-Credentials", "true");
+					response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
+					response.addHeader("Access-Control-Allow-Headers",
+							"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+					response.addHeader("Access-Control-Expose-Headers",
+							"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
+					response.addHeader("Access-Control-Allow-Credentials", "true");
 					chain.doFilter(request, response);
 				} else {
 					// Set the response status and message
@@ -78,10 +83,12 @@ public class CustomerFilter extends HttpFilter {
 			}
 		}
 		response.setHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
-        response.addHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-        response.addHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
-        response.addHeader("Access-Control-Allow-Credentials", "true");
+		response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
+		response.addHeader("Access-Control-Allow-Headers",
+				"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+		response.addHeader("Access-Control-Expose-Headers",
+				"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
+		response.addHeader("Access-Control-Allow-Credentials", "true");
 		chain.doFilter(request, response);
 	}
 

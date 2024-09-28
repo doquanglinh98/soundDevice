@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,13 +13,41 @@ import org.springframework.stereotype.Service;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
+import com.vn.sound.repository.MicroTscRepository;
+import com.vn.sound.repository.MicroTscSeriesRepository;
+import com.vn.sound.repository.MixerRepository;
+import com.vn.sound.repository.MixerSeriesRepository;
 import com.vn.sound.repository.N9SpeakerSeriesAllProductsRepository;
+import com.vn.sound.repository.N9SpeakerSeriesRepository;
+import com.vn.sound.repository.PowerAmplifierRepository;
+import com.vn.sound.repository.PowerAmplifierSeriesRepository;
 
 @Service
 public class N9SpeakerSeriesAllProductsService {
 
 	@Autowired
 	private N9SpeakerSeriesAllProductsRepository n9SpeakerSeriesAllProductsRepository;
+
+	@Autowired
+	private MicroTscRepository microTscRepository;
+
+	@Autowired
+	private MixerRepository mixerRepository;
+
+	@Autowired
+	private PowerAmplifierRepository powerAmplifierRepository;
+
+	@Autowired
+	private MicroTscSeriesRepository microTscSeriesRepository;
+
+	@Autowired
+	private MixerSeriesRepository mixerSeriesRepository;
+
+	@Autowired
+	private PowerAmplifierSeriesRepository powerAmplifierSeriesRepository;
+
+	@Autowired
+	private N9SpeakerSeriesRepository n9SpeakerSeriesRepository;
 
 	public N9SpeakerSeriesAllProducts findN9SpeakerSeriesAllProductsById(Long Id) throws Exception {
 		Optional<N9SpeakerSeriesAllProducts> n9SpeakerSeriesAllProductsOptional = n9SpeakerSeriesAllProductsRepository
@@ -132,4 +161,18 @@ public class N9SpeakerSeriesAllProductsService {
 	public Page<N9SpeakerSeriesAllProducts> findAllProductOfSpeakerSeries(int page, int size) throws Exception {
 		return n9SpeakerSeriesAllProductsRepository.findAll(PageRequest.of(page, size));
 	}
+
+	public String countProduct() {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("microTsc", microTscRepository.count());
+		jsonObject.put("mixerTsc", mixerRepository.count());
+		jsonObject.put("n9SpeakerTsc", n9SpeakerSeriesAllProductsRepository.count());
+		jsonObject.put("powerAmplifierTsc", powerAmplifierRepository.count());
+		jsonObject.put("microTscSeries", microTscSeriesRepository.count());
+		jsonObject.put("mixerTscSeries", mixerSeriesRepository.count());
+		jsonObject.put("n9SpeakerTscSeries", n9SpeakerSeriesRepository.count());
+		jsonObject.put("powerAmplifierTscSeries", powerAmplifierSeriesRepository.count());
+		return Utility.jsonStringConverter(jsonObject);
+	}
+
 }
