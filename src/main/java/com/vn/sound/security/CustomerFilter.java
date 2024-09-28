@@ -59,7 +59,9 @@ public class CustomerFilter extends HttpFilter {
 				// credentials = username:password
 				final String[] values = credentials.split(":", 2);
 				if (userService.isAdmin(values[0], values[1])) {
-					response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
+					// change when deploy
+					//response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
+					response.setHeader("Access-Control-Allow-Origin", "*");
 					response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
 					response.addHeader("Access-Control-Allow-Headers",
 							"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
