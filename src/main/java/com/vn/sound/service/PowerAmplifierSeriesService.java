@@ -26,7 +26,7 @@ public class PowerAmplifierSeriesService {
 		Optional<PowerAmplifierSeries> powerAmplifierSeriesOptional = powerAmplifierSeriesRepository.findById(Id);
 
 		if (powerAmplifierSeriesOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			// System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		PowerAmplifierSeries powerAmplifierSeriesTmp = powerAmplifierSeriesOptional.get();
@@ -36,17 +36,13 @@ public class PowerAmplifierSeriesService {
 	}
 
 	public String createPowerAmplifierSeries(PowerAmplifierSeries powerAmplifierSeries) throws Exception {
-		if (!powerAmplifierSeriesRepository.existsById(powerAmplifierSeries.getId())) {
-			if (powerAmplifierSeriesRepository.existsBySeriesName(powerAmplifierSeries.getSeriesName())) {
-				// return
-				// Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName());
-				throw new CustomException("Record name has existed");
-			} else {
-				powerAmplifierSeriesRepository.save(powerAmplifierSeries);
-				return Utility.successMsg(powerAmplifierSeries.getId());
-			}
+		if (powerAmplifierSeriesRepository.existsBySeriesName(powerAmplifierSeries.getSeriesName())) {
+			// return
+			// Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(powerAmplifierSeries.getId());
+			powerAmplifierSeriesRepository.save(powerAmplifierSeries);
+			return Utility.successMsg(powerAmplifierSeries.getId());
 		}
 	}
 

@@ -36,17 +36,14 @@ public class MicroTscSeriesService {
 	}
 
 	public String createMicroTscSeries(MicroTscSeries miroTscSeries) throws Exception {
-		if (!miroTscSeriesRepository.existsById(miroTscSeries.getId())) {
-			if (miroTscSeriesRepository.existsBySeriesName(miroTscSeries.getSeriesName())) {
-				// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
-				throw new CustomException("Record name has existed");
-			} else {
-				miroTscSeriesRepository.save(miroTscSeries);
-				return Utility.successMsg(miroTscSeries.getId());
-			}
+		if (miroTscSeriesRepository.existsBySeriesName(miroTscSeries.getSeriesName())) {
+			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(miroTscSeries.getId());
+			miroTscSeriesRepository.save(miroTscSeries);
+			return Utility.successMsg(miroTscSeries.getId());
 		}
+
 	}
 
 	public String editMicroTscSeries(MicroTscSeries miroTscSeries) throws Exception {

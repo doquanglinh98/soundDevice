@@ -23,7 +23,7 @@ public class PowerAmplifierService {
 		Optional<PowerAmplifier> powerAmplifierOptional = powerAmplifierRepository.findById(Id);
 
 		if (powerAmplifierOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			// System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		PowerAmplifier powerAmplifierTmp = powerAmplifierOptional.get();
@@ -35,10 +35,11 @@ public class PowerAmplifierService {
 				powerAmplifierTmp.getsSourceNRatio(), powerAmplifierTmp.getSlewRatio(),
 				powerAmplifierTmp.getDampingFactor(), powerAmplifierTmp.getOutputCircuitry(),
 				powerAmplifierTmp.getCrossTalk(), powerAmplifierTmp.getInputImpedance(),
-				powerAmplifierTmp.getInputSensitivity(), powerAmplifierTmp.getProtectPowerAmplifier(), powerAmplifierTmp.getgWeight(),
-				powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize(), powerAmplifierTmp.getGain(),
-				powerAmplifierTmp.getOptionalGian(), powerAmplifierTmp.getDegreeOfSeparation(),
-				powerAmplifierTmp.getDissipateHeat(), powerAmplifierTmp.getAppearanceVolume());
+				powerAmplifierTmp.getInputSensitivity(), powerAmplifierTmp.getProtectPowerAmplifier(),
+				powerAmplifierTmp.getgWeight(), powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize(),
+				powerAmplifierTmp.getGain(), powerAmplifierTmp.getOptionalGian(),
+				powerAmplifierTmp.getDegreeOfSeparation(), powerAmplifierTmp.getDissipateHeat(),
+				powerAmplifierTmp.getAppearanceVolume());
 
 		return powerAmplifier;
 	}
@@ -48,16 +49,12 @@ public class PowerAmplifierService {
 	}
 
 	public String createAmpli(PowerAmplifier powerAmplifier) throws Exception {
-		if (!powerAmplifierRepository.existsById(powerAmplifier.getId())) {
-			if (powerAmplifierRepository.existsByMode(powerAmplifier.getMode())) {
-				// return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
-				throw new CustomException("Record name has existed");
-			} else {
-				powerAmplifierRepository.save(powerAmplifier);
-				return Utility.successMsg(powerAmplifier.getId());
-			}
+		if (powerAmplifierRepository.existsByMode(powerAmplifier.getMode())) {
+			// return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(powerAmplifier.getId());
+			powerAmplifierRepository.save(powerAmplifier);
+			return Utility.successMsg(powerAmplifier.getId());
 		}
 	}
 

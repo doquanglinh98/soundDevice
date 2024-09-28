@@ -26,7 +26,7 @@ public class MixerSeriesService {
 		Optional<MixerSeries> mixerSeriesOptional = mixerSeriesRepository.findById(Id);
 
 		if (mixerSeriesOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			// System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MixerSeries mixerSeriesTmp = mixerSeriesOptional.get();
@@ -36,16 +36,12 @@ public class MixerSeriesService {
 	}
 
 	public String createMixerSeries(MixerSeries mixerSeries) throws Exception {
-		if (!mixerSeriesRepository.existsById(mixerSeries.getId())) {
-			if (mixerSeriesRepository.existsBySeriesName(mixerSeries.getSeriesName())) {
-				// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
-				throw new CustomException("Record name has existed");
-			} else {
-				mixerSeriesRepository.save(mixerSeries);
-				return Utility.successMsg(mixerSeries.getId());
-			}
+		if (mixerSeriesRepository.existsBySeriesName(mixerSeries.getSeriesName())) {
+			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(mixerSeries.getId());
+			mixerSeriesRepository.save(mixerSeries);
+			return Utility.successMsg(mixerSeries.getId());
 		}
 	}
 

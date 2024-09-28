@@ -54,7 +54,7 @@ public class N9SpeakerSeriesAllProductsService {
 				.findById(Id);
 
 		if (n9SpeakerSeriesAllProductsOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			//System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProductsTmp = n9SpeakerSeriesAllProductsOptional.get();
@@ -121,18 +121,14 @@ public class N9SpeakerSeriesAllProductsService {
 	}
 
 	public String createN9SpeakerSeries(N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProducts) throws Exception {
-		if (!n9SpeakerSeriesAllProductsRepository.existsById(n9SpeakerSeriesAllProducts.getId())) {
-			if (n9SpeakerSeriesAllProductsRepository
-					.existsByN9SpeakerSeriesName(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName())) {
-				// return
-				// Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
-				throw new CustomException("Record name has existed");
-			} else {
-				n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
-				return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());
-			}
+		if (n9SpeakerSeriesAllProductsRepository
+				.existsByN9SpeakerSeriesName(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName())) {
+			// return
+			// Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(n9SpeakerSeriesAllProducts.getId());
+			n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
+			return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());
 		}
 	}
 

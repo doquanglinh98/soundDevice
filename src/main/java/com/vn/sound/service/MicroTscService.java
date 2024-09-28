@@ -51,7 +51,6 @@ public class MicroTscService {
 	}
 
 	public String createMicTsc(MicroTsc microTsc) throws Exception {
-		if (!microTscRepository.existsById(microTsc.getId())) {
 			if (microTscRepository.existsByMicroName(microTsc.getMicroName())) {
 				// return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
 				throw new CustomException("Record name has existed");
@@ -59,9 +58,6 @@ public class MicroTscService {
 				microTscRepository.save(microTsc);
 				return Utility.successMsg(microTsc.getId());
 			}
-		} else {
-			return Utility.errMsgCreate(microTsc.getId());
-		}
 	}
 
 	public String editMicTsc(MicroTsc microTsc) throws Exception {

@@ -27,7 +27,7 @@ public class N9SpeakerSeriesService {
 		Optional<N9SpeakerSeries> n9SpeakerSeriesOptional = n9SpeakerSeriesRepository.findById(Id);
 
 		if (n9SpeakerSeriesOptional.isEmpty()) {
-			System.out.println("Not found with id: " + Id);
+			// System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		N9SpeakerSeries n9SpeakerSeriesTmp = n9SpeakerSeriesOptional.get();
@@ -37,16 +37,12 @@ public class N9SpeakerSeriesService {
 	}
 
 	public String createN9SpeakerSeries(N9SpeakerSeries n9SpeakerSeries) throws Exception {
-		if (!n9SpeakerSeriesRepository.existsById(n9SpeakerSeries.getId())) {
-			if (n9SpeakerSeriesRepository.existsBySeriesName(n9SpeakerSeries.getSeriesName())) {
-				// return Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName());
-				throw new CustomException("Record name has existed");
-			} else {
-				n9SpeakerSeriesRepository.save(n9SpeakerSeries);
-				return Utility.successMsg(n9SpeakerSeries.getId());
-			}
+		if (n9SpeakerSeriesRepository.existsBySeriesName(n9SpeakerSeries.getSeriesName())) {
+			// return Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName());
+			throw new CustomException("Record name has existed");
 		} else {
-			return Utility.errMsgCreate(n9SpeakerSeries.getId());
+			n9SpeakerSeriesRepository.save(n9SpeakerSeries);
+			return Utility.successMsg(n9SpeakerSeries.getId());
 		}
 	}
 
