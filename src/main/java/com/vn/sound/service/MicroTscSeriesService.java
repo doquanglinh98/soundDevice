@@ -8,15 +8,21 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTscSeries;
 import com.vn.sound.repository.MicroTscSeriesRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class MicroTscSeriesService {
+
 	@Autowired
 	private MicroTscSeriesRepository miroTscSeriesRepository;
+
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
 
 	public Page<MicroTscSeries> findAllMicroTscSeries(int page, int size) throws Exception {
 		return miroTscSeriesRepository.findAll(PageRequest.of(page, size));
@@ -40,6 +46,16 @@ public class MicroTscSeriesService {
 			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
+			if (Utility.isNotNull(uploadImgsRepository.findUploadImgsBySrcImg(miroTscSeries.getSeriesName()))) {
+				String filename = "";
+				if (Utility.isNotNull(
+						uploadImgsRepository.findUploadImgsBySrcImg(miroTscSeries.getSeriesName() + ".png"))) {
+					filename = miroTscSeries.getSeriesName() + ".png";
+				} else {
+					filename = miroTscSeries.getSeriesName() + ".jpg";
+				}
+				miroTscSeries.setImgId(Constant.host + "MicrosSeries/" + filename);
+			}
 			miroTscSeriesRepository.save(miroTscSeries);
 			return Utility.successMsg(miroTscSeries.getId());
 		}

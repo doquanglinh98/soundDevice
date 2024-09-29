@@ -170,5 +170,7 @@ public class N9SpeakerSeriesAllProductsService {
 		jsonObject.put("powerAmplifierTscSeries", powerAmplifierSeriesRepository.count());
 		return Utility.jsonStringConverter(jsonObject);
 	}
+	
+	
 
 }

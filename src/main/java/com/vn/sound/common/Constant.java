@@ -19,4 +19,6 @@ public class Constant {
 	public static final String uploadDir_Mixer_Series = System.getProperty("user.dir")
 			+ "/src/main/resources/static/imgs/MixersSeries/";
 
+	public static final String host = "https://tscproaudio.com/";
+
 }

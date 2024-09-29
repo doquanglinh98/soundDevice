@@ -31,7 +31,6 @@ import com.vn.sound.model.N9SpeakerSeriesAllProducts;
 import com.vn.sound.model.PowerAmplifier;
 import com.vn.sound.model.PowerAmplifierSeries;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -43,6 +42,7 @@ import com.vn.sound.service.N9SpeakerSeriesAllProductsService;
 import com.vn.sound.service.N9SpeakerSeriesService;
 import com.vn.sound.service.PowerAmplifierSeriesService;
 import com.vn.sound.service.PowerAmplifierService;
+import com.vn.sound.service.UploadImgsService;
 
 @Controller
 public class SoundController {
@@ -70,6 +70,9 @@ public class SoundController {
 
 	@Autowired
 	private MixerSeriesService mixerSeriesService;
+
+	@Autowired
+	private UploadImgsService uploadImgsService;
 
 	// for Micro
 
@@ -405,6 +408,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(microTscSeries.getSeriesName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
+			System.out.println("loi roi = "+ e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -646,7 +650,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_N9Speakers + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_N9Speakers + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -669,7 +673,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_Ampli + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_Ampli + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -690,9 +694,9 @@ public class SoundController {
 			}
 
 			// Tạo file mới và lưu
-			File newFile = new File(Constant.uploadDir_Ampli + file.getOriginalFilename());
+			File newFile = new File(Constant.uploadDir_Mixer + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_Mixer + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -715,7 +719,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_micro + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_micro + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -738,7 +742,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_micro_Series + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_micro_Series + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -761,7 +765,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_Mixer_Series + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_Mixer_Series + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -784,7 +788,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_Ampli_Series + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_Ampli_Series + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
@@ -807,7 +811,7 @@ public class SoundController {
 			// Tạo file mới và lưu
 			File newFile = new File(Constant.uploadDir_N9Speakers_Series + file.getOriginalFilename());
 			file.transferTo(newFile);
-
+			uploadImgsService.saveImgs(Constant.uploadDir_N9Speakers_Series + file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
