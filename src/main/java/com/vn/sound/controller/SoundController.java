@@ -648,20 +648,198 @@ public class SoundController {
 			file.transferTo(newFile);
 
 			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
-			System.out.println("msg=" + message);
 			return ResponseEntity.status(HttpStatus.OK).body(message);
 		} catch (Exception e) {
 			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
-			System.out.println("msg=" + message);
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/ampli")
+	public ResponseEntity<String> uploadFileAmpli(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_Ampli);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_Ampli + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/mixer")
+	public ResponseEntity<String> uploadFileMixer(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_Mixer);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_Ampli + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/micro")
+	public ResponseEntity<String> uploadFileMicro(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_micro);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_micro + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/microSeries")
+	public ResponseEntity<String> uploadFileMicroSeries(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_micro_Series);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_micro_Series + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/mixerSeries")
+	public ResponseEntity<String> uploadFileMixerSeries(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_Mixer_Series);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_Mixer_Series + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/AmpliSeries")
+	public ResponseEntity<String> uploadFileAmpliSeries(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_Ampli_Series);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_Ampli_Series + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+
+	@PostMapping("/upload/N9SpeakerSeries")
+	public ResponseEntity<String> uploadFileN9SpeakerSeries(@RequestParam("file") MultipartFile file) {
+		String message = "";
+		System.out.println("upload=" + System.getProperty("user.dir"));
+		try {
+			// Kiểm tra nếu thư mục không tồn tại thì tạo
+			File dir = new File(Constant.uploadDir_N9Speakers_Series);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			// Tạo file mới và lưu
+			File newFile = new File(Constant.uploadDir_N9Speakers_Series + file.getOriginalFilename());
+			file.transferTo(newFile);
+
+			message = "Uploaded the file successfully: " + newFile.getAbsolutePath();
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
 		}
 	}
 
 	// map path from browser to resource server
-	@GetMapping("/imgs/Speakers/{filename:.+}")
-	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
+	@GetMapping("/imgs/{folder}/{filename:.+}")
+	public ResponseEntity<Resource> serveFile(@PathVariable("folder") String folder,
+			@PathVariable("filename") String filename) {
 		try {
-			Path file = Paths.get(Constant.uploadDir_N9Speakers).resolve(filename);
+			Path file = null;
+			if (folder.equals("Speakers")) {
+				file = Paths.get(Constant.uploadDir_N9Speakers).resolve(filename);
+			} else if (folder.equals("Amplifiers")) {
+				file = Paths.get(Constant.uploadDir_Ampli).resolve(filename);
+			} else if (folder.equals("Mixers")) {
+				file = Paths.get(Constant.uploadDir_Mixer).resolve(filename);
+			} else if (folder.equals("Micros")) {
+				file = Paths.get(Constant.uploadDir_micro).resolve(filename);
+			} else if (folder.equals("MicrosSeries")) {
+				file = Paths.get(Constant.uploadDir_micro_Series).resolve(filename);
+			} else if (folder.equals("AmplifiersSeries")) {
+				file = Paths.get(Constant.uploadDir_Ampli_Series).resolve(filename);
+			} else if (folder.equals("SpeakersSeries")) {
+				file = Paths.get(Constant.uploadDir_N9Speakers_Series).resolve(filename);
+			} else if (folder.equals("MixersSeries")) {
+				file = Paths.get(Constant.uploadDir_Mixer_Series).resolve(filename);
+			}
+
 			Resource resource = new UrlResource(file.toUri());
 
 			if (resource.exists() || resource.isReadable()) {
