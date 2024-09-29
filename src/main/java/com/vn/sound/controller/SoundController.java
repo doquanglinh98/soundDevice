@@ -271,6 +271,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
+			System.out.println("loi roi =" +e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -323,6 +324,7 @@ public class SoundController {
 					Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
+			System.out.println("loi roi =" +e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -470,6 +472,7 @@ public class SoundController {
 					Utility.errMsgCreateFieldNameExits(powerAmplifierSeries.getSeriesName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
+			System.out.println("loi roi =" +e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -600,6 +603,7 @@ public class SoundController {
 			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(mixerSeries.getSeriesName().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
+			System.out.println("loi roi =" +e);
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}
 	}

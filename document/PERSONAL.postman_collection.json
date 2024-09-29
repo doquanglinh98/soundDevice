@@ -4,7 +4,7 @@
 		"name": "PERSONAL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12995520",
-		"_collection_link": "https://web.postman.co/workspace/0722~e202eccc-0570-4a10-a2bb-a7148b11606d/collection/12995520-bb1c4da7-2a3d-4892-986e-979ef153e151?source=collection_link"
+		"_collection_link": "https://planetary-moon-873841.postman.co/workspace/0722~e202eccc-0570-4a10-a2bb-a7148b11606d/collection/12995520-bb1c4da7-2a3d-4892-986e-979ef153e151?action=share&source=collection_link&creator=12995520"
 	},
 	"item": [
 		{
@@ -14,29 +14,17 @@
 					"name": "findByID MIC",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
@@ -53,6 +41,49 @@
 					},
 					"request": {
 						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tscproaudio.com/manager/micro/all?page=0&size=10",
+							"protocol": "https",
+							"host": [
+								"tscproaudio",
+								"com"
+							],
+							"path": [
+								"manager",
+								"micro",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create MIC",
+					"request": {
+						"auth": {
 							"type": "basic",
 							"basic": [
 								{
@@ -67,56 +98,11 @@
 								}
 							]
 						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8088/manager/micro/all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8088",
-							"path": [
-								"manager",
-								"micro",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create MIC",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"/imgs/mics/mic1.png\",\r\n    \"model\": \"\",\r\n    \"description\": \"\",\r\n    \"microName\": \"TC-1200TS\",\r\n    \"frequencyQuantity\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"frequencyRangeCha\": \"640-648MHz\",\r\n    \"frequencyRangeChb\": \"665-673Mhz\",\r\n    \"signalToNoiseRatio\": \"150dB\",\r\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n    \"modulationMode\": \"Analog\",\r\n    \"workingDistance\": \"500-1000 metes\",\r\n    \"frequencyBandwidth\": \"25MHz\",\r\n    \"channelInterval\": \"300KHz\",\r\n    \"maxDeviation\": \"+/-45 Khz\",\r\n    \"frequencyStability\": \"+/- 0.05 %\",\r\n    \"oscillationModeReceiverParam\": \"PLL\",\r\n    \"modulation\": \"\",\r\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n    \"antennaAccess\": \"BNC/50 Ohm\",\r\n    \"midFrequence\": \"110MHz.10.7MHz\",\r\n    \"spuriousSuppression\": \">= 75 db\",\r\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n    \"outputPower\": \"50mW\",\r\n    \"directivity\": \"Cardioid pickup pattern\",\r\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n    \"oscillationModeTransmitterParam\": \"PLL\",\r\n    \"transmitterType\": \"Dynamic microphone\",\r\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n    \"batteryLifeTime\": \"10~20 hours\",\r\n    \"oscillationMode\": \"\",\r\n    \"channels\": \"\"\r\n}",
+							"raw": "{\r\n    \"model\": \"\",\r\n    \"description\": \"\",\r\n    \"microName\": \"TC-189TS\",\r\n    \"frequencyQuantity\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"frequencyRangeCha\": \"640-648MHz\",\r\n    \"frequencyRangeChb\": \"665-673Mhz\",\r\n    \"signalToNoiseRatio\": \"150dB\",\r\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n    \"modulationMode\": \"Analog\",\r\n    \"workingDistance\": \"500-1000 metes\",\r\n    \"frequencyBandwidth\": \"25MHz\",\r\n    \"channelInterval\": \"300KHz\",\r\n    \"maxDeviation\": \"+/-45 Khz\",\r\n    \"frequencyStability\": \"+/- 0.05 %\",\r\n    \"oscillationModeReceiverParam\": \"PLL\",\r\n    \"modulation\": \"\",\r\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n    \"antennaAccess\": \"BNC/50 Ohm\",\r\n    \"midFrequence\": \"110MHz.10.7MHz\",\r\n    \"spuriousSuppression\": \">= 75 db\",\r\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n    \"outputPower\": \"50mW\",\r\n    \"directivity\": \"Cardioid pickup pattern\",\r\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n    \"oscillationModeTransmitterParam\": \"PLL\",\r\n    \"transmitterType\": \"Dynamic microphone\",\r\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n    \"batteryLifeTime\": \"10~20 hours\",\r\n    \"oscillationMode\": \"\",\r\n    \"channels\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,12 +110,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/create",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/create",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
@@ -147,7 +133,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -161,7 +147,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"/imgs/mics/mic1.png\",\r\n    \"model\": \"\",\r\n    \"description\": \"\",\r\n    \"microName\": \"TC-1200TS\",\r\n    \"frequencyQuantity\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"frequencyRangeCha\": \"640-648MHz\",\r\n    \"frequencyRangeChb\": \"665-673Mhz\",\r\n    \"signalToNoiseRatio\": \"150dB\",\r\n    \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n    \"modulationMode\": \"Analog\",\r\n    \"workingDistance\": \"500-1000 metes\",\r\n    \"frequencyBandwidth\": \"25MHz\",\r\n    \"channelInterval\": \"300KHz\",\r\n    \"maxDeviation\": \"+/-45 Khz\",\r\n    \"frequencyStability\": \"+/- 0.05 %\",\r\n    \"oscillationModeReceiverParam\": \"PLL\",\r\n    \"modulation\": \"\",\r\n    \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n    \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n    \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n    \"antennaAccess\": \"BNC/50 Ohm\",\r\n    \"midFrequence\": \"110MHz.10.7MHz\",\r\n    \"spuriousSuppression\": \">= 75 db\",\r\n    \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n    \"outputPower\": \"50mW\",\r\n    \"directivity\": \"Cardioid pickup pattern\",\r\n    \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n    \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n    \"oscillationModeTransmitterParam\": \"PLL\",\r\n    \"transmitterType\": \"Dynamic microphone\",\r\n    \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n    \"batteryLifeTime\": \"10~20 hours\",\r\n    \"oscillationMode\": \"\",\r\n    \"channels\": \"\"\r\n}",
+							"raw": "{\r\n            \"id\": 2,\r\n            \"imgId\": \"https://tscproaudio.com/imgs/Micros/TC-189TS.png\",\r\n            \"microName\": \"TC-189TS\",\r\n            \"frequencyRangeCha\": \"640-648MHz\",\r\n            \"frequencyRangeChb\": \"665-673Mhz\",\r\n            \"signalToNoiseRatio\": \"150dB\",\r\n            \"totalHarmonicDistortion\": \"< 0.5 %\",\r\n            \"modulationMode\": \"Analog\",\r\n            \"workingDistance\": \"500-1000 metes\",\r\n            \"frequencyBandwidth\": \"25MHz\",\r\n            \"channelInterval\": \"300KHz\",\r\n            \"maxDeviation\": \"+/-45 Khz\",\r\n            \"frequencyStability\": \"+/- 0.05 %\",\r\n            \"oscillationModeReceiverParam\": \"PLL\",\r\n            \"sensitivity\": \"12 dBuV(80dB S/N)\",\r\n            \"sensitivityAdjustment\": \"12~32 dBuV\",\r\n            \"powerSupplyMode\": \"DC 12V, 850A input\",\r\n            \"antennaAccess\": \"BNC/50 Ohm\",\r\n            \"midFrequence\": \"110MHz.10.7MHz\",\r\n            \"spuriousSuppression\": \">= 75 db\",\r\n            \"maxOutputElectricalLevel\": \"+ 10dBv\",\r\n            \"outputPower\": \"50mW\",\r\n            \"directivity\": \"Cardioid pickup pattern\",\r\n            \"frequencyResponse\": \"40~18,000HZ(+1db,-3dB)\",\r\n            \"powerSupply\": \"2*AA 1.5V alkli batteries\",\r\n            \"oscillationModeTransmitterParam\": \"PLL\",\r\n            \"transmitterType\": \"Dynamic microphone\",\r\n            \"pipeBodyMaterial\": \"Zic aluminum alloy\",\r\n            \"batteryLifeTime\": \"10~20 hours\"\r\n        }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -169,12 +155,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/edit",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/edit",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
@@ -192,7 +178,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -205,12 +191,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/delete/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/delete/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
@@ -236,7 +222,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -258,12 +244,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/delete/multiple",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/delete/multiple",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
@@ -278,34 +264,55 @@
 					"name": "find by name MIC",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/micro/find-by-keyword/TC-2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/micro/find-by-keyword/TC-1",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"micro",
 								"find-by-keyword",
-								"TC-2"
+								"TC-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload img",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/Micro/TC-189TS.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tscproaudio.com/upload/micro",
+							"protocol": "https",
+							"host": [
+								"tscproaudio",
+								"com"
+							],
+							"path": [
+								"upload",
+								"micro"
 							]
 						}
 					},
@@ -320,29 +327,17 @@
 					"name": "findByID MIC",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
@@ -359,19 +354,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -385,12 +368,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/all",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/all",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
@@ -422,7 +405,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"/imgs/mics/mixA.png\",\r\n    \"modelMixer\": \"M2\",\r\n    \"description\": \"\",\r\n    \"channel\": \"\",\r\n    \"channelEQ\": \"\",\r\n    \"AUX\": \"\",\r\n    \"returnMixer\": \"\",\r\n    \"effects\": \"\",\r\n    \"mainOut\": \"\",\r\n    \"groupsMixer\": \"\",\r\n    \"phantomPower\": \"\",\r\n    \"usbPlayer\": \"\"\r\n}",
+							"raw": "{\r\n    \"modelMixer\": \"mixer1\",\r\n    \"description\": \"\",\r\n    \"channel\": \"\",\r\n    \"channelEQ\": \"\",\r\n    \"AUX\": \"\",\r\n    \"returnMixer\": \"\",\r\n    \"effects\": \"\",\r\n    \"mainOut\": \"\",\r\n    \"groupsMixer\": \"\",\r\n    \"phantomPower\": \"\",\r\n    \"usbPlayer\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -430,12 +413,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/create",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/create",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
@@ -453,7 +436,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -467,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"/imgs/mics/mixA.png\",\r\n    \"modelMixer\": \"\",\r\n    \"description\": \"\",\r\n    \"channel\": \"\",\r\n    \"channelEQ\": \"\",\r\n    \"AUX\": \"\",\r\n    \"returnMixer\": \"\",\r\n    \"effects\": \"\",\r\n    \"mainOut\": \"\",\r\n    \"groupsMixer\": \"\",\r\n    \"phantomPower\": \"\",\r\n    \"usbPlayer\": \"\"\r\n}",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"imgId\": \"https://tscproaudio.com/imgs/Mixers/mixer1.png\",\r\n    \"modelMixer\": \"\",\r\n    \"description\": \"\",\r\n    \"channel\": \"\",\r\n    \"channelEQ\": \"\",\r\n    \"AUX\": \"\",\r\n    \"returnMixer\": \"\",\r\n    \"effects\": \"\",\r\n    \"mainOut\": \"\",\r\n    \"groupsMixer\": \"\",\r\n    \"phantomPower\": \"\",\r\n    \"usbPlayer\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -475,12 +458,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/edit",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/edit",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
@@ -498,7 +481,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "123",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
@@ -511,12 +494,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/delete/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/delete/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
@@ -538,34 +521,55 @@
 					"name": "find by model mixer",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/mixer/find-by-keyword/M",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/mixer/find-by-keyword/M",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"mixer",
 								"find-by-keyword",
 								"M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload img",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/Mixer/mixer1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tscproaudio.com/upload/mixer",
+							"protocol": "https",
+							"host": [
+								"tscproaudio",
+								"com"
+							],
+							"path": [
+								"upload",
+								"mixer"
 							]
 						}
 					},
@@ -580,29 +584,17 @@
 					"name": "findByID AMPLI",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/1",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/1",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -616,29 +608,17 @@
 					"name": "findAll Ampli",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/all?page=0&size=20",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/all?page=0&size=20",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -680,7 +660,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2\",\r\n    \"imgId\": \"/imgs/amplifiers/amplifier1.png\",\r\n    \"mode\": \"CID2/400\",\r\n    \"stereoPower8OHM\": \"400Wx2\",\r\n    \"stereoPower4OHM\": \"600Wx2\",\r\n    \"stereoPower2OHM\": \"900Wx2\",\r\n    \"btl8OHM\": \"1200Wx2\",\r\n    \"btl4OHM\": \"1600Wx2\",\r\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n    \"sSourceNRatio\": \">80dB\",\r\n    \"slewRatio\": \"13V/microSecond\",\r\n    \"dampingFactor\": \">200\",\r\n    \"ourputCircuitry\": \"class H\",\r\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\r\n    \"gWeight\": \"20KG\",\r\n    \"dimension\": \"500x485x88(2U)\",\r\n    \"packingSize\": \"599x568x155\",\r\n    \"model\": \"\",\r\n    \"description\": \"\",\r\n    \"gain\": \"\",\r\n    \"optionalGian\": \"\",\r\n    \"degreeOfSeparation\": \"\",\r\n    \"dissipateHeat\": \"\",\r\n    \"appearanceVolume\": \"\"\r\n}",
+							"raw": "{\r\n    \"mode\": \"CID2/400\",\r\n    \"stereoPower8OHM\": \"400Wx2\",\r\n    \"stereoPower4OHM\": \"600Wx2\",\r\n    \"stereoPower2OHM\": \"900Wx2\",\r\n    \"btl8OHM\": \"1200Wx2\",\r\n    \"btl4OHM\": \"1600Wx2\",\r\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n    \"sSourceNRatio\": \">80dB\",\r\n    \"slewRatio\": \"13V/microSecond\",\r\n    \"dampingFactor\": \">200\",\r\n    \"ourputCircuitry\": \"class H\",\r\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\r\n    \"gWeight\": \"20KG\",\r\n    \"dimension\": \"500x485x88(2U)\",\r\n    \"packingSize\": \"599x568x155\",\r\n    \"model\": \"TDM\",\r\n    \"description\": \"\",\r\n    \"gain\": \"\",\r\n    \"optionalGian\": \"\",\r\n    \"degreeOfSeparation\": \"\",\r\n    \"dissipateHeat\": \"\",\r\n    \"appearanceVolume\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -688,12 +668,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/create",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/create",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -710,13 +690,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "admin",
+									"key": "password",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "123",
+									"key": "username",
+									"value": "admin",
 									"type": "string"
 								}
 							]
@@ -725,7 +705,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2\",\r\n    \"imgId\": \"/imgs/amplifiers/amplifier1.png\",\r\n    \"mode\": \"CID2/400\",\r\n    \"stereoPower8OHM\": \"400Wx2\",\r\n    \"stereoPower4OHM\": \"600Wx2\",\r\n    \"stereoPower2OHM\": \"900Wx2\",\r\n    \"btl8OHM\": \"1200Wx2\",\r\n    \"btl4OHM\": \"1600Wx2\",\r\n    \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n    \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n    \"sSourceNRatio\": \">80dB\",\r\n    \"slewRatio\": \"13V/microSecond\",\r\n    \"dampingFactor\": \">200\",\r\n    \"ourputCircuitry\": \"class H\",\r\n    \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n    \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n    \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n    \"protect\": \"DC Safeguard/out Overloading/Chancroid Sgartup/Boot-Strap Short Test\",\r\n    \"gWeight\": \"20KG\",\r\n    \"dimension\": \"500x485x88(2U)\",\r\n    \"packingSize\": \"599x568x155\",\r\n    \"model\": \"\",\r\n    \"description\": \"\",\r\n    \"gain\": \"\",\r\n    \"optionalGian\": \"\",\r\n    \"degreeOfSeparation\": \"\",\r\n    \"dissipateHeat\": \"\",\r\n    \"appearanceVolume\": \"\"\r\n}",
+							"raw": "{\r\n            \"id\": 1,\r\n            \"imgId\": \"https://tscproaudio.com/imgs/Amplifiers/TDM.png\",\r\n            \"model\": \"TDM\",\r\n            \"mode\": \"TDM\",\r\n            \"stereoPower8OHM\": \"400Wx2\",\r\n            \"stereoPower4OHM\": \"600Wx2\",\r\n            \"stereoPower2OHM\": \"900Wx2\",\r\n            \"btl8OHM\": \"1200Wx2\",\r\n            \"btl4OHM\": \"1600Wx2\",\r\n            \"frequencyResponse\": \"20Hz-20Hz +/- 0.3dB\",\r\n            \"thdPlus\": \"<0.05%@8ohm 1KHz\",\r\n            \"sSourceNRatio\": \">80dB\",\r\n            \"slewRatio\": \"13V/microSecond\",\r\n            \"dampingFactor\": \">200\",\r\n            \"crossTalk\": \">70dB@8ohm 1KHz\",\r\n            \"inputImpedance\": \"20Kohm (Balance)/10kohn (Unbalance)\",\r\n            \"inputSensitivity\": \"0.775V/1.0V/1.4V\",\r\n            \"gWeight\": \"20KG\",\r\n            \"dimension\": \"500x485x88(2U)\",\r\n            \"packingSize\": \"599x568x155\"\r\n        }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -733,12 +713,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/edit",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/edit",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -769,12 +749,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/delete/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/delete/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -815,12 +795,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/delete/multiple",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/delete/multiple",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
@@ -852,17 +832,50 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/ampli/find-by-keyword/CID",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/ampli/find-by-keyword/CID",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"ampli",
 								"find-by-keyword",
 								"CID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload img",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/Ampli/TDM.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tscproaudio.com/upload/ampli",
+							"protocol": "https",
+							"host": [
+								"tscproaudio",
+								"com"
+							],
+							"path": [
+								"upload",
+								"ampli"
 							]
 						}
 					},
@@ -877,29 +890,17 @@
 					"name": "findByID SPEAKERS",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "123",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/2",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -916,13 +917,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "admin",
+									"key": "password",
+									"value": "123456@",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "123",
+									"key": "username",
+									"value": "admin",
 									"type": "string"
 								}
 							]
@@ -931,7 +932,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2\",\r\n    \"imgId\": \"/imgs/speakers/LR700.png\",\r\n    \"descreption\": \"LR700 is a line array active system from Lifeng Audio that is small in size, easy to transport and has powerful performance. Its build-in dual-channel hight-efficiency power amplifier module can also provide particularlygenerous dynamic reproduction capabilities at high level.\",\r\n    \"n9SpeakerSeriesName\": \"LR700\",\r\n    \"systemDescription\": \"4*4 Inch full range speakers\",\r\n    \"tweeter\": \"\",\r\n    \"woofer\": \"\",\r\n    \"power\": \"\",\r\n    \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n    \"coverAngle\": \"120°x20° (H x V)\",\r\n    \"hangingPoint\": \"\",\r\n    \"hand\": \"\",\r\n    \"paintTreatment\": \"\",\r\n    \"LFUnit\": \"\",\r\n    \"MFUnit\": \"\",\r\n    \"HFUnit\": \"\",\r\n    \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n    \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n    \"sensitivity\": \"97dB/W/M\",\r\n    \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n    \"nominalImpedance\": \"8 ohm\",\r\n    \"inputSensitivity\": \"\",\r\n    \"maxSPL\": \"\",\r\n    \"nominalImpedence\": \"\",\r\n    \"coverRange\": \"\",\r\n    \"hangingHardware\": \"\",\r\n    \"handle\": \"\",\r\n    \"bracketFixedSeat\": \"\",\r\n    \"connector\": \"\",\r\n    \"boxMaterial\": \"Aluminum alloy\",\r\n    \"netWeight\": \"6.5kg\",\r\n    \"size\": \"137x182x477mm\",\r\n    \"categorg\": \"\",\r\n    \"outputPower\": \"\",\r\n    \"DSPAccuracy\": \"\",\r\n    \"dividerPartFIRFilter\": \"\",\r\n    \"digitalInput\": \"\",\r\n    \"panel\": \"\",\r\n    \"maximumHangerNumber\": \"\",\r\n    \"crossover\": \"\",\r\n    \"overlay\": \"\",\r\n    \"sprayPaintProcessing\": \"\",\r\n    \"overlayAngle\": \"\",\r\n    \"altoUnit\": \"\",\r\n    \"transformerConstantPressurePower\": \"\",\r\n    \"DCImpedance\": \"\",\r\n    \"qualityControlRange\": \"\",\r\n    \"anti_magneticEffectTest\": \"\",\r\n    \"earthquakeDropTest\": \"\",\r\n    \"dimensions\": \"\",\r\n    \"category\": \"\",\r\n    \"maximumOutputPower\": \"\",\r\n    \"totalHarmonicDistortion\": \"\",\r\n    \"intermodulationDistortion\": \"\",\r\n    \"coolingMethod\": \"\",\r\n    \"DSPPart\": \"\",\r\n    \"inputAndOutputPart\": \"\",\r\n    \"caseMaterial\": \"\",\r\n    \"model\": \"\",\r\n    \"normalImpedance\": \"\",\r\n    \"sprayPaintingTreatment\": \"\",\r\n    \"weight\": \"\",\r\n    \"output4ohm\": \"\",\r\n    \"output8ohm\": \"\",\r\n    \"digitalOutput\": \"\",\r\n    \"channelNumber\": \"\",\r\n    \"THD\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"dampingFactor\": \"\",\r\n    \"cperatingRange\": \"\",\r\n    \"powerCurrent\": \"\",\r\n    \"angleIncrements\": \"\",\r\n    \"horizontal\": \"\",\r\n    \"fullFrequencyUnit\": \"\",\r\n    \"conversionEfficiency\": \"\",\r\n    \"inputImpedance\": \"\",\r\n    \"outputImpedance\": \"\",\r\n    \"mainPowerSupply\": \"\",\r\n    \"frequencyResponseRange\": \"\",\r\n    \"powerFR\": \"\",\r\n    \"AMPFrequencyLoad\": \"\",\r\n    \"stereo8ohm\": \"\",\r\n    \"stereo4ohm\": \"\",\r\n    \"slewRate\": \"\",\r\n    \"dynamicRange\": \"\",\r\n    \"voltageGain\": \"\",\r\n    \"outputCircuitDesign\": \"\",\r\n    \"powerSelection\": \"\",\r\n    \"inputVoltage\": \"\",\r\n    \"speakerSpecifications\": \"\",\r\n    \"color\": \"\",\r\n    \"waterproof\": \"\",\r\n    \"unitConfigure\": \"\",\r\n    \"installationOpeningSize\": \"\",\r\n    \"maximumOuterDiameter\": \"\",\r\n    \"withstandPower\": \"\",\r\n    \"paintingTreatment\": \"\",\r\n    \"suspensionPoint\": \"\",\r\n    \"gain\": \"\"\r\n}",
+							"raw": "{\r\n    /*\"imgId\": \"\",*/\r\n    \"descreption\": \"LR789 is a line array active system from Lifeng Audio that is small in size, easy to transport and has powerful performance. Its build-in dual-channel hight-efficiency power amplifier module can also provide particularlygenerous dynamic reproduction capabilities at high level.\",\r\n    \"n9SpeakerSeriesName\": \"LR789\",\r\n    \"systemDescription\": \"4*4 Inch full range speakers\",\r\n    \"tweeter\": \"\",\r\n    \"woofer\": \"\",\r\n    \"power\": \"\",\r\n    \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n    \"coverAngle\": \"120°x20° (H x V)\",\r\n    \"hangingPoint\": \"\",\r\n    \"hand\": \"\",\r\n    \"paintTreatment\": \"\",\r\n    \"LFUnit\": \"\",\r\n    \"MFUnit\": \"\",\r\n    \"HFUnit\": \"\",\r\n    \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n    \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n    \"sensitivity\": \"97dB/W/M\",\r\n    \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n    \"nominalImpedance\": \"8 ohm\",\r\n    \"inputSensitivity\": \"\",\r\n    \"maxSPL\": \"\",\r\n    \"nominalImpedence\": \"\",\r\n    \"coverRange\": \"\",\r\n    \"hangingHardware\": \"\",\r\n    \"handle\": \"\",\r\n    \"bracketFixedSeat\": \"\",\r\n    \"connector\": \"\",\r\n    \"boxMaterial\": \"Aluminum alloy\",\r\n    \"netWeight\": \"6.5kg\",\r\n    \"size\": \"137x182x477mm\",\r\n    \"categorg\": \"\",\r\n    \"outputPower\": \"\",\r\n    \"DSPAccuracy\": \"\",\r\n    \"dividerPartFIRFilter\": \"\",\r\n    \"digitalInput\": \"\",\r\n    \"panel\": \"\",\r\n    \"maximumHangerNumber\": \"\",\r\n    \"crossover\": \"\",\r\n    \"overlay\": \"\",\r\n    \"sprayPaintProcessing\": \"\",\r\n    \"overlayAngle\": \"\",\r\n    \"altoUnit\": \"\",\r\n    \"transformerConstantPressurePower\": \"\",\r\n    \"DCImpedance\": \"\",\r\n    \"qualityControlRange\": \"\",\r\n    \"anti_magneticEffectTest\": \"\",\r\n    \"earthquakeDropTest\": \"\",\r\n    \"dimensions\": \"\",\r\n    \"category\": \"\",\r\n    \"maximumOutputPower\": \"\",\r\n    \"totalHarmonicDistortion\": \"\",\r\n    \"intermodulationDistortion\": \"\",\r\n    \"coolingMethod\": \"\",\r\n    \"DSPPart\": \"\",\r\n    \"inputAndOutputPart\": \"\",\r\n    \"caseMaterial\": \"\",\r\n    \"model\": \"\",\r\n    \"normalImpedance\": \"\",\r\n    \"sprayPaintingTreatment\": \"\",\r\n    \"weight\": \"\",\r\n    \"output4ohm\": \"\",\r\n    \"output8ohm\": \"\",\r\n    \"digitalOutput\": \"\",\r\n    \"channelNumber\": \"\",\r\n    \"THD\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"dampingFactor\": \"\",\r\n    \"cperatingRange\": \"\",\r\n    \"powerCurrent\": \"\",\r\n    \"angleIncrements\": \"\",\r\n    \"horizontal\": \"\",\r\n    \"fullFrequencyUnit\": \"\",\r\n    \"conversionEfficiency\": \"\",\r\n    \"inputImpedance\": \"\",\r\n    \"outputImpedance\": \"\",\r\n    \"mainPowerSupply\": \"\",\r\n    \"frequencyResponseRange\": \"\",\r\n    \"powerFR\": \"\",\r\n    \"AMPFrequencyLoad\": \"\",\r\n    \"stereo8ohm\": \"\",\r\n    \"stereo4ohm\": \"\",\r\n    \"slewRate\": \"\",\r\n    \"dynamicRange\": \"\",\r\n    \"voltageGain\": \"\",\r\n    \"outputCircuitDesign\": \"\",\r\n    \"powerSelection\": \"\",\r\n    \"inputVoltage\": \"\",\r\n    \"speakerSpecifications\": \"\",\r\n    \"color\": \"\",\r\n    \"waterproof\": \"\",\r\n    \"unitConfigure\": \"\",\r\n    \"installationOpeningSize\": \"\",\r\n    \"maximumOuterDiameter\": \"\",\r\n    \"withstandPower\": \"\",\r\n    \"paintingTreatment\": \"\",\r\n    \"suspensionPoint\": \"\",\r\n    \"gain\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -939,12 +940,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/create",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/create",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -976,7 +977,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2\",\r\n    \"imgId\": \"/imgs/speakers/LR700.png\",\r\n    \"descreption\": \"LR700 is a line array active system from Lifeng Audio that is small in size, easy to transport and has powerful performance. Its build-in dual-channel hight-efficiency power amplifier module can also provide particularlygenerous dynamic reproduction capabilities at high level.\",\r\n    \"n9SpeakerSeriesName\": \"LR700\",\r\n    \"systemDescription\": \"4*4 Inch full range speakers\",\r\n    \"tweeter\": \"\",\r\n    \"woofer\": \"\",\r\n    \"power\": \"\",\r\n    \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n    \"coverAngle\": \"120°x20° (H x V)\",\r\n    \"hangingPoint\": \"\",\r\n    \"hand\": \"\",\r\n    \"paintTreatment\": \"\",\r\n    \"LFUnit\": \"\",\r\n    \"MFUnit\": \"\",\r\n    \"HFUnit\": \"\",\r\n    \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n    \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n    \"sensitivity\": \"97dB/W/M\",\r\n    \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n    \"nominalImpedance\": \"8 ohm\",\r\n    \"inputSensitivity\": \"\",\r\n    \"maxSPL\": \"\",\r\n    \"nominalImpedence\": \"\",\r\n    \"coverRange\": \"\",\r\n    \"hangingHardware\": \"\",\r\n    \"handle\": \"\",\r\n    \"bracketFixedSeat\": \"\",\r\n    \"connector\": \"\",\r\n    \"boxMaterial\": \"Aluminum alloy\",\r\n    \"netWeight\": \"6.5kg\",\r\n    \"size\": \"137x182x477mm\",\r\n    \"categorg\": \"\",\r\n    \"outputPower\": \"\",\r\n    \"DSPAccuracy\": \"\",\r\n    \"dividerPartFIRFilter\": \"\",\r\n    \"digitalInput\": \"\",\r\n    \"panel\": \"\",\r\n    \"maximumHangerNumber\": \"\",\r\n    \"crossover\": \"\",\r\n    \"overlay\": \"\",\r\n    \"sprayPaintProcessing\": \"\",\r\n    \"overlayAngle\": \"\",\r\n    \"altoUnit\": \"\",\r\n    \"transformerConstantPressurePower\": \"\",\r\n    \"DCImpedance\": \"\",\r\n    \"qualityControlRange\": \"\",\r\n    \"anti_magneticEffectTest\": \"\",\r\n    \"earthquakeDropTest\": \"\",\r\n    \"dimensions\": \"\",\r\n    \"category\": \"\",\r\n    \"maximumOutputPower\": \"\",\r\n    \"totalHarmonicDistortion\": \"\",\r\n    \"intermodulationDistortion\": \"\",\r\n    \"coolingMethod\": \"\",\r\n    \"DSPPart\": \"\",\r\n    \"inputAndOutputPart\": \"\",\r\n    \"caseMaterial\": \"\",\r\n    \"model\": \"\",\r\n    \"normalImpedance\": \"\",\r\n    \"sprayPaintingTreatment\": \"\",\r\n    \"weight\": \"\",\r\n    \"output4ohm\": \"\",\r\n    \"output8ohm\": \"\",\r\n    \"digitalOutput\": \"\",\r\n    \"channelNumber\": \"\",\r\n    \"THD\": \"\",\r\n    \"sSourceNRatio\": \"\",\r\n    \"dampingFactor\": \"\",\r\n    \"cperatingRange\": \"\",\r\n    \"powerCurrent\": \"\",\r\n    \"angleIncrements\": \"\",\r\n    \"horizontal\": \"\",\r\n    \"fullFrequencyUnit\": \"\",\r\n    \"conversionEfficiency\": \"\",\r\n    \"inputImpedance\": \"\",\r\n    \"outputImpedance\": \"\",\r\n    \"mainPowerSupply\": \"\",\r\n    \"frequencyResponseRange\": \"\",\r\n    \"powerFR\": \"\",\r\n    \"AMPFrequencyLoad\": \"\",\r\n    \"stereo8ohm\": \"\",\r\n    \"stereo4ohm\": \"\",\r\n    \"slewRate\": \"\",\r\n    \"dynamicRange\": \"\",\r\n    \"voltageGain\": \"\",\r\n    \"outputCircuitDesign\": \"\",\r\n    \"powerSelection\": \"\",\r\n    \"inputVoltage\": \"\",\r\n    \"speakerSpecifications\": \"\",\r\n    \"color\": \"\",\r\n    \"waterproof\": \"\",\r\n    \"unitConfigure\": \"\",\r\n    \"installationOpeningSize\": \"\",\r\n    \"maximumOuterDiameter\": \"\",\r\n    \"withstandPower\": \"\",\r\n    \"paintingTreatment\": \"\",\r\n    \"suspensionPoint\": \"\",\r\n    \"gain\": \"\"\r\n}",
+							"raw": "        {\r\n            \"id\": 1,\r\n            \"imgId\": \"https://tscproaudio.com/imgs/Speakers/LR789.png\",\r\n            \"n9SpeakerSeriesName\": \"LR789\",\r\n            \"systemDescription\": \"4*4 Inch full range speakers\",\r\n            \"maximumSoundPressure\": \"115dB (RMS) 121dB (PEAK)\",\r\n            \"coverAngle\": \"120°x20° (H x V)\",\r\n            \"unit\": \"High-quality driver unit imported from Italy, 4*4 (25mm voice coil)\",\r\n            \"frequencyResponse\": \"120Hz-20KHz(-3dB)\",\r\n            \"sensitivity\": \"97dB/W/M\",\r\n            \"ratedPower\": \"250W (RMS) 1000W (PEAK)\",\r\n            \"nominalImpedance\": \"8 ohm\",\r\n            \"boxMaterial\": \"Aluminum alloy\",\r\n            \"netWeight\": \"6.5kg\",\r\n            \"size\": \"137x182x477mm\"\r\n        }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -984,12 +985,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/edit",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/edit",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -1020,12 +1021,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/delete/1",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/delete/1",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -1057,12 +1058,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/find-by-keyword/LR",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/find-by-keyword/LR",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -1106,12 +1107,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/manager/n9-speaker-series/all?page=0&size=5",
-							"protocol": "http",
+							"raw": "https://tscproaudio.com/manager/n9-speaker-series/all?page=0&size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tscproaudio",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"manager",
 								"n9-speaker-series",
@@ -1126,6 +1127,51 @@
 									"key": "size",
 									"value": "5"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload img",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123456@",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/N9/LR789.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tscproaudio.com/upload/n9-speakers",
+							"protocol": "https",
+							"host": [
+								"tscproaudio",
+								"com"
+							],
+							"path": [
+								"upload",
+								"n9-speakers"
 							]
 						}
 					},
@@ -1160,12 +1206,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/all?page=0&size=5",
-									"protocol": "http",
+									"raw": "https://tscproaudio.com/manager/speakers-series/all?page=0&size=5",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"tscproaudio",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"manager",
 										"speakers-series",
@@ -1243,7 +1289,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"6\",\r\n    \"imgId\":\"/img/HK_series.png\",\r\n    \"seriesName\":\"HK Series\"\r\n}",
+									"raw": "{\r\n    \"seriesName\":\"HK Series\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1251,12 +1297,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/manager/speakers-series/create",
-									"protocol": "http",
+									"raw": "https://tscproaudio.com/manager/speakers-series/create",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"tscproaudio",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"manager",
 										"speakers-series",
@@ -1347,6 +1393,39 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "upload img",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/N9/LR789.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://tscproaudio.com/upload/N9SpeakerSeries",
+									"protocol": "https",
+									"host": [
+										"tscproaudio",
+										"com"
+									],
+									"path": [
+										"upload",
+										"N9SpeakerSeries"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1374,12 +1453,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/manager/micro-tsc-series/all?page=0&size=5",
+									"raw": "http://localhost:8088/manager/micro-tsc-series/all?page=0&size=5",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8088",
 									"path": [
 										"manager",
 										"micro-tsc-series",
@@ -1457,7 +1536,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"2\",\r\n    \"imgId\":\"/img/TC_series.png\",\r\n    \"seriesName\":\"TC-8 Series\"\r\n}",
+									"raw": "{\r\n    \"seriesName\":\"LR789\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1465,12 +1544,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/manager/micro-tsc-series/create",
-									"protocol": "http",
+									"raw": "https://tscproaudio.com/manager/micro-tsc-series/create",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"tscproaudio",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"manager",
 										"micro-tsc-series",
@@ -1546,17 +1625,50 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/manager/micro-tsc-series/delete/5",
+									"raw": "http://localhost:8088/manager/micro-tsc-series/delete/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8088",
 									"path": [
 										"manager",
 										"micro-tsc-series",
 										"delete",
-										"5"
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload img",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/N9/LR789.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://tscproaudio.com/upload/microSeries",
+									"protocol": "https",
+									"host": [
+										"tscproaudio",
+										"com"
+									],
+									"path": [
+										"upload",
+										"microSeries"
 									]
 								}
 							},
@@ -1656,13 +1768,13 @@
 									"type": "basic",
 									"basic": [
 										{
-											"key": "username",
-											"value": "admin",
+											"key": "password",
+											"value": "123456@",
 											"type": "string"
 										},
 										{
-											"key": "password",
-											"value": "123",
+											"key": "username",
+											"value": "admin",
 											"type": "string"
 										}
 									]
@@ -1671,7 +1783,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"2\",\r\n    \"imgId\":\"/img/JX_series.png\",\r\n    \"seriesName\":\"JX Series\"\r\n}",
+									"raw": "{\r\n    \"seriesName\":\"LR789\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1775,6 +1887,39 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "upload img",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/N9/LR789.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://tscproaudio.com/upload/AmpliSeries",
+									"protocol": "https",
+									"host": [
+										"tscproaudio",
+										"com"
+									],
+									"path": [
+										"upload",
+										"AmpliSeries"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1867,25 +2012,13 @@
 							"name": "CREATE",
 							"request": {
 								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										},
-										{
-											"key": "password",
-											"value": "123",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\":\"2\",\r\n    \"imgId\":\"/img/JX_series.png\",\r\n    \"seriesName\":\"JX Series\"\r\n}",
+									"raw": "{\r\n    \"seriesName\":\"LR789\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1989,6 +2122,39 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "upload img",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/E:/Personal/Web/FromGit/soundDevice/sound/document/imgTest/N9/LR789.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://tscproaudio.com/upload/mixerSeries",
+									"protocol": "https",
+									"host": [
+										"tscproaudio",
+										"com"
+									],
+									"path": [
+										"upload",
+										"mixerSeries"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -2034,14 +2200,35 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/info",
-					"protocol": "http",
+					"raw": "https://tscproaudio.com/info",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"tscproaudio",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tscproaudio.com/manager/count/product",
+					"protocol": "https",
+					"host": [
+						"tscproaudio",
+						"com"
+					],
+					"path": [
+						"manager",
+						"count",
+						"product"
 					]
 				}
 			},
