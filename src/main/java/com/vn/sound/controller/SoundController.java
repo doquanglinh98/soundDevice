@@ -636,10 +636,10 @@ public class SoundController {
 	}
 
 	// upload images
-	@PostMapping("/upload/n9-speakers")
+	@PostMapping("/manager/upload/n9-speakers")
 	public ResponseEntity<String> uploadFileN9Speakers(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_N9Speakers);
@@ -659,10 +659,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/ampli")
+	@PostMapping("/manager/upload/ampli")
 	public ResponseEntity<String> uploadFileAmpli(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_Ampli);
@@ -682,10 +682,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/mixer")
+	@PostMapping("/manager/upload/mixer")
 	public ResponseEntity<String> uploadFileMixer(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_Mixer);
@@ -705,10 +705,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/micro")
+	@PostMapping("/manager/upload/micro")
 	public ResponseEntity<String> uploadFileMicro(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_micro);
@@ -728,10 +728,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/microSeries")
+	@PostMapping("/manager/upload/microSeries")
 	public ResponseEntity<String> uploadFileMicroSeries(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_micro_Series);
@@ -751,10 +751,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/mixerSeries")
+	@PostMapping("/manager/upload/mixerSeries")
 	public ResponseEntity<String> uploadFileMixerSeries(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_Mixer_Series);
@@ -774,10 +774,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/AmpliSeries")
+	@PostMapping("/manager/upload/AmpliSeries")
 	public ResponseEntity<String> uploadFileAmpliSeries(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_Ampli_Series);
@@ -797,10 +797,10 @@ public class SoundController {
 		}
 	}
 
-	@PostMapping("/upload/N9SpeakerSeries")
+	@PostMapping("/manager/upload/N9SpeakerSeries")
 	public ResponseEntity<String> uploadFileN9SpeakerSeries(@RequestParam("file") MultipartFile file) {
 		String message = "";
-		System.out.println("upload=" + System.getProperty("user.dir"));
+		//System.out.println("upload=" + System.getProperty("user.dir"));
 		try {
 			// Kiểm tra nếu thư mục không tồn tại thì tạo
 			File dir = new File(Constant.uploadDir_N9Speakers_Series);
