@@ -142,7 +142,7 @@ public class N9SpeakerSeriesAllProductsService {
 				} else {
 					filename = n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName() + ".jpg";
 				}
-				n9SpeakerSeriesAllProducts.setImgId(Constant.host + "/imgs/Speakers/" + filename);
+				n9SpeakerSeriesAllProducts.setImgId(Constant.host + "imgs/Speakers/" + filename);
 			}
 			n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
 			return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());

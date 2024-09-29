@@ -62,7 +62,7 @@ public class MixerService {
 				} else {
 					filename = mixer.getModelMixer() + ".jpg";
 				}
-				mixer.setImgId(Constant.host + "/imgs/Mixers/" + filename);
+				mixer.setImgId(Constant.host + "imgs/Mixers/" + filename);
 			}
 			mixerRepository.save(mixer);
 			return Utility.successMsg(mixer.getId());

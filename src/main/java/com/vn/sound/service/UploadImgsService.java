@@ -11,9 +11,11 @@ public class UploadImgsService {
 	@Autowired
 	private UploadImgsRepository uploadImgsRepository;
 
-	public void saveImgs(String fullPathImg) {
-		UploadImgs uploadImgs = new UploadImgs();
-		uploadImgs.setSrcImg(fullPathImg);
-		uploadImgsRepository.save(uploadImgs);
+	public void saveImgs(String fullPathImg) throws Exception {
+		if (!uploadImgsRepository.existsBySrcImg(fullPathImg)) {
+			UploadImgs uploadImgs = new UploadImgs();
+			uploadImgs.setSrcImg(fullPathImg);
+			uploadImgsRepository.save(uploadImgs);
+		}
 	}
 }

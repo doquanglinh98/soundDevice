@@ -69,7 +69,7 @@ public class MicroTscService {
 				} else {
 					filename = microTsc.getMicroName() + ".jpg";
 				}
-				microTsc.setImgId(Constant.host + "/imgs/Micros/" + filename);
+				microTsc.setImgId(Constant.host + "imgs/Micros/" + filename);
 			}
 			microTscRepository.save(microTsc);
 			return Utility.successMsg(microTsc.getId());

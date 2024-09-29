@@ -68,7 +68,7 @@ public class PowerAmplifierService {
 				} else {
 					filename = powerAmplifier.getModel() + ".jpg";
 				}
-				powerAmplifier.setImgId(Constant.host + "/imgs/MicrosSeries/" + filename);
+				powerAmplifier.setImgId(Constant.host + "imgs/MicrosSeries/" + filename);
 			}
 			powerAmplifierRepository.save(powerAmplifier);
 			return Utility.successMsg(powerAmplifier.getId());
