@@ -55,7 +55,7 @@ public class MicroTscSeriesService {
 				} else {
 					filename = miroTscSeries.getSeriesName() + ".jpg";
 				}
-				miroTscSeries.setImgId(Constant.host + "MicrosSeries/" + filename);
+				miroTscSeries.setImgId(Constant.host + "/imgs/MicrosSeries/" + filename);
 			}
 			miroTscSeriesRepository.save(miroTscSeries);
 			return Utility.successMsg(miroTscSeries.getId());

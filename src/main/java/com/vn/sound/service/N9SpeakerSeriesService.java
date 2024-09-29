@@ -55,7 +55,7 @@ public class N9SpeakerSeriesService {
 				} else {
 					filename = n9SpeakerSeries.getSeriesName() + ".jpg";
 				}
-				n9SpeakerSeries.setImgId(Constant.host + "SpeakersSeries/" + filename);
+				n9SpeakerSeries.setImgId(Constant.host + "/imgs/SpeakersSeries/" + filename);
 			}
 			n9SpeakerSeriesRepository.save(n9SpeakerSeries);
 			return Utility.successMsg(n9SpeakerSeries.getId());

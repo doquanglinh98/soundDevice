@@ -56,7 +56,7 @@ public class PowerAmplifierSeriesService {
 				} else {
 					filename = powerAmplifierSeries.getSeriesName() + ".jpg";
 				}
-				powerAmplifierSeries.setImgId(Constant.host + "AmplifiersSeries/" + filename);
+				powerAmplifierSeries.setImgId(Constant.host + "/imgs/AmplifiersSeries/" + filename);
 			}
 			powerAmplifierSeriesRepository.save(powerAmplifierSeries);
 			return Utility.successMsg(powerAmplifierSeries.getId());
