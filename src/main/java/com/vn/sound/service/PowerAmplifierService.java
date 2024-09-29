@@ -9,13 +9,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.PowerAmplifier;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.PowerAmplifierRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class PowerAmplifierService {
+
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
+
 	@Autowired
 	private PowerAmplifierRepository powerAmplifierRepository;
 
@@ -53,6 +60,16 @@ public class PowerAmplifierService {
 			// return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
 			throw new CustomException("Record name has existed");
 		} else {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(powerAmplifier.getModel());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = powerAmplifier.getModel() + ".png";
+				} else {
+					filename = powerAmplifier.getModel() + ".jpg";
+				}
+				powerAmplifier.setImgId(Constant.host + "MicrosSeries/" + filename);
+			}
 			powerAmplifierRepository.save(powerAmplifier);
 			return Utility.successMsg(powerAmplifier.getId());
 		}

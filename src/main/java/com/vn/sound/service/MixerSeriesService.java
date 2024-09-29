@@ -8,15 +8,22 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MixerSeries;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.MixerSeriesRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class MixerSeriesService {
+	
 	@Autowired
 	private MixerSeriesRepository mixerSeriesRepository;
+	
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
 
 	public Page<MixerSeries> findAllMixerSeries(int page, int size) throws Exception {
 		return mixerSeriesRepository.findAll(PageRequest.of(page, size));
@@ -40,6 +47,16 @@ public class MixerSeriesService {
 			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(mixerSeries.getSeriesName());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = mixerSeries.getSeriesName() + ".png";
+				} else {
+					filename = mixerSeries.getSeriesName() + ".jpg";
+				}
+				mixerSeries.setImgId(Constant.host + "MixersSeries/" + filename);
+			}
 			mixerSeriesRepository.save(mixerSeries);
 			return Utility.successMsg(mixerSeries.getId());
 		}

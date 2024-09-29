@@ -8,14 +8,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.N9SpeakerSeries;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.N9SpeakerSeriesRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class N9SpeakerSeriesService {
 
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
+	
 	@Autowired
 	private N9SpeakerSeriesRepository n9SpeakerSeriesRepository;
 
@@ -41,6 +47,16 @@ public class N9SpeakerSeriesService {
 			// return Utility.errMsgCreateFieldNameExits(n9SpeakerSeries.getSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(n9SpeakerSeries.getSeriesName());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = n9SpeakerSeries.getSeriesName() + ".png";
+				} else {
+					filename = n9SpeakerSeries.getSeriesName() + ".jpg";
+				}
+				n9SpeakerSeries.setImgId(Constant.host + "SpeakersSeries/" + filename);
+			}
 			n9SpeakerSeriesRepository.save(n9SpeakerSeries);
 			return Utility.successMsg(n9SpeakerSeries.getId());
 		}

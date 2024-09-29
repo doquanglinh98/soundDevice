@@ -9,13 +9,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.Mixer;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.MixerRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class MixerService {
+
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
+
 	@Autowired
 	private MixerRepository mixerRepository;
 
@@ -47,6 +54,16 @@ public class MixerService {
 			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(mixer.getModelMixer());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = mixer.getModelMixer() + ".png";
+				} else {
+					filename = mixer.getModelMixer() + ".jpg";
+				}
+				mixer.setImgId(Constant.host + "Mixers/" + filename);
+			}
 			mixerRepository.save(mixer);
 			return Utility.successMsg(mixer.getId());
 		}

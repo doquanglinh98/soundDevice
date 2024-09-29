@@ -7,16 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTsc;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.MicroTscRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @org.springframework.stereotype.Service
 public class MicroTscService {
 
 	@Autowired
 	private MicroTscRepository microTscRepository;
+
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
 
 	public MicroTsc findMicroTscById(Long Id) throws Exception {
 		Optional<MicroTsc> microTscOptional = microTscRepository.findById(Id);
@@ -51,13 +57,23 @@ public class MicroTscService {
 	}
 
 	public String createMicTsc(MicroTsc microTsc) throws Exception {
-			if (microTscRepository.existsByMicroName(microTsc.getMicroName())) {
-				// return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
-				throw new CustomException("Record name has existed");
-			} else {
-				microTscRepository.save(microTsc);
-				return Utility.successMsg(microTsc.getId());
+		if (microTscRepository.existsByMicroName(microTsc.getMicroName())) {
+			// return Utility.errMsgCreateFieldNameExits(microTsc.getMicroName());
+			throw new CustomException("Record name has existed");
+		} else {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(microTsc.getMicroName());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = microTsc.getMicroName() + ".png";
+				} else {
+					filename = microTsc.getMicroName() + ".jpg";
+				}
+				microTsc.setImgId(Constant.host + "Micros/" + filename);
 			}
+			microTscRepository.save(microTsc);
+			return Utility.successMsg(microTsc.getId());
+		}
 	}
 
 	public String editMicTsc(MicroTsc microTsc) throws Exception {

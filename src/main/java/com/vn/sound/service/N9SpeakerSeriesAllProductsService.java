@@ -10,9 +10,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.N9SpeakerSeriesAllProducts;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.MicroTscRepository;
 import com.vn.sound.repository.MicroTscSeriesRepository;
 import com.vn.sound.repository.MixerRepository;
@@ -21,9 +23,13 @@ import com.vn.sound.repository.N9SpeakerSeriesAllProductsRepository;
 import com.vn.sound.repository.N9SpeakerSeriesRepository;
 import com.vn.sound.repository.PowerAmplifierRepository;
 import com.vn.sound.repository.PowerAmplifierSeriesRepository;
+import com.vn.sound.repository.UploadImgsRepository;
 
 @Service
 public class N9SpeakerSeriesAllProductsService {
+
+	@Autowired
+	private UploadImgsRepository uploadImgsRepository;
 
 	@Autowired
 	private N9SpeakerSeriesAllProductsRepository n9SpeakerSeriesAllProductsRepository;
@@ -54,7 +60,7 @@ public class N9SpeakerSeriesAllProductsService {
 				.findById(Id);
 
 		if (n9SpeakerSeriesAllProductsOptional.isEmpty()) {
-			//System.out.println("Not found with id: " + Id);
+			// System.out.println("Not found with id: " + Id);
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		N9SpeakerSeriesAllProducts n9SpeakerSeriesAllProductsTmp = n9SpeakerSeriesAllProductsOptional.get();
@@ -127,6 +133,17 @@ public class N9SpeakerSeriesAllProductsService {
 			// Utility.errMsgCreateFieldNameExits(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
+			UploadImgs uploadImgs = uploadImgsRepository
+					.findUploadImgsBySrcImg(n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
+					filename = n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName() + ".png";
+				} else {
+					filename = n9SpeakerSeriesAllProducts.getN9SpeakerSeriesName() + ".jpg";
+				}
+				n9SpeakerSeriesAllProducts.setImgId(Constant.host + "Speakers/" + filename);
+			}
 			n9SpeakerSeriesAllProductsRepository.save(n9SpeakerSeriesAllProducts);
 			return Utility.successMsg(n9SpeakerSeriesAllProducts.getId());
 		}
@@ -170,7 +187,5 @@ public class N9SpeakerSeriesAllProductsService {
 		jsonObject.put("powerAmplifierTscSeries", powerAmplifierSeriesRepository.count());
 		return Utility.jsonStringConverter(jsonObject);
 	}
-	
-	
 
 }

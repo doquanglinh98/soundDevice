@@ -12,6 +12,7 @@ import com.vn.sound.common.Constant;
 import com.vn.sound.common.CustomException;
 import com.vn.sound.common.Utility;
 import com.vn.sound.model.MicroTscSeries;
+import com.vn.sound.model.UploadImgs;
 import com.vn.sound.repository.MicroTscSeriesRepository;
 import com.vn.sound.repository.UploadImgsRepository;
 
@@ -46,10 +47,10 @@ public class MicroTscSeriesService {
 			// return Utility.errMsgCreateFieldNameExits(miroTscSeries.getSeriesName());
 			throw new CustomException("Record name has existed");
 		} else {
-			if (Utility.isNotNull(uploadImgsRepository.findUploadImgsBySrcImg(miroTscSeries.getSeriesName()))) {
-				String filename = "";
-				if (Utility.isNotNull(
-						uploadImgsRepository.findUploadImgsBySrcImg(miroTscSeries.getSeriesName() + ".png"))) {
+			UploadImgs uploadImgs = uploadImgsRepository.findUploadImgsBySrcImg(miroTscSeries.getSeriesName());
+			String filename = "";
+			if (Utility.isNotNull(uploadImgs)) {
+				if (uploadImgs.getSrcImg().contains(".png")) {
 					filename = miroTscSeries.getSeriesName() + ".png";
 				} else {
 					filename = miroTscSeries.getSeriesName() + ".jpg";
