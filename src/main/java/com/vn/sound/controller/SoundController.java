@@ -168,10 +168,10 @@ public class SoundController {
 
 	@RequestMapping(value = "/manager/ampli/find-by-keyword/{pattern}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<String> findAmpliByMode(@PathVariable String pattern) {
+	public ResponseEntity<String> findAmpliByModel(@PathVariable String pattern) {
 		try {
 			return ResponseEntity
-					.ok(Utility.jsonStringConverter(powerAmplifierService.findPowerAmplifierByMode(pattern)));
+					.ok(Utility.jsonStringConverter(powerAmplifierService.findPowerAmplifierByModel(pattern)));
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
 		}

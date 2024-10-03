@@ -104,7 +104,7 @@ public class PowerAmplifierService {
 		return Utility.deleteMultiMsg(count);
 	}
 
-	public List<PowerAmplifier> findPowerAmplifierByMode(String mode) throws Exception {
-		return powerAmplifierRepository.findPowerAmplifierByMode(mode);
+	public List<PowerAmplifier> findPowerAmplifierByModel(String model) throws Exception {
+		return powerAmplifierRepository.findPowerAmplifierByModel(model);
 	}
 }
