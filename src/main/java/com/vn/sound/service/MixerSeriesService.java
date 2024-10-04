@@ -37,8 +37,8 @@ public class MixerSeriesService {
 			throw new NoSuchElementException("Not found with id: " + Id);
 		}
 		MixerSeries mixerSeriesTmp = mixerSeriesOptional.get();
-		MixerSeries mixerSeries = new MixerSeries(mixerSeriesTmp.getId(), mixerSeriesTmp.getSeriesName(),
-				mixerSeriesTmp.getImgId());
+		MixerSeries mixerSeries = new MixerSeries(mixerSeriesTmp.getId(), mixerSeriesTmp.getImgId(),
+				mixerSeriesTmp.getSeriesName());
 		return mixerSeries;
 	}
 
