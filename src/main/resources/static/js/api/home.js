@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const products = data.content;
       if (products.length === 0) {
         listSeriesSpeaker.innerHTML =
-          '<div class="text-center fs-4">No data</div';
+          '<div class="text-center fs-4">No data</div>';
       }
       products.forEach((product) => {
         const markup = `
@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-thumbnail">
                   <a
                     class="product_overlay"
-                    href="/src/main/resources/templates/views/series/speaker.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/speaker/${product.seriesName}"
                     title="${product.seriesName}"
                   ></a>
                   <a
                     class="image_thumb"
-                    href="/src/main/resources/templates/views/series/speaker.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/speaker/${product.seriesName}"
                     title="${product.seriesName}"
                   >
                     <img
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-info">
                   <h3 class="product-name">
                     <a
-                      href="/src/main/resources/templates/views/series/speaker.html?series=${product.seriesName}"
+                      href="https://tscproaudio.com/series/speaker/${product.seriesName}"
                       title="${product.seriesName}"
                     >${product.seriesName}</a>
                   </h3>
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
         `;
-
         listSeriesSpeaker.insertAdjacentHTML("beforeend", markup);
       });
 
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const products = data.content;
       if (products.length === 0) {
         listSeriesAmplifier.innerHTML =
-          '<div class="text-center fs-4">No data</div';
+          '<div class="text-center fs-4">No data</div>';
       }
 
       products.forEach((product) => {
@@ -86,12 +85,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-thumbnail">
                   <a
                     class="product_overlay"
-                    href="/src/main/resources/templates/views/series/amplifier.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/amplifier/${product.seriesName}"
                     title="${product.seriesName}"
                   ></a>
                   <a
                     class="image_thumb"
-                    href="/src/main/resources/templates/views/series/amplifier.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/amplifier/${product.seriesName}"
                     title="${product.seriesName}"
                   >
                     <img
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-info">
                   <h3 class="product-name">
                     <a
-                      href="/src/main/resources/templates/views/series/amplifier.html?series=${product.seriesName}"
+                      href="https://tscproaudio.com/series/amplifier/${product.seriesName}"
                       title="${product.seriesName}"
                     >${product.seriesName}</a>
                   </h3>
@@ -115,7 +114,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
         `;
-
         listSeriesAmplifier.insertAdjacentHTML("beforeend", markup);
       });
       loading[1].style.display = "none";
@@ -134,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const products = data.content;
       if (products.length === 0) {
         listSeriesMicro.innerHTML =
-          '<div class="text-center fs-4">No data</div';
+          '<div class="text-center fs-4">No data</div>';
       }
 
       products.forEach((product) => {
@@ -145,12 +143,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-thumbnail">
                   <a
                     class="product_overlay"
-                    href="/src/main/resources/templates/views/series/micro.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/micro/${product.seriesName}"
                     title="${product.seriesName}"
                   ></a>
                   <a
                     class="image_thumb"
-                    href="/src/main/resources/templates/views/series/micro.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/micro/${product.seriesName}"
                     title="${product.seriesName}"
                   >
                     <img
@@ -165,7 +163,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-info">
                   <h3 class="product-name">
                     <a
-                      href="/src/main/resources/templates/views/series/micro.html?series=${product.seriesName}"
+                      href="https://tscproaudio.com/series/micro/${product.seriesName}"
                       title="${product.seriesName}"
                     >${product.seriesName}</a>
                   </h3>
@@ -174,7 +172,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
         `;
-
         listSeriesMicro.insertAdjacentHTML("beforeend", markup);
       });
       loading[2].style.display = "none";
@@ -183,6 +180,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       loading[2].style.display = "none";
     }
   }
+
   async function fetchSeriesMixer() {
     try {
       const response = await fetch(`${API_URL}/mixer-series/all?page=0&size=5`);
@@ -190,7 +188,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const products = data.content;
       if (products.length === 0) {
         listSeriesMixer.innerHTML =
-          '<div class="text-center fs-4">No data</div';
+          '<div class="text-center fs-4">No data</div>';
       }
 
       products.forEach((product) => {
@@ -201,12 +199,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-thumbnail">
                   <a
                     class="product_overlay"
-                    href="/src/main/resources/templates/views/series/mixer.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/mixer/${product.seriesName}"
                     title="${product.seriesName}"
                   ></a>
                   <a
                     class="image_thumb"
-                    href="/src/main/resources/templates/views/series/mixer.html?series=${product.seriesName}"
+                    href="https://tscproaudio.com/series/mixer/${product.seriesName}"
                     title="${product.seriesName}"
                   >
                     <img
@@ -221,7 +219,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <div class="product-info">
                   <h3 class="product-name">
                     <a
-                      href="/src/main/resources/templates/views/series/mixer.html?series=${product.seriesName}"
+                      href="https://tscproaudio.com/series/mixer/${product.seriesName}"
                       title="${product.seriesName}"
                     >${product.seriesName}</a>
                   </h3>
@@ -230,7 +228,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
           </div>
         `;
-
         listSeriesMixer.insertAdjacentHTML("beforeend", markup);
       });
       loading[3].style.display = "none";

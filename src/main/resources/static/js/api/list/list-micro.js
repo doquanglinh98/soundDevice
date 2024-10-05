@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
                           <div class="variants wishItem">
                               <div class="product-thumbnail">
                                   <a class="product_overlay"
-                                      href="/src/main/resources/templates/views/detail/micro-detail.html?id=${product.id}"
+                                      href="https://tscproaudio.com/detail/micro/${product.id}"
                                       title="${product.microName}"></a>
-                                  <a class="image_thumb" href="/src/main/resources/templates/views/detail/micro-detail.html?id=${product.id}"
+                                  <a class="image_thumb" href="https://tscproaudio.com/detail/micro/${product.id}"
                                       title="${product.microName}">
                                       <img class="lazyload" width="200" height="200"
                                           src="${product.imgId}"
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                               <div class="product-info">
                                   <h3 class="product-name">
                                       <a
-                                          href="/src/main/resources/templates/views/detail/micro-detail.html?id=${product.id}"
+                                          href="https://tscproaudio.com/detail/micro/${product.id}"
                                         >
                                         ${product.microName}
                                       </a>

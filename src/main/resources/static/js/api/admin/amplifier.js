@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>
               <div>
                 <a 
-                href="/src/main/resources/templates/views/admin/edit/amplifier-edit.html?id=${
+                href="https://tscproaudio.com/admin/edit/amplifier/${
                   product.id
                 }" 
                 type="button" class="btn btn-success btn-sm">

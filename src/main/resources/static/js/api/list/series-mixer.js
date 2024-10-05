@@ -1,13 +1,12 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const series = urlParams.get("series");
 
+const path = window.location.pathname;
+const pathSegments = path.split("/");
+const series = pathSegments[pathSegments.length - 1];
 let seriesName = series;
-
 if (seriesName.toLowerCase().includes("series")) {
   seriesName = seriesName.replace(/series/i, "").trim();
 }
-
 seriesName = seriesName.split(" ")[0];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -36,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
                           <div class="variants wishItem">
                               <div class="product-thumbnail">
                                   <a class="product_overlay"
-                                      href="/src/main/resources/templates/views/detail/mixer-detail.html?id=${product.id}"
+                                      href="https://tscproaudio.com/detail/mixer/${product.id}"
                                       title="${product.modelMixer}"></a>
-                                  <a class="image_thumb" href="/src/main/resources/templates/views/detail/mixer-detail.html?id=${product.id}"
+                                  <a class="image_thumb" href="https://tscproaudio.com/detail/mixer/${product.id}"
                                       title="${product.modelMixer}">
                                       <img class="lazyload" width="200" height="200"
                                           src="${product.imgId}"
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                               <div class="product-info">
                                   <h3 class="product-name">
                                       <a
-                                          href="/src/main/resources/templates/views/detail/mixer-detail.html?id=${product.id}"
+                                          href="https://tscproaudio.com/detail/mixer/${product.id}"
                                           title=" ${product.modelMixer}">
                                           ${product.modelMixer}
                                       </a>

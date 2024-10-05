@@ -1,7 +1,9 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const microId = urlParams.get("id");
+
+const path = window.location.pathname;
+const microId = path.split("/").pop();
 const getNumberId = parseInt(microId);
+
 const basicAuth = localStorage.getItem("basicAuth");
 
 document.addEventListener("DOMContentLoaded", function () {

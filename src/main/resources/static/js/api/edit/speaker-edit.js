@@ -1,7 +1,9 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const speakerId = urlParams.get("id");
+
+const path = window.location.pathname;
+const speakerId = path.split("/").pop();
 const getNumberId = parseInt(speakerId);
+
 const basicAuth = localStorage.getItem("basicAuth");
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -184,17 +186,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       data.id = getNumberId;
 
-      fetch(
-        `${API_URL}/n9-speaker-series/edit`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: basicAuth,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      )
+      fetch(`${API_URL}/n9-speaker-series/edit`, {
+        method: "PUT",
+        headers: {
+          Authorization: basicAuth,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

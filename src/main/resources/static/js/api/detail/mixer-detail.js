@@ -1,8 +1,8 @@
 const API_URL = "https://tscproaudio.com/manager";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get("id");
+  const path = window.location.pathname;
+  const productId = path.split("/").pop();
 
   function getProductDetails() {
     fetch(`${API_URL}/mixer/${productId}`)

@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="/src/main/resources/templates/views/admin/edit/micro-series-edit.html?id=${
+                  href="https://tscproaudio.com/admin/edit/micro-series/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">
@@ -208,9 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="/src/main/resources/templates/views/admin/edit/mixer-series-edit.html?id=${
-                    product.id
-                  }" 
+                 href="https://tscproaudio.com/admin/edit/mixer-series/${
+                   product.id
+                 }"
                   type="button" class="btn btn-success btn-sm">
                   Edit
                   </a>
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="/src/main/resources/templates/views/admin/edit/amplifier-series-edit.html?id=${
+                  href="https://tscproaudio.com/admin/edit/amplifier-series/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">
@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="/src/main/resources/templates/views/admin/edit/speaker-series-edit.html?id=${
+                  href="https://tscproaudio.com/admin/edit/speaker-series/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">

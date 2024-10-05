@@ -1,6 +1,7 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const mixerId = urlParams.get("id");
+
+const path = window.location.pathname;
+const mixerId = path.split("/").pop();
 const getNumberId = parseInt(mixerId);
 const basicAuth = localStorage.getItem("basicAuth");
 

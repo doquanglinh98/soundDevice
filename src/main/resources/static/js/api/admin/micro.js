@@ -56,9 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>
               <div>
                 <a 
-                href="/src/main/resources/templates/views/admin/edit/micro-edit.html?id=${
-                  product.id
-                }" 
+                href="https://tscproaudio.com/admin/edit/micro/${product.id}" 
                 type="button" class="btn btn-success btn-sm">
                 Edit
                 </a>

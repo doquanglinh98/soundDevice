@@ -1,6 +1,7 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const mixerId = urlParams.get("id");
+
+const path = window.location.pathname;
+const mixerId = path.split("/").pop();
 const getNumberId = parseInt(mixerId);
 const basicAuth = localStorage.getItem("basicAuth");
 
@@ -34,17 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
         imgId: document.getElementById("imgId").value,
       };
 
-      fetch(
-        `${API_URL}/mixer-series/edit`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: basicAuth,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      )
+      fetch(`${API_URL}/mixer-series/edit`, {
+        method: "PUT",
+        headers: {
+          Authorization: basicAuth,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
         .then((response) => response.json())
         .then((data) => {
           console.log("Update successful:", data);

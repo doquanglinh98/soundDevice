@@ -1,8 +1,8 @@
 const API_URL = "https://tscproaudio.com/manager";
-const urlParams = new URLSearchParams(window.location.search);
-const amplifierId = urlParams.get("id");
+
+const path = window.location.pathname;
+const amplifierId = path.split("/").pop();
 const getNumberId = parseInt(amplifierId);
-const basicAuth = localStorage.getItem("basicAuth");
 
 document.addEventListener("DOMContentLoaded", function () {
   function productDetails() {
@@ -35,17 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       data.id = getNumberId;
 
-      fetch(
-        `${API_URL}/power-ampli-series/edit`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: basicAuth,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      )
+      fetch(`${API_URL}/power-ampli-series/edit`, {
+        method: "PUT",
+        headers: {
+          Authorization: basicAuth,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
         .then((response) => response.json())
         .then((data) => {
           console.log("Update successful:", data);

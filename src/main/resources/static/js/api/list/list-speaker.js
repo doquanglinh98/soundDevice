@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
                           <div class="variants wishItem">
                               <div class="product-thumbnail">
                                   <a class="product_overlay"
-                                      href="/src/main/resources/templates/views/detail/speaker-detail.html?id=${product.id}"
+                                      href="https://tscproaudio.com/detail/speaker/${product.id}"
                                       title="${product.n9SpeakerSeriesName}"></a>
-                                  <a class="image_thumb" href="/src/main/resources/templates/views/detail/speaker-detail.html?id=${product.id}"
+                                  <a class="image_thumb" href="https://tscproaudio.com/detail/speaker/${product.id}"
                                       title="${product.n9SpeakerSeriesName}">
                                       <img class="lazyload" width="200" height="200"
                                           src="${product.imgId}"
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                               <div class="product-info">
                                   <h3 class="product-name">
                                       <a
-                                          href="/src/main/resources/templates/views/detail/speaker-detail.html?id=${product.id}"
+                                          href="https://tscproaudio.com/detail/speaker/${product.id}"
                                           title="${product.n9SpeakerSeriesName}">
                                           ${product.n9SpeakerSeriesName}
                                       </a>
