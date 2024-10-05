@@ -934,7 +934,7 @@
 }
 .filter-container__selected-filter-item .fa {
   margin-right: 10px;
-  background-image: url(//src/main/resources/static/vendor/template/i-close.svg?1665484620046);
+  background-image: url(/https://tscproaudio.com/vendor/template/i-close.svg?1665484620046);
   background-repeat: no-repeat;
   width: 20px;
   height: 9px;
@@ -1004,7 +1004,7 @@
   text-indent: 0.01px;
   cursor: pointer;
   line-height: 36px;
-  background-image: url(//src/main/resources/static/vendor/template/ico-select.png?1665484620046) !important;
+  background-image: url(/https://tscproaudio.com/vendor/template/ico-select.png?1665484620046) !important;
   border: 1px solid #ebebeb;
 }
 .sort-by > ul > li:hover {

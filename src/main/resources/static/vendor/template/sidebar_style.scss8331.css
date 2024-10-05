@@ -79,7 +79,7 @@
   right: -10px;
 }
 .sidebar-category .aside-content .nav-item .fa.fa-minus {
-  background-image: url(//src/main/resources/static/vendor/template/i-minus.svg?1665484620046);
+  background-image: url(/https://tscproaudio.com/vendor/template/i-minus.svg?1665484620046);
 }
 .sidebar-category .aside-content .nav-item .dropdown-menu {
   width: 100%;
@@ -245,7 +245,7 @@
   margin-left: 5px;
 }
 .aside-item.collection-category .nav-item .fa {
-  background-image: url(//src/main/resources/static/vendor/template/i-plus.svg?1665484620046);
+  background-image: url(/https://tscproaudio.com/vendor/template/i-plus.svg?1665484620046);
   background-repeat: no-repeat;
   width: 20px;
   height: 10px;
@@ -256,7 +256,7 @@
   right: -10px;
 }
 .aside-item.collection-category .nav-item .fa.fa-minus {
-  background-image: url(//src/main/resources/static/vendor/template/i-minus.svg?1665484620046);
+  background-image: url(/https://tscproaudio.com/vendor/template/i-minus.svg?1665484620046);
 }
 .aside-item.collection-category .nav-item .dropdown-menu {
   position: static;

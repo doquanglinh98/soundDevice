@@ -2072,7 +2072,7 @@ footer.footer .clicked {
     transition: all ease 0.3s;
   }
   footer.footer .clicked.open_:after {
-    background-image: url(//src/main/resources/static/vendor/template/i-up-arrow.svg?1665484620046);
+    background-image: url(/https://tscproaudio.com/vendor/template/i-up-arrow.svg?1665484620046);
     right: -10px;
     transform: rotateX(0);
     -webkit-transition: all ease 0.3s;

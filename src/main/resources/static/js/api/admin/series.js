@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (listMicro.length === 0) {
         if (listProductMicro) {
           listProductMicro.innerHTML =
-            '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+            '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         }
         pagination.style.display = "none";
         return;
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listMixer.length === 0) {
         listProductMixer.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listAmplifier.length === 0) {
         listProductAmplifier.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -505,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listSpeaker.length === 0) {
         listProductSpeaker.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }

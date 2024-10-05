@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listMixer.length === 0) {
         listProduct.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listMixer.length === 0) {
         listProduct.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
         return;
       }
 
@@ -196,15 +196,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!confirmation) return;
 
         try {
-          const response = await fetch(
-            `${API_URL}/mixer/delete/${productId}`,
-            {
-              method: "DELETE",
-              headers: {
-                Authorization: basicAuth,
-              },
-            }
-          );
+          const response = await fetch(`${API_URL}/mixer/delete/${productId}`, {
+            method: "DELETE",
+            headers: {
+              Authorization: basicAuth,
+            },
+          });
 
           if (response.ok) {
             alert("Delete success");
@@ -244,18 +241,15 @@ document.addEventListener("DOMContentLoaded", function () {
         usbPlayer: document.getElementById("usbPlayer").value,
       };
       try {
-        const response = await fetch(
-          `${API_URL}/mixer/create`,
-          {
-            method: "POST",
-            headers: {
-              Authorization: basicAuth,
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        );
+        const response = await fetch(`${API_URL}/mixer/create`, {
+          method: "POST",
+          headers: {
+            Authorization: basicAuth,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
         if (!response.ok) {
           const errorData = await response.json();
           console.error("Error Details:", errorData);
@@ -291,16 +285,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const formData = new FormData(form);
 
       try {
-        const response = await fetch(
-          `https://tscproaudio.com/upload/mixer`,
-          {
-            method: "POST",
-            headers: {
-              Authorization: basicAuth,
-            },
-            body: formData,
-          }
-        );
+        const response = await fetch(`https://tscproaudio.com/upload/mixer`, {
+          method: "POST",
+          headers: {
+            Authorization: basicAuth,
+          },
+          body: formData,
+        });
         const contentType = response.headers.get("Content-Type");
 
         let result;

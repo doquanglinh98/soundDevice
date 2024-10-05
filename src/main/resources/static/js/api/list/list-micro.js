@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (data.content.length === 0) {
           listProduct.innerHTML =
-            '<div class="text-center fs-2 d-flex justify-content-center align-items-center" style="height:300px"><div>No data</div><img width="100" height="100" src="/src/main/resources/static/imgs/svg/box.svg" alt="box-icon" /></div>';
+            '<div class="text-center fs-2 d-flex justify-content-center align-items-center" style="height:300px"><div>No data</div><img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></div>';
           pagination.style.display = "none";
           return;
         }
