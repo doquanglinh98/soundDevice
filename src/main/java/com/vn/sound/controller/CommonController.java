@@ -27,11 +27,6 @@ public class CommonController {
 		Utility.logMessage(ref, "Health check!!!");
 		return new ResponseEntity<>("App is running!", HttpStatus.OK);
 	}
-	
-	@GetMapping("/err")
-	public String errPage() {
-		return "views/error404";
-	}
 
 	@GetMapping("/")
 	public String index() {
@@ -56,20 +51,22 @@ public class CommonController {
 
 	// series redirect
 	@GetMapping("/series/{pagename:.+}/{seriesName}")
-	public String seriesRedirect(@PathVariable("pagename") String pagename, @PathVariable("seriesName") String seriesName, Model model) {
+	public String seriesRedirect(@PathVariable("pagename") String pagename,
+			@PathVariable("seriesName") String seriesName, Model model) {
 		model.addAttribute("seriesName", seriesName);
 		return "views/series/" + pagename;
 	}
-	
+
 	// list redirect
 	@GetMapping("/list/{pagename:.+}")
 	public String listRedirect(@PathVariable("pagename") String pagename) {
 		return "views/product/" + pagename;
 	}
-	
+
 	// detail redirect
 	@GetMapping("/detail/{pagename:.+}/{id}")
-	public String detailRedirect(@PathVariable("pagename") String pagename, @PathVariable("id") String id, Model model) {
+	public String detailRedirect(@PathVariable("pagename") String pagename, @PathVariable("id") String id,
+			Model model) {
 		model.addAttribute("id", id);
 		return "views/detail/" + pagename;
 	}
@@ -79,7 +76,7 @@ public class CommonController {
 	public String adminPage() {
 		return "views/admin/admin-index";
 	}
-	
+
 	// admin list page redirect
 	@GetMapping("/admin/list/{pagename:.+}")
 	public String adminListRedirect(@PathVariable("pagename") String pagename) {
@@ -91,18 +88,19 @@ public class CommonController {
 	public String adminListSeriesPage() {
 		return "views/admin/series/series-product";
 	}
-	
+
 	// admin add product page redirect
 	@GetMapping("/admin/add/{pagename:.+}")
 	public String adminAddProductPage(@PathVariable("pagename") String pagename) {
 		return "views/admin/add/" + pagename;
 	}
-	
+
 	// admin edit product page redirect
 	@GetMapping("/admin/edit/{pagename:.+}/{id}")
-	public String adminEditProductPage(@PathVariable("pagename") String pagename, @PathVariable("id") String id, Model model) {
+	public String adminEditProductPage(@PathVariable("pagename") String pagename, @PathVariable("id") String id,
+			Model model) {
 		model.addAttribute("id", id);
 		return "views/admin/edit/" + pagename;
 	}
-	
+
 }
