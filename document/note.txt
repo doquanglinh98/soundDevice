@@ -1,0 +1,2 @@
+use jdk17 to build
+Create a file named error.html in src/main/resources/templates with your custom error message.You may also create a 404.html page in the same directory. Spring Boot will automatically use this page for 404 errors.
