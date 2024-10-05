@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,8 +51,9 @@ public class CommonController {
 //	}
 
 	// series redirect
-	@GetMapping("/series/product/{pagename:.+}")
-	public String seriesRedirect(@PathVariable("pagename") String pagename) {
+	@GetMapping("/series/{pagename:.+}/{seriesName}")
+	public String seriesRedirect(@PathVariable("pagename") String pagename, @PathVariable("seriesName") String seriesName, Model model) {
+		model.addAttribute("seriesName", seriesName);
 		return "views/series/" + pagename;
 	}
 	
@@ -62,8 +64,9 @@ public class CommonController {
 	}
 	
 	// detail redirect
-	@GetMapping("/detail/{pagename:.+}")
-	public String detailRedirect(@PathVariable("pagename") String pagename) {
+	@GetMapping("/detail/{pagename:.+}/{id}")
+	public String detailRedirect(@PathVariable("pagename") String pagename, @PathVariable("id") String id, Model model) {
+		model.addAttribute("id", id);
 		return "views/detail/" + pagename;
 	}
 
@@ -92,8 +95,9 @@ public class CommonController {
 	}
 	
 	// admin edit product page redirect
-	@GetMapping("/admin/edit/{pagename:.+}")
-	public String adminEditProductPage(@PathVariable("pagename") String pagename) {
+	@GetMapping("/admin/edit/{pagename:.+}/{id}")
+	public String adminEditProductPage(@PathVariable("pagename") String pagename, @PathVariable("id") String id, Model model) {
+		model.addAttribute("id", id);
 		return "views/admin/edit/" + pagename;
 	}
 	
