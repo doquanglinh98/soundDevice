@@ -2,7 +2,7 @@ const API_URL = "https://tscproaudio.com/manager";
 
 const path = window.location.pathname;
 const pathSegments = path.split("/");
-const series = pathSegments[pathSegments.length - 1];
+const series = decodeURIComponent(pathSegments[pathSegments.length - 1]);
 let seriesName = series;
 if (seriesName.toLowerCase().includes("series")) {
   seriesName = seriesName.replace(/series/i, "").trim();

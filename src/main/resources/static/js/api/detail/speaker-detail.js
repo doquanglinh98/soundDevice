@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
           fields.forEach((field) => {
             if (field.value) {
               detailCatalogue += `
-                <p class="text-capitalize m-0 p-0">
+                <p class="col-6 text-capitalize m-0 p-0">
                   <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
                 </p>
               `;
