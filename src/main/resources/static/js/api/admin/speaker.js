@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listSpeaker.length === 0) {
         listProduct.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listSpeaker.length === 0) {
         listProduct.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         return;
       }
 

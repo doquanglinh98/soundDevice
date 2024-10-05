@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (listMicro.length === 0) {
         if (listProductMicro) {
           listProductMicro.innerHTML =
-            '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+            '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         }
         pagination.style.display = "none";
         return;
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="https://tscproaudio.com/admin/edit/micro-series/${
+                  href="https://tscproaudio.com/admin/edit/micro-series-edit/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listMixer.length === 0) {
         listProductMixer.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                 href="https://tscproaudio.com/admin/edit/mixer-series/${
+                 href="https://tscproaudio.com/admin/edit/mixer-series-edit/${
                    product.id
                  }"
                   type="button" class="btn btn-success btn-sm">
@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listAmplifier.length === 0) {
         listProductAmplifier.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="https://tscproaudio.com/admin/edit/amplifier-series/${
+                  href="https://tscproaudio.com/admin/edit/amplifier-series-edit/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">
@@ -505,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (listSpeaker.length === 0) {
         listProductSpeaker.innerHTML =
-          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></td></tr>';
+          '<tr style="height: 200px"><td colspan="4" style="padding-top:55px" class="text-center fs-4">No data<img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></td></tr>';
         pagination.style.display = "none";
         return;
       }
@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>
                 <div>
                   <a 
-                  href="https://tscproaudio.com/admin/edit/speaker-series/${
+                  href="https://tscproaudio.com/admin/edit/speaker-series-edit/${
                     product.id
                   }" 
                   type="button" class="btn btn-success btn-sm">
