@@ -27,28 +27,32 @@ public class CommonController {
 		Utility.logMessage(ref, "Health check!!!");
 		return new ResponseEntity<>("App is running!", HttpStatus.OK);
 	}
+	
+	@GetMapping("/err")
+	public String errPage() {
+		return "views/error404";
+	}
 
 	@GetMapping("/")
 	public String index() {
 		return "views/home";
 	}
 
-	@GetMapping("/admin/login")
+	@GetMapping("/admin-login")
 	public String managerLogin() {
 		return "views/admin/login";
 	}
 
-//	@RequestMapping(value = "/admin-login", method = RequestMethod.POST, produces = "application/json")
-//	@ResponseBody
-//	public ResponseEntity<String> loginManager(@RequestParam(name = "username") String userName,
-//			@RequestParam(name = "password") String passWord) {
-//		// Long ref = System.currentTimeMillis();
-//		if (userService.isAdmin(userName, passWord)) {
-//			return ResponseEntity.ok("login OK");
-//		} else {
-//			return ResponseEntity.ok("login fail");
-//		}
-//	}
+	@RequestMapping(value = "/admin-login/verification", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<String> loginManager(@RequestParam(name = "username") String userName,
+			@RequestParam(name = "password") String passWord) {
+		if (userService.isAdmin(userName, passWord)) {
+			return ResponseEntity.ok("login OK");
+		} else {
+			return ResponseEntity.ok("login fail");
+		}
+	}
 
 	// series redirect
 	@GetMapping("/series/{pagename:.+}/{seriesName}")
