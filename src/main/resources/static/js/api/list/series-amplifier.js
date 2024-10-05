@@ -2,7 +2,7 @@ const API_URL = "https://tscproaudio.com/manager";
 
 const path = window.location.pathname;
 const pathSegments = path.split("/");
-const series = pathSegments[pathSegments.length - 1];
+const series = decodeURIComponent(pathSegments[pathSegments.length - 1]);
 let seriesName = series;
 if (seriesName.toLowerCase().includes("series")) {
   seriesName = seriesName.replace(/series/i, "").trim();
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (data.length === 0) {
           listProduct.innerHTML =
-            '<div class="text-center fs-2 d-flex justify-content-center align-items-center" style="height:300px"><div>No data</div><img width="100" height="100" src="https://tscproaudio.com/imgs/svg/box.svg" alt="box-icon" /></div>';
+            '<div class="text-center fs-2 d-flex justify-content-center align-items-center" style="height:300px"><div>No data</div><img width="100" height="100" src="https://tscproaudio.com/images/svg/box.svg" alt="box-icon" /></div>';
           return;
         }
         data.forEach((product) => {
