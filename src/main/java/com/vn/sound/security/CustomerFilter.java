@@ -40,10 +40,8 @@ public class CustomerFilter extends HttpFilter {
 					|| requestPath.contains("/micro-tsc-series/") || requestPath.contains("/power-ampli-series/")
 					|| requestPath.contains("/mixer-series/") || requestPath.contains("/count/")
 					|| requestPath.contains("/login")) && request.getMethod().equals("GET")) {
-				// change when deploy
-				// response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
-				response.setHeader("Access-Control-Allow-Origin", "*");
-				//response.setHeader("Access-Control-Allow-Origin", "http://localhost:5500");
+
+				response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
 				response.addHeader("Access-Control-Allow-Methods", "GET");
 				response.addHeader("Access-Control-Allow-Headers",
 						"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
@@ -56,37 +54,28 @@ public class CustomerFilter extends HttpFilter {
 			final String authorization = request.getHeader("Authorization");
 			if (authorization != null && authorization.toLowerCase().startsWith("basic")) {
 				// Authorization: Basic base64credentials
-//				String base64Credentials = authorization.substring("Basic".length()).trim();
-//				byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
-//				String credentials = new String(credDecoded, StandardCharsets.UTF_8);
-//				// credentials = username:password
-//				final String[] values = credentials.split(":", 2);
-//				if (userService.isAdmin(values[0], values[1])) {
-//					// change when deploy
-//					//response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
-//					response.setHeader("Access-Control-Allow-Origin", "*");
-//					response.setHeader("Access-Control-Allow-Origin", "http://localhost:5500");
-//					response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
-//					response.addHeader("Access-Control-Allow-Headers",
-//							"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-//					response.addHeader("Access-Control-Expose-Headers",
-//							"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
-//					response.addHeader("Access-Control-Allow-Credentials", "true");
-//					chain.doFilter(request, response);
-//				} else {
-//					// Set the response status and message
-//					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//					response.setContentType("application/json");
-//					response.getWriter().write(Utility.errMsgUnAuthorize());
-//					return; // Stop processing
-//				}
-				response.setHeader("Access-Control-Allow-Origin", "*");
-				response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
-				response.addHeader("Access-Control-Allow-Headers",
-						"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-				response.addHeader("Access-Control-Expose-Headers",
-						"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
-				response.addHeader("Access-Control-Allow-Credentials", "true");
+				String base64Credentials = authorization.substring("Basic".length()).trim();
+				byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
+				String credentials = new String(credDecoded, StandardCharsets.UTF_8);
+				// credentials = username:password
+				final String[] values = credentials.split(":", 2);
+				if (userService.isAdmin(values[0], values[1])) {
+					response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
+					response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
+					response.addHeader("Access-Control-Allow-Headers",
+							"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+					response.addHeader("Access-Control-Expose-Headers",
+							"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
+					response.addHeader("Access-Control-Allow-Credentials", "true");
+					chain.doFilter(request, response);
+				} else {
+					// Set the response status and message
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					response.setContentType("application/json");
+					response.getWriter().write(Utility.errMsgUnAuthorize());
+					return; // Stop processing
+				}
+
 				chain.doFilter(request, response);
 			} else {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -95,18 +84,24 @@ public class CustomerFilter extends HttpFilter {
 				return; // Stop processing
 			}
 		}
-		// change when deploy
-		// response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
-		response.setHeader("Access-Control-Allow-Origin", "*");
-		// response.setHeader("Access-Control-Allow-Origin", "http://localhost:5500");
+		response.setHeader("Access-Control-Allow-Origin", "https://tscproaudio.com");
 		response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, HEAD");
 		response.addHeader("Access-Control-Allow-Headers",
 				"Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
 		response.addHeader("Access-Control-Expose-Headers",
 				"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
 		response.addHeader("Access-Control-Allow-Credentials", "true");
-		System.out.println("requestPath = " + requestPath);
+
 		chain.doFilter(request, response);
+		
+		// Check if response status is 404
+//		System.out.println("loi roi : "+ response.getStatus());
+//		if (response.getStatus() == HttpServletResponse.SC_NOT_FOUND) {
+//			System.out.println("loi roi : "+ response.getStatus());
+//			response.sendRedirect("/error");
+//		} else {
+//			chain.doFilter(request, response);
+//		}
 	}
 
 }
