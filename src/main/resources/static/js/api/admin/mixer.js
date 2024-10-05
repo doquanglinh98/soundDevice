@@ -1,7 +1,5 @@
 const API_URL = "https://tscproaudio.com/manager";
 const API_IMG = "https://tscproaudio.com";
-const successToast = new bootstrap.Toast(".toast-success");
-const failToast = new bootstrap.Toast(".toast-fail");
 
 const basicAuth = localStorage.getItem("basicAuth");
 
@@ -218,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //create
 
 document.addEventListener("DOMContentLoaded", function () {
+  const successToast = new bootstrap.Toast(".toast-success");
+  const failToast = new bootstrap.Toast(".toast-fail");
   const createForm = document.getElementById("create-mixer-form");
   if (createForm) {
     createForm.addEventListener("submit", async function (event) {
