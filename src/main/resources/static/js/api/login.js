@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!token) {
     alert("Please login to access");
-    window.location.href = "login.html";
+    window.location.href = "/admin-login";
   }
 
   function logout() {
     localStorage.removeItem("token");
-    window.location.href = "login.html";
+    window.location.href = "/admin-login";
   }
 
   document.getElementById("logoutBtn").addEventListener("click", logout);

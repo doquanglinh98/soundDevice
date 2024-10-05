@@ -128,7 +128,7 @@
             formData.append("username", username);
             formData.append("password", password);
 
-            fetch("https://tscproaudio.com/admin-login", {
+            fetch("https://tscproaudio.com/admin-login/verification", {
               method: "POST",
               headers: {
                 Authorization: basicAuth,
@@ -145,7 +145,7 @@
                   localStorage.setItem("token", token);
                   localStorage.setItem("basicAuth", basicAuth);
 
-                  window.location.href = "admin-index.html";
+                  window.location.href = "/admin";
                 } else if (data.toLowerCase().includes("fail")) {
                   alert(
                     "Login failed. Please check your username and password!"
