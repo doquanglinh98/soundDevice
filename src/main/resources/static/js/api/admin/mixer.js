@@ -51,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>
               <div>
                 <a 
-                href="https://tscproaudio.com/admin/edit/mixer/${product.id}" 
+                href="https://tscproaudio.com/admin/edit/mixer-edit/${
+                  product.id
+                }" 
                 type="button" class="btn btn-success btn-sm">
                 Edit
                 </a>
@@ -108,7 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>
               <div>
                 <a 
-                href="https://tscproaudio.com/admin/edit/mixer/${product.id}" 
+                href="https://tscproaudio.com/admin/edit/mixer-edit/${
+                  product.id
+                }" 
                 type="button" class="btn btn-success btn-sm">
                 Edit
                 </a>
