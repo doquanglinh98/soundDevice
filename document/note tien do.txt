@@ -1,3 +1,0 @@
-deploy web java lên server sử dụng railway, elephantSQL, github : https://www.youtube.com/watch?v=LPHhPSAusiQ
-using aws: https://www.youtube.com/watch?v=nji0cB3Py1w
-use jdk17 to build
