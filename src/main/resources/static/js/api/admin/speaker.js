@@ -114,9 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>
               <div>
                 <a 
-                href="/src/main/resources/templates/views/admin/edit/speaker-edit.html?id=${
-                  product.id
-                }" 
+                href="https://tscproaudio.com/admin/edit/speaker/${product.id}" 
                 type="button" class="btn btn-success btn-sm">
                 Edit
                 </a>

@@ -82,7 +82,7 @@ public class CommonController {
 	// admin list series page redirect
 	@GetMapping("/admin/list-series")
 	public String adminListSeriesPage() {
-		return "views/admin/amplifier";
+		return "views/admin/series/series-product";
 	}
 	
 	// admin add product page redirect
