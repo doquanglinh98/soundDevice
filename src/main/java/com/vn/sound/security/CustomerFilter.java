@@ -92,10 +92,16 @@ public class CustomerFilter extends HttpFilter {
 				"Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
 		response.addHeader("Access-Control-Allow-Credentials", "true");
 
+		// System.out.println("loi roi : "+ response.getStatus());
 		chain.doFilter(request, response);
-		
+
+		if (response.getStatus() == 404) {
+			System.out.println("loi roi : " + response.getStatus());
+			response.sendRedirect("/err");
+		}
+
 		// Check if response status is 404
-//		System.out.println("loi roi : "+ response.getStatus());
+		// System.out.println("loi roi 2: " + response.getStatus());
 //		if (response.getStatus() == HttpServletResponse.SC_NOT_FOUND) {
 //			System.out.println("loi roi : "+ response.getStatus());
 //			response.sendRedirect("/error");

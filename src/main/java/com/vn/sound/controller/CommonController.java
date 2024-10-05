@@ -48,9 +48,9 @@ public class CommonController {
 	public ResponseEntity<String> loginManager(@RequestParam(name = "username") String userName,
 			@RequestParam(name = "password") String passWord) {
 		if (userService.isAdmin(userName, passWord)) {
-			return ResponseEntity.ok("login OK");
+			return ResponseEntity.status(HttpStatus.OK).body("login OK");
 		} else {
-			return ResponseEntity.ok("login fail");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("login fail");
 		}
 	}
 
