@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   type="button" class="btn btn-success btn-sm">
                   Edit
                   </a>
-                  <button type="button" class="btn btn-danger btn-sm deleteButton" data-bs-toggle="popover" data-bs-html="true"
+                  <button type="button" class="btn btn-danger btn-sm deleteButtonAmplifier" data-bs-toggle="popover" data-bs-html="true"
                   data-product-id="${product.id}">
                   Delete
                   </button>

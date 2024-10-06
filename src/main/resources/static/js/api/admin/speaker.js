@@ -137,12 +137,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  searchButton.addEventListener("click", function () {
-    const keyword = searchInput.value;
-    if (keyword) {
-      searchProducts(keyword);
-    }
-  });
+  if (searchButton) {
+    searchButton.addEventListener("click", function () {
+      const keyword = searchInput.value;
+      if (keyword) {
+        searchProducts(keyword);
+      }
+    });
+  }
 
   function displayPagination(totalPages, currentPage) {
     if (totalPages <= 1) {
