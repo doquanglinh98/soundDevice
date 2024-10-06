@@ -224,61 +224,63 @@ document.addEventListener("DOMContentLoaded", function () {
   const successToast = new bootstrap.Toast(".toast-success");
   const failToast = new bootstrap.Toast(".toast-fail");
   const form = document.getElementById("create-amplifier-form");
+  if (form) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+      const data = {
+        model: document.getElementById("model").value,
+        stereoPower8OHM: document.getElementById("stereoPower8OHM").value,
+        stereoPower4OHM: document.getElementById("stereoPower4OHM").value,
+        stereoPower2OHM: document.getElementById("stereoPower2OHM").value,
+        btl8OHM: document.getElementById("btl8OHM").value,
+        btl4OHM: document.getElementById("btl4OHM").value,
+        frequencyResponse: document.getElementById("frequencyResponse").value,
+        thdPlus: document.getElementById("thdPlus").value,
+        sSourceNRatio: document.getElementById("sSourceNRatio").value,
+        slewRatio: document.getElementById("slewRatio").value,
+        dampingFactor: document.getElementById("dampingFactor").value,
+        ourputCircuitry: document.getElementById("ourputCircuitry").value,
+        crossTalk: document.getElementById("crossTalk").value,
+        inputImpedance: document.getElementById("inputImpedance").value,
+        inputSensitivity: document.getElementById("inputSensitivity").value,
+        protect: document.getElementById("protect").value,
+        gWeight: document.getElementById("gWeight").value,
+        dimension: document.getElementById("dimension").value,
+        description: document.getElementById("description").value,
+        packingSize: document.getElementById("packingSize").value,
+        gain: document.getElementById("gain").value,
+        optionalGian: document.getElementById("optionalGian").value,
+        degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
+        dissipateHeat: document.getElementById("dissipateHeat").value,
+        appearanceVolume: document.getElementById("appearanceVolume").value,
+      };
 
-    const data = {
-      model: document.getElementById("model").value,
-      description: document.getElementById("description").value,
-      stereoPower8OHM: document.getElementById("stereoPower8OHM").value,
-      stereoPower4OHM: document.getElementById("stereoPower4OHM").value,
-      stereoPower2OHM: document.getElementById("stereoPower2OHM").value,
-      btl8OHM: document.getElementById("btl8OHM").value,
-      btl4OHM: document.getElementById("btl4OHM").value,
-      frequencyResponse: document.getElementById("frequencyResponse").value,
-      thdPlus: document.getElementById("thdPlus").value,
-      sSourceNRatio: document.getElementById("sSourceNRatio").value,
-      slewRatio: document.getElementById("slewRatio").value,
-      dampingFactor: document.getElementById("dampingFactor").value,
-      ourputCircuitry: document.getElementById("ourputCircuitry").value,
-      crossTalk: document.getElementById("crossTalk").value,
-      inputImpedance: document.getElementById("inputImpedance").value,
-      inputSensitivity: document.getElementById("inputSensitivity").value,
-      protect: document.getElementById("protect").value,
-      gWeight: document.getElementById("gWeight").value,
-      dimension: document.getElementById("dimension").value,
-      packingSize: document.getElementById("packingSize").value,
-      gain: document.getElementById("gain").value,
-      optionalGian: document.getElementById("optionalGian").value,
-      degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
-      dissipateHeat: document.getElementById("dissipateHeat").value,
-      appearanceVolume: document.getElementById("appearanceVolume").value,
-    };
-    try {
-      const response = await fetch(`${API_URL}/ampli/create`, {
-        method: "POST",
-        headers: {
-          Authorization: basicAuth,
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error Details:", errorData);
+      console.log(data);
+      try {
+        const response = await fetch(`${API_URL}/ampli/create`, {
+          method: "POST",
+          headers: {
+            Authorization: basicAuth,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("Error Details:", errorData);
+          failToast.show();
+          throw new Error("Failed to create amplifier.");
+        }
+
+        successToast.show();
+      } catch (error) {
         failToast.show();
-        throw new Error("Failed to create mixer.");
+        console.error("Error:", error);
       }
-
-      const result = await response.json();
-      successToast.show();
-    } catch (error) {
-      failToast.show();
-      console.error("Error:", error);
-    }
-  });
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
