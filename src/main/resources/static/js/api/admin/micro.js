@@ -306,6 +306,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const successToast = new bootstrap.Toast(".toast-success");
+  const failToast = new bootstrap.Toast(".toast-fail");
   const uploadForm = document.getElementById("create-img-micro");
   if (uploadForm) {
     uploadForm.addEventListener("submit", async function (event) {
