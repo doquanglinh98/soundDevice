@@ -227,39 +227,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const formData = new FormData(form);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
 
-    // const data = {
-    //   model: document.getElementById("model").value,
-    //   description: document.getElementById("description").value,
-    //   stereoPower8OHM: document.getElementById("stereoPower8OHM").value,
-    //   stereoPower4OHM: document.getElementById("stereoPower4OHM").value,
-    //   stereoPower2OHM: document.getElementById("stereoPower2OHM").value,
-    //   btl8OHM: document.getElementById("btl8OHM").value,
-    //   btl4OHM: document.getElementById("btl4OHM").value,
-    //   frequencyResponse: document.getElementById("frequencyResponse").value,
-    //   thdPlus: document.getElementById("thdPlus").value,
-    //   sSourceNRatio: document.getElementById("sSourceNRatio").value,
-    //   slewRatio: document.getElementById("slewRatio").value,
-    //   dampingFactor: document.getElementById("dampingFactor").value,
-    //   ourputCircuitry: document.getElementById("ourputCircuitry").value,
-    //   crossTalk: document.getElementById("crossTalk").value,
-    //   inputImpedance: document.getElementById("inputImpedance").value,
-    //   inputSensitivity: document.getElementById("inputSensitivity").value,
-    //   protect: document.getElementById("protect").value,
-    //   gWeight: document.getElementById("gWeight").value,
-    //   dimension: document.getElementById("dimension").value,
-    //   packingSize: document.getElementById("packingSize").value,
-    //   gain: document.getElementById("gain").value,
-    //   optionalGian: document.getElementById("optionalGian").value,
-    //   degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
-    //   dissipateHeat: document.getElementById("dissipateHeat").value,
-    //   appearanceVolume: document.getElementById("appearanceVolume").value,
-    // };
+    const data = {
+      model: document.getElementById("model").value,
+      description: document.getElementById("description").value,
+      stereoPower8OHM: document.getElementById("stereoPower8OHM").value,
+      stereoPower4OHM: document.getElementById("stereoPower4OHM").value,
+      stereoPower2OHM: document.getElementById("stereoPower2OHM").value,
+      btl8OHM: document.getElementById("btl8OHM").value,
+      btl4OHM: document.getElementById("btl4OHM").value,
+      frequencyResponse: document.getElementById("frequencyResponse").value,
+      thdPlus: document.getElementById("thdPlus").value,
+      sSourceNRatio: document.getElementById("sSourceNRatio").value,
+      slewRatio: document.getElementById("slewRatio").value,
+      dampingFactor: document.getElementById("dampingFactor").value,
+      ourputCircuitry: document.getElementById("ourputCircuitry").value,
+      crossTalk: document.getElementById("crossTalk").value,
+      inputImpedance: document.getElementById("inputImpedance").value,
+      inputSensitivity: document.getElementById("inputSensitivity").value,
+      protect: document.getElementById("protect").value,
+      gWeight: document.getElementById("gWeight").value,
+      dimension: document.getElementById("dimension").value,
+      packingSize: document.getElementById("packingSize").value,
+      gain: document.getElementById("gain").value,
+      optionalGian: document.getElementById("optionalGian").value,
+      degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
+      dissipateHeat: document.getElementById("dissipateHeat").value,
+      appearanceVolume: document.getElementById("appearanceVolume").value,
+    };
     try {
       const response = await fetch(`${API_URL}/ampli/create`, {
         method: "POST",
