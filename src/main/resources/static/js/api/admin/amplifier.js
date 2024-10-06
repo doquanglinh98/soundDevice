@@ -230,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = {
       model: document.getElementById("model").value,
-      description: document.getElementById("description").value,
       stereoPower8OHM: document.getElementById("stereoPower8OHM").value,
       stereoPower4OHM: document.getElementById("stereoPower4OHM").value,
       stereoPower2OHM: document.getElementById("stereoPower2OHM").value,
@@ -249,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
       gWeight: document.getElementById("gWeight").value,
       dimension: document.getElementById("dimension").value,
       packingSize: document.getElementById("packingSize").value,
+      description: document.getElementById("description").value,
       gain: document.getElementById("gain").value,
       optionalGian: document.getElementById("optionalGian").value,
       degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
@@ -265,14 +265,14 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify(data),
       });
+      const result = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error Details:", errorData);
+        console.error("Error Details:", result);
         failToast.show();
-        throw new Error("Failed to create mixer.");
+        throw new Error("Failed to create amplifier.");
       }
 
-      const result = await response.json();
       successToast.show();
     } catch (error) {
       failToast.show();
