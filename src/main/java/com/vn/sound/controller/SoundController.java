@@ -197,7 +197,7 @@ public class SoundController {
 			powerAmplifier = Utility.convertStringToJsonAmpli(ampliFromClient);
 			return ResponseEntity.ok(powerAmplifierService.createAmpli(powerAmplifier));
 		} catch (CustomException e) {
-			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode().toString()),
+			return new ResponseEntity<>(Utility.errMsgCreateFieldNameExits(powerAmplifier.getModel().toString()),
 					HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			return new ResponseEntity<>(Utility.errMsgInvalid(), HttpStatus.BAD_REQUEST);
