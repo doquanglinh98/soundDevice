@@ -33,6 +33,11 @@ public class CommonController {
 		return "views/home";
 	}
 
+	@GetMapping("/about-us")
+	public String introPage() {
+		return "views/about-us";
+	}
+
 	@GetMapping("/admin-login")
 	public String managerLogin() {
 		return "views/admin/login";
