@@ -3,6 +3,7 @@ const API_URL = "https://tscproaudio.com/manager";
 const path = window.location.pathname;
 const amplifierId = path.split("/").pop();
 const getNumberId = parseInt(amplifierId);
+const basicAuth = localStorage.getItem("basicAuth");
 
 document.addEventListener("DOMContentLoaded", function () {
   function productDetails() {
