@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
   productDetails();
 
   const submitButton = document.querySelector(".btn-edit-micro");
-
   const editForm = document.getElementById("edit-series-micro");
+
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
       event.preventDefault();

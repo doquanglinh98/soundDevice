@@ -270,6 +270,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const successToast = new bootstrap.Toast(".toast-success");
+  const failToast = new bootstrap.Toast(".toast-fail");
+
   const upImageForm = document.getElementById("create-img-mixer");
   if (upImageForm) {
     upImageForm.addEventListener("submit", async function (event) {
