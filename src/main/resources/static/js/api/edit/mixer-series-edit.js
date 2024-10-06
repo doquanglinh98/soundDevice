@@ -20,41 +20,41 @@ document.addEventListener("DOMContentLoaded", function () {
   productDetails();
 
   const submitButton = document.querySelector(".btn-edit-mixer");
+  const editForm = document.getElementById("edit-series-mixer");
 
-  document
-    .getElementById("edit-series-mixer")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
+  editForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      submitButton.disabled = true;
-      submitButton.textContent = "Updating...";
+    submitButton.disabled = true;
+    submitButton.textContent = "Updating...";
 
-      const formData = {
-        id: getNumberId,
-        seriesName: document.getElementById("seriesName").value,
-        imgId: document.getElementById("imgId").value,
-      };
-
-      fetch(`${API_URL}/mixer-series/edit`, {
-        method: "PUT",
-        headers: {
-          Authorization: basicAuth,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Update successful:", data);
-          alert("Product updated successfully!");
-          submitButton.disabled = false;
-          submitButton.textContent = "Edit";
-        })
-        .catch((error) => {
-          console.error("Error updating product:", error);
-          alert("Failed to update the product.");
-          submitButton.disabled = false;
-          submitButton.textContent = "Edit";
-        });
+    const formData = new FormData(editForm);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
     });
+    data.id = getNumberId;
+
+    fetch(`${API_URL}/mixer-series/edit`, {
+      method: "PUT",
+      headers: {
+        Authorization: basicAuth,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Update successful:", data);
+        alert("Product updated successfully!");
+        submitButton.disabled = false;
+        submitButton.textContent = "Edit";
+      })
+      .catch((error) => {
+        console.error("Error updating product:", error);
+        alert("Failed to update the product.");
+        submitButton.disabled = false;
+        submitButton.textContent = "Edit";
+      });
+  });
 });

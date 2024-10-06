@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
   productDetails();
 
   const submitButton = document.querySelector(".btn-edit-amplifier");
-
   const editForm = document.getElementById("edit-series-amplifier");
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
