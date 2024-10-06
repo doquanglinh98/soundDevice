@@ -14,5 +14,5 @@ public interface PowerAmplifierRepository extends JpaRepository<PowerAmplifier, 
 	@Query("SELECT u FROM PowerAmplifier u WHERE u.model LIKE %:model%")
 	List<PowerAmplifier> findPowerAmplifierByModel(@Param("model") String model);
 
-	boolean existsByMode(String mode);
+	boolean existsByModel(String model);
 }

@@ -56,7 +56,7 @@ public class PowerAmplifierService {
 	}
 
 	public String createAmpli(PowerAmplifier powerAmplifier) throws Exception {
-		if (powerAmplifierRepository.existsByMode(powerAmplifier.getMode())) {
+		if (powerAmplifierRepository.existsByModel(powerAmplifier.getModel())) {
 			// return Utility.errMsgCreateFieldNameExits(powerAmplifier.getMode());
 			throw new CustomException("Record name has existed");
 		} else {
