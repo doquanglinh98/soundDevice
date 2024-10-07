@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
           product.frequencyResponseTransmitterParam || "";
         document.getElementById("frequencyRangeCha").value =
           product.frequencyRangeCha || "";
+        document.getElementById("frequencyRange").value =
+          product.frequencyRange || "";
         document.getElementById("frequencyRangeChb").value =
           product.frequencyRangeChb || "";
         document.getElementById("signalToNoiseRatio").value =

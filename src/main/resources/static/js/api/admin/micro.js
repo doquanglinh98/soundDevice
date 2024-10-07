@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ).value,
         frequencyRangeCha: document.getElementById("frequencyRangeCha").value,
         frequencyRangeChb: document.getElementById("frequencyRangeChb").value,
+        frequencyRange: document.getElementById("frequencyRange").value,
         signalToNoiseRatio: document.getElementById("signalToNoiseRatio").value,
         totalHarmonicDistortion: document.getElementById(
           "totalHarmonicDistortion"

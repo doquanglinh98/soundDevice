@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const fieldsSystemParam = [
             {
+              label: "Frequency Range",
+              value: product.frequencyRange,
+            },
+            {
               label: "Frequency Range (Cha)",
               value: product.frequencyRangeCha,
             },
