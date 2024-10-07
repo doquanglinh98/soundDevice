@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function fetchListProduct(page) {
     loadingMessage.style.display = "block";
-    fetch(
-      `https://cors-anywhere.herokuapp.com/${API_URL}/ampli/all?page=${
-        page - 1
-      }&size=${productsPerPage}`
-    )
+    fetch(`${API_URL}/ampli/all?page=${page - 1}&size=${productsPerPage}`)
       .then((res) => res.json())
       .then((data) => {
         loadingMessage.style.display = "none";
