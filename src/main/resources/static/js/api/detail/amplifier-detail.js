@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Crosstalk", value: product.crossTalk },
             { label: "Input Impedance", value: product.inputImpedance },
             { label: "Input Sensitivity", value: product.inputSensitivity },
-            { label: "Protect", value: product.protect },
+            { label: "Protect", value: product.protectPowerAmplifier },
             { label: "G Weight", value: product.gWeight },
             { label: "Dimension", value: product.dimension },
             { label: "Packing Size", value: product.packingSize },
