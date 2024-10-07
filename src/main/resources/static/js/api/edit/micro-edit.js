@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("microName").value = product.microName || "";
         document.getElementById("frequencyQuantity").value =
           product.frequencyQuantity || "";
-        document.getElementById("sSourceNRatio").value =
-          product.sSourceNRatio || "";
+        document.getElementById("frequencyResponseTransmitterParam ").value =
+          product.frequencyResponseTransmitterParam || "";
         document.getElementById("frequencyRangeCha").value =
           product.frequencyRangeCha || "";
+        document.getElementById("frequencyRange").value =
+          product.frequencyRange || "";
         document.getElementById("frequencyRangeChb").value =
           product.frequencyRangeChb || "";
         document.getElementById("signalToNoiseRatio").value =

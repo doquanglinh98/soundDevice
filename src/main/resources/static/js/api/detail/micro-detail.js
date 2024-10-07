@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const fieldsSystemParam = [
             {
+              label: "Frequency Range",
+              value: product.frequencyRange,
+            },
+            {
               label: "Frequency Range (Cha)",
               value: product.frequencyRangeCha,
             },
@@ -111,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Transmitter Type", value: product.transmitterType },
             { label: "Pipe Body Material", value: product.pipeBodyMaterial },
             { label: "Battery Life Time", value: product.batteryLifeTime },
+            {
+              label: "Frequency Response",
+              value: product.frequencyResponseTransmitterParam,
+            },
           ];
 
           fieldsSystemParam.forEach((field) => {
