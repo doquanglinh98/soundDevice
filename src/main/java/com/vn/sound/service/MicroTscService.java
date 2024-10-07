@@ -32,19 +32,20 @@ public class MicroTscService {
 		}
 		MicroTsc microTscTmp = microTscOptional.get();
 		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getModel(),
-				microTscTmp.getDescription(), microTscTmp.getMicroName(), microTscTmp.getsSourceNRatio(),
-				microTscTmp.getFrequencyQuantity(), microTscTmp.getFrequencyRangeCha(),
-				microTscTmp.getFrequencyRangeChb(), microTscTmp.getSignalToNoiseRatio(),
-				microTscTmp.getTotalHarmonicDistortion(), microTscTmp.getModulationMode(),
-				microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(), microTscTmp.getChannelInterval(),
-				microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(), microTscTmp.getOscillationMode(),
-				microTscTmp.getOscillationModeReceiverParam(), microTscTmp.getModulation(),
-				microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(), microTscTmp.getPowerSupplyMode(),
-				microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(), microTscTmp.getSpuriousSuppression(),
-				microTscTmp.getMaxOutputElectricalLevel(), microTscTmp.getOutputPower(), microTscTmp.getDirectivity(),
-				microTscTmp.getFrequencyResponse(), microTscTmp.getPowerSupply(),
-				microTscTmp.getOscillationModeTransmitterParam(), microTscTmp.getTransmitterType(),
-				microTscTmp.getPipeBodyMaterial(), microTscTmp.getChannels(), microTscTmp.getBatteryLifeTime());
+				microTscTmp.getDescription(), microTscTmp.getMicroName(),
+				microTscTmp.getFrequencyResponseTransmitterParam(), microTscTmp.getFrequencyQuantity(),
+				microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
+				microTscTmp.getSignalToNoiseRatio(), microTscTmp.getTotalHarmonicDistortion(),
+				microTscTmp.getModulationMode(), microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(),
+				microTscTmp.getChannelInterval(), microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
+				microTscTmp.getOscillationMode(), microTscTmp.getOscillationModeReceiverParam(),
+				microTscTmp.getModulation(), microTscTmp.getSensitivity(), microTscTmp.getSensitivityAdjustment(),
+				microTscTmp.getPowerSupplyMode(), microTscTmp.getAntennaAccess(), microTscTmp.getMidFrequence(),
+				microTscTmp.getSpuriousSuppression(), microTscTmp.getMaxOutputElectricalLevel(),
+				microTscTmp.getOutputPower(), microTscTmp.getDirectivity(), microTscTmp.getFrequencyResponse(),
+				microTscTmp.getPowerSupply(), microTscTmp.getOscillationModeTransmitterParam(),
+				microTscTmp.getTransmitterType(), microTscTmp.getPipeBodyMaterial(), microTscTmp.getChannels(),
+				microTscTmp.getBatteryLifeTime());
 		return microTsc;
 	}
 

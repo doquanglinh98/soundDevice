@@ -42,8 +42,8 @@ public class MicroTsc {
 	@Column(name = "frequencyRangeChb", length = 150)
 	private String frequencyRangeChb;
 
-	@Column(name = "sSourceNRatio", length = 150)
-	private String sSourceNRatio;
+	@Column(name = "frequencyResponseTransmitterParam ", length = 150)
+	private String frequencyResponseTransmitterParam;
 
 	@Column(name = "signalToNoiseRatio", length = 150)
 	private String signalToNoiseRatio;
@@ -399,12 +399,12 @@ public class MicroTsc {
 		this.description = description;
 	}
 
-	public String getsSourceNRatio() {
-		return sSourceNRatio;
+	public String getFrequencyResponseTransmitterParam() {
+		return frequencyResponseTransmitterParam;
 	}
 
-	public void setsSourceNRatio(String sSourceNRatio) {
-		this.sSourceNRatio = sSourceNRatio;
+	public void setFrequencyResponseTransmitterParam(String frequencyResponseTransmitterParam) {
+		this.frequencyResponseTransmitterParam = frequencyResponseTransmitterParam;
 	}
 
 	public String getOscillationMode() {
@@ -420,7 +420,7 @@ public class MicroTsc {
 	}
 
 	public MicroTsc(Long Id, String imgId, String model, String description, String microName, String frequencyQuantity,
-			String sSourceNRatio, String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
+			String frequencyResponseTransmitterParam , String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
 			String totalHarmonicDistortion, String modulationMode, String workingDistance, String frequencyBandwidth,
 			String channelInterval, String maxDeviation, String frequencyStability, String oscillationMode,
 			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
@@ -434,7 +434,7 @@ public class MicroTsc {
 		this.description = description;
 		this.microName = microName;
 		this.frequencyQuantity = frequencyQuantity;
-		this.sSourceNRatio = sSourceNRatio;
+		this.frequencyResponseTransmitterParam  = frequencyResponseTransmitterParam ;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;
