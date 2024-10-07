@@ -238,7 +238,9 @@ document.addEventListener("DOMContentLoaded", function () {
         description: document.getElementById("description").value,
         microName: document.getElementById("microName").value,
         frequencyQuantity: document.getElementById("frequencyQuantity").value,
-        sSourceNRatio: document.getElementById("sSourceNRatio").value,
+        frequencyResponseTransmitterParam: document.getElementById(
+          "frequencyResponseTransmitterParam "
+        ).value,
         frequencyRangeCha: document.getElementById("frequencyRangeCha").value,
         frequencyRangeChb: document.getElementById("frequencyRangeChb").value,
         signalToNoiseRatio: document.getElementById("signalToNoiseRatio").value,

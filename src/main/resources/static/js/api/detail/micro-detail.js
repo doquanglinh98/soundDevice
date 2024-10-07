@@ -111,6 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Transmitter Type", value: product.transmitterType },
             { label: "Pipe Body Material", value: product.pipeBodyMaterial },
             { label: "Battery Life Time", value: product.batteryLifeTime },
+            {
+              label: "Frequency Response",
+              value: product.frequencyResponseTransmitterParam,
+            },
           ];
 
           fieldsSystemParam.forEach((field) => {
