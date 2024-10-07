@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Channel", value: product.channel },
             { label: "Channel EQ", value: product.channelEQ },
             { label: "AUX", value: product.AUX },
-            { label: "Return", value: product.return },
+            { label: "Return", value: product.returnMixer },
             { label: "Effects", value: product.effects },
             { label: "Main Out", value: product.mainOut },
-            { label: "Groups", value: product.groups },
+            { label: "Groups", value: product.groupsMixer },
             { label: "Phantom Power", value: product.phantomPower },
             { label: "USB Player", value: product.usbPlayer },
           ];
