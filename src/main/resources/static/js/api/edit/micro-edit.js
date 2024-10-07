@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("microName").value = product.microName || "";
         document.getElementById("frequencyQuantity").value =
           product.frequencyQuantity || "";
-        document.getElementById("frequencyResponseTransmitterParam ").value =
+        document.getElementById("frequencyResponseTransmitterParam").value =
           product.frequencyResponseTransmitterParam || "";
         document.getElementById("frequencyRangeCha").value =
           product.frequencyRangeCha || "";
