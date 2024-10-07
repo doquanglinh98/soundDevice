@@ -32,6 +32,9 @@ public class MicroTsc {
 
 	@Column(name = "description", columnDefinition = "LONGTEXT")
 	private String description;
+	
+	@Column(name = "frequencyRange", length = 150)
+	private String frequencyRange;
 
 	@Column(name = "frequencyRangeCha", length = 150)
 	private String frequencyRangeCha;
@@ -133,6 +136,14 @@ public class MicroTsc {
 
 	public String getFrequencyRangeCha() {
 		return frequencyRangeCha;
+	}
+
+	public String getFrequencyRange() {
+		return frequencyRange;
+	}
+
+	public void setFrequencyRange(String frequencyRange) {
+		this.frequencyRange = frequencyRange;
 	}
 
 	public void setFrequencyRangeCha(String frequencyRangeCha) {
@@ -420,7 +431,7 @@ public class MicroTsc {
 	}
 
 	public MicroTsc(Long Id, String imgId, String model, String description, String microName, String frequencyQuantity,
-			String frequencyResponseTransmitterParam , String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
+			String frequencyResponseTransmitterParam , String frequencyRange, String frequencyRangeCha, String frequencyRangeChb, String signalToNoiseRatio,
 			String totalHarmonicDistortion, String modulationMode, String workingDistance, String frequencyBandwidth,
 			String channelInterval, String maxDeviation, String frequencyStability, String oscillationMode,
 			String oscillationModeReceiverParam, String modulation, String sensitivity, String sensitivityAdjustment,
@@ -434,7 +445,8 @@ public class MicroTsc {
 		this.description = description;
 		this.microName = microName;
 		this.frequencyQuantity = frequencyQuantity;
-		this.frequencyResponseTransmitterParam  = frequencyResponseTransmitterParam ;
+		this.frequencyResponseTransmitterParam  = frequencyResponseTransmitterParam;
+		this.frequencyRange = frequencyRange;
 		this.frequencyRangeCha = frequencyRangeCha;
 		this.frequencyRangeChb = frequencyRangeChb;
 		this.signalToNoiseRatio = signalToNoiseRatio;

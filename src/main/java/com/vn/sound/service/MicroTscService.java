@@ -34,7 +34,7 @@ public class MicroTscService {
 		MicroTsc microTsc = new MicroTsc(microTscTmp.getId(), microTscTmp.getImgId(), microTscTmp.getModel(),
 				microTscTmp.getDescription(), microTscTmp.getMicroName(),
 				microTscTmp.getFrequencyResponseTransmitterParam(), microTscTmp.getFrequencyQuantity(),
-				microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
+				microTscTmp.getFrequencyRange(), microTscTmp.getFrequencyRangeCha(), microTscTmp.getFrequencyRangeChb(),
 				microTscTmp.getSignalToNoiseRatio(), microTscTmp.getTotalHarmonicDistortion(),
 				microTscTmp.getModulationMode(), microTscTmp.getWorkingDistance(), microTscTmp.getFrequencyBandwidth(),
 				microTscTmp.getChannelInterval(), microTscTmp.getMaxDeviation(), microTscTmp.getFrequencyStability(),
