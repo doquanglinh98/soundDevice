@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dimension").value = product.dimension || "";
         document.getElementById("packingSize").value =
           product.packingSize || "";
+        document.getElementById("protect").value = product.protect || "";
+        document.getElementById("ourputCircuitry").value =
+          product.ourputCircuitry || "";
+        protect;
         document.getElementById("gain").value = product.gain || "";
         document.getElementById("optionalGian").value =
           product.optionalGian || "";
