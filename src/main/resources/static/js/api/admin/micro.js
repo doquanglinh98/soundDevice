@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
         microName: document.getElementById("microName").value,
         frequencyQuantity: document.getElementById("frequencyQuantity").value,
         frequencyResponseTransmitterParam: document.getElementById(
-          "frequencyResponseTransmitterParam "
+          "frequencyResponseTransmitterParam"
         ).value,
         frequencyRangeCha: document.getElementById("frequencyRangeCha").value,
         frequencyRangeChb: document.getElementById("frequencyRangeChb").value,
