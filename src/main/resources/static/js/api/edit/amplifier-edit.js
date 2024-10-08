@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
           product.dissipateHeat || "";
         document.getElementById("appearanceVolume").value =
           product.appearanceVolume || "";
+        document.getElementById("other").value = product.other || "";
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);

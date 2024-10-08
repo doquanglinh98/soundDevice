@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         groupsMixer: document.getElementById("groupsMixer").value,
         phantomPower: document.getElementById("phantomPower").value,
         usbPlayer: document.getElementById("usbPlayer").value,
+        other: document.getElementById("other").value,
       };
       try {
         const response = await fetch(`${API_URL}/mixer/create`, {

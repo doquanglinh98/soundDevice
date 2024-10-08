@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("phantomPower").value =
           product.phantomPower || "";
         document.getElementById("usbPlayer").value = product.usbPlayer || "";
+        document.getElementById("other").value = product.other || "";
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);

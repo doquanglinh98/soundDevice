@@ -255,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
         degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
         dissipateHeat: document.getElementById("dissipateHeat").value,
         appearanceVolume: document.getElementById("appearanceVolume").value,
+        other: document.getElementById("other").value,
       };
 
       console.log(data);
