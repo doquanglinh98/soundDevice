@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("phantomPower").value =
           product.phantomPower || "";
         document.getElementById("usbPlayer").value = product.usbPlayer || "";
-        document.getElementById("other").value = product.other || "";
+        window.editorInstance.setData(product.other);
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("edit-mixer-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+      const editorContent = window.editorInstance.getData();
 
       submitButton.disabled = true;
       submitButton.textContent = "Updating...";
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         groupsMixer: document.getElementById("groupsMixer").value,
         phantomPower: document.getElementById("phantomPower").value,
         usbPlayer: document.getElementById("usbPlayer").value,
-        other: document.getElementById("other").value,
+        other: editorContent,
       };
 
       fetch(`${API_URL}/mixer/edit`, {

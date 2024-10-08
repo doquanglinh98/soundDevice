@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
           fieldsSystemParam.forEach((field) => {
             if (field.value) {
               systemParamCatalogue += `<p class="text-capitalize m-0 p-0">
-                  <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
+                  <span class="fw-bold">${field.label}</span> : <span>${field.value}</span>
                 </p>`;
             }
           });
@@ -132,14 +132,14 @@ document.addEventListener("DOMContentLoaded", function () {
           fieldsReceiverParam.forEach((field) => {
             if (field.value) {
               receiverParamCatalogue += `<p class="text-capitalize m-0 p-0">
-                  <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
+                  <span class="fw-bold">${field.label}</span> : <span>${field.value}</span>
                 </p>`;
             }
           });
           fieldsTransmitterParam.forEach((field) => {
             if (field.value) {
               transmitterParamCatalogue += `<p class="text-capitalize m-0 p-0">
-                  <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
+                  <span class="fw-bold">${field.label}</span> : <span>${field.value}</span>
                 </p>`;
             }
           });

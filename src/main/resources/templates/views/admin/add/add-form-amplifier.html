@@ -33,6 +33,10 @@
       href="https://tscproaudio.com/css/admin-dashboard.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.css"
+    />
   </head>
 
   <body id="page-top">
@@ -682,18 +686,18 @@
                   </div>
                   <div class="row mb-3 mt-3">
                     <div class="col-sm-2">
-                      <label for="other" class="form-label"
+                      <label for="editorAmplifier" class="form-label"
                         >Other catalogue:</label
                       >
                     </div>
                     <div class="col-sm-10">
                       <textarea
-                        type="text"
-                        class="form-control"
-                        id="other"
-                        placeholder="Enter"
-                        name="other"
-                      ></textarea>
+                        name="editorAmplifier"
+                        id="editorAmplifier"
+                        rows="10"
+                        cols="80"
+                      >
+                      </textarea>
                     </div>
                   </div>
 
@@ -737,6 +741,23 @@
       defer
       src="https://tscproaudio.com/vendor/bootstrap/js/bootstrap.bundle.min.js"
     ></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.umd.js"></script>
+    <script>
+      const { ClassicEditor, Essentials, Bold, Italic, Font, Paragraph } =
+        CKEDITOR;
+
+      ClassicEditor.create(document.querySelector("#editorAmplifier"), {
+        plugins: [Essentials, Bold, Italic, Font, Paragraph],
+        toolbar: ["bold", "italic", "|", "fontSize", "fontColor"],
+      })
+        .then((editorOfAmplifier) => {
+          window.editorInstance = editorOfAmplifier;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
 
     <!-- Custom scripts for all pages-->
     <script src="https://tscproaudio.com/js/sb-admin-2.js"></script>

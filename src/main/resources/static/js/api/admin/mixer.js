@@ -228,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (createForm) {
     createForm.addEventListener("submit", async function (event) {
       event.preventDefault();
+      const editorContent = window.editorInstance.getData();
 
       const data = {
         modelMixer: document.getElementById("modelMixer").value,
@@ -241,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
         groupsMixer: document.getElementById("groupsMixer").value,
         phantomPower: document.getElementById("phantomPower").value,
         usbPlayer: document.getElementById("usbPlayer").value,
-        other: document.getElementById("other").value,
+        other: editorContent,
       };
       try {
         const response = await fetch(`${API_URL}/mixer/create`, {
