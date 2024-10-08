@@ -53,6 +53,17 @@ public class Mixer {
 	@Column(name = "usbPlayer", length = 150)
 	private String usbPlayer;
 
+	@Column(name = "other", columnDefinition = "LONGTEXT")
+	private String other;
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
 	public String getImgId() {
 		return imgId;
 	}
@@ -159,7 +170,7 @@ public class Mixer {
 
 	public Mixer(Long id, String imgId, String modelMixer, String description, String channel, String channelEQ,
 			String AUX, String returnMixer, String effects, String mainOut, String groupsMixer, String phantomPower,
-			String usbPlayer) {
+			String usbPlayer, String other) {
 		this.id = id;
 		this.imgId = imgId;
 		this.modelMixer = modelMixer;
@@ -173,6 +184,7 @@ public class Mixer {
 		this.groupsMixer = groupsMixer;
 		this.phantomPower = phantomPower;
 		this.usbPlayer = usbPlayer;
+		this.other = other;
 	}
 
 }

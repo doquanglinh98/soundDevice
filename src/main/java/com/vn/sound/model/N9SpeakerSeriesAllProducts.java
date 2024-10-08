@@ -313,7 +313,18 @@ public class N9SpeakerSeriesAllProducts {
 	@Column(name = "gain", length = 150)
 	private String gain;
 
+	@Column(name = "other", columnDefinition = "LONGTEXT")
+	private String other;
+
 // setter getter
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
 
 	public String getImgId() {
 		return imgId;
@@ -1129,7 +1140,7 @@ public class N9SpeakerSeriesAllProducts {
 			String outputCircuitDesign, String powerSelection, String inputVoltage, String speakerSpecifications,
 			String color, String waterproof, String unitConfigure, String installationOpeningSize,
 			String maximumOuterDiameter, String withstandPower, String paintingTreatment, String suspensionPoint,
-			String gain) {
+			String gain, String other) {
 		this.id = id;
 		this.imgId = imgId;
 		this.description = description;
@@ -1229,5 +1240,6 @@ public class N9SpeakerSeriesAllProducts {
 		this.paintingTreatment = paintingTreatment;
 		this.suspensionPoint = suspensionPoint;
 		this.gain = gain;
+		this.other = other;
 	}
 }

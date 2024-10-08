@@ -41,7 +41,7 @@ public class MixerService {
 		Mixer mixer = new Mixer(mixerTmp.getId(), mixerTmp.getImgId(), mixerTmp.getModelMixer(),
 				mixerTmp.getDescription(), mixerTmp.getChannel(), mixerTmp.getChannelEQ(), mixerTmp.getAUX(),
 				mixerTmp.getReturnMixer(), mixerTmp.getEffects(), mixerTmp.getMainOut(), mixerTmp.getGroupsMixer(),
-				mixerTmp.getPhantomPower(), mixerTmp.getUsbPlayer());
+				mixerTmp.getPhantomPower(), mixerTmp.getUsbPlayer(), mixerTmp.getOther());
 		return mixer;
 	}
 

@@ -46,7 +46,7 @@ public class PowerAmplifierService {
 				powerAmplifierTmp.getgWeight(), powerAmplifierTmp.getDimension(), powerAmplifierTmp.getPackingSize(),
 				powerAmplifierTmp.getGain(), powerAmplifierTmp.getOptionalGian(),
 				powerAmplifierTmp.getDegreeOfSeparation(), powerAmplifierTmp.getDissipateHeat(),
-				powerAmplifierTmp.getAppearanceVolume());
+				powerAmplifierTmp.getAppearanceVolume(), powerAmplifierTmp.getOther());
 
 		return powerAmplifier;
 	}

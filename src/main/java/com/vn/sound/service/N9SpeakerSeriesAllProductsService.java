@@ -119,7 +119,8 @@ public class N9SpeakerSeriesAllProductsService {
 				n9SpeakerSeriesAllProductsTmp.getInstallationOpeningSize(),
 				n9SpeakerSeriesAllProductsTmp.getMaximumOuterDiameter(),
 				n9SpeakerSeriesAllProductsTmp.getWithstandPower(), n9SpeakerSeriesAllProductsTmp.getPaintingTreatment(),
-				n9SpeakerSeriesAllProductsTmp.getSuspensionPoint(), n9SpeakerSeriesAllProductsTmp.getGain()
+				n9SpeakerSeriesAllProductsTmp.getSuspensionPoint(), n9SpeakerSeriesAllProductsTmp.getGain(),
+				n9SpeakerSeriesAllProductsTmp.getOther()
 
 		);
 

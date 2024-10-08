@@ -98,6 +98,17 @@ public class PowerAmplifier {
 	@Column(name = "appearanceVolume", length = 150)
 	private String appearanceVolume;
 
+	@Column(name = "other", columnDefinition = "LONGTEXT")
+	private String other;
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
 	public String getImgId() {
 		return imgId;
 	}
@@ -325,9 +336,9 @@ public class PowerAmplifier {
 	public PowerAmplifier(Long Id, String imgId, String model, String description, String mode, String stereoPower8OHM,
 			String stereoPower4OHM, String stereoPower2OHM, String btl8OHM, String btl4OHM, String frequencyResponse,
 			String thdPlus, String sSourceNRatio, String slewRatio, String dampingFactor, String outputCircuitry,
-			String crossTalk, String inputImpedance, String inputSensitivity, String protectPowerAmplifier, String gWeight,
-			String dimension, String packingSize, String gain, String optionalGian, String degreeOfSeparation,
-			String dissipateHeat, String appearanceVolume) {
+			String crossTalk, String inputImpedance, String inputSensitivity, String protectPowerAmplifier,
+			String gWeight, String dimension, String packingSize, String gain, String optionalGian,
+			String degreeOfSeparation, String dissipateHeat, String appearanceVolume, String other) {
 		this.id = Id;
 		this.imgId = imgId;
 		this.model = model;
@@ -356,6 +367,7 @@ public class PowerAmplifier {
 		this.degreeOfSeparation = degreeOfSeparation;
 		this.dissipateHeat = dissipateHeat;
 		this.appearanceVolume = appearanceVolume;
+		this.other = other;
 	}
 
 }
