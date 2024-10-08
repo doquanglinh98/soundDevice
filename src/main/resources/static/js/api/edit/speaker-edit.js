@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("suspensionPoint").value =
           product.suspensionPoint || "";
         document.getElementById("gain").value = product.gain || "";
+        document.getElementById("other").value = product.other || "";
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);

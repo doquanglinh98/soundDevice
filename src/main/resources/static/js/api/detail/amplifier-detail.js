@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             { label: "Dissipate Heat", value: product.dissipateHeat },
             { label: "Appearance Volume", value: product.appearanceVolume },
+            { label: "Other", value: product.other },
           ];
 
           fields.forEach((field) => {

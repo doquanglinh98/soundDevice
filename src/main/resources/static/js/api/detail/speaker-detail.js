@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Rated Power", value: product.ratedPower },
             { label: "Nominal Impedance", value: product.nominalImpedance },
             { label: "Input Sensitivity", value: product.inputSensitivity },
-            { label: "Max SPL", value: product.maxSPL },
+            { label: "Mlax.SPL", value: product.maxSPL },
             { label: "Nominal Impedence", value: product.nominalImpedence },
             { label: "Cover Range", value: product.coverRange },
             { label: "Hanging Hardware", value: product.hangingHardware },
@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Painting Treatment", value: product.paintingTreatment },
             { label: "Suspension Point", value: product.suspensionPoint },
             { label: "Gain", value: product.gain },
+            { label: "Other", value: product.other },
           ];
 
           fields.forEach((field) => {
