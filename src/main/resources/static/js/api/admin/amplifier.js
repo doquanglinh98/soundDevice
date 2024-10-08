@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (form) {
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const editorContent = window.editorInstance.getData();
+      const editorContent = window.editorOfAmplifier.getData();
 
       const data = {
         model: document.getElementById("model").value,

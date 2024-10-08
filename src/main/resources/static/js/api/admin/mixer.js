@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (createForm) {
     createForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const editorContent = window.editorInstance.getData();
+      const editorContent = window.editorOfMixer.getData();
 
       const data = {
         modelMixer: document.getElementById("modelMixer").value,

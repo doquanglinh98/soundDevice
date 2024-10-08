@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("suspensionPoint").value =
           product.suspensionPoint || "";
         document.getElementById("gain").value = product.gain || "";
-        window.editorInstance.setData(product.other);
+        window.editorOfEditSpeaker.setData(product.other);
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const editorContent = window.editorInstance.getData();
+      const editorContent = window.editorOfEditSpeaker.getData();
 
       submitButton.disabled = true;
       submitButton.textContent = "Updating...";

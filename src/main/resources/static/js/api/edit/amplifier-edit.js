@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
           product.dissipateHeat || "";
         document.getElementById("appearanceVolume").value =
           product.appearanceVolume || "";
-        window.editorInstance.setData(product.other);
+        window.editorOfEditAmplifier.setData(product.other);
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const editorContent = window.editorInstance.getData();
+      const editorContent = window.editorOfEditAmplifier.getData();
 
       submitButton.disabled = true;
       submitButton.textContent = "Updating...";

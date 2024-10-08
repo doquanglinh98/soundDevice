@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const editorContent = window.editorInstance.getData();
+    const editorContent = window.editorOfSpeaker.getData();
 
     const formData = new FormData(form);
     const data = {};
