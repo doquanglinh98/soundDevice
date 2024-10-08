@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             { label: "Dissipate Heat", value: product.dissipateHeat },
             { label: "Appearance Volume", value: product.appearanceVolume },
-            { label: "Other", value: product.other },
           ];
 
           fields.forEach((field) => {
@@ -77,6 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
               `;
             }
           });
+          detailCatalogue += `
+                <p class="text-capitalize m-0 p-0">
+                  ${product.other}
+                </p>
+              `;
 
           catalogueProduct.innerHTML = detailCatalogue;
         }
