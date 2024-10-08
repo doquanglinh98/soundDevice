@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   const listSeriesAmplifier = document.querySelector(".list-series-amplifier");
   const listSeriesMicro = document.querySelector(".list-series-micro");
   const listSeriesMixer = document.querySelector(".list-series-mixer");
+  const seriesSpeaker = document.querySelector(".series-speaker");
+  const seriesAmplifier = document.querySelector(".series-amplifier");
+  const seriesMicro = document.querySelector(".series-micro");
+  const seriesMixer = document.querySelector(".series-mixer");
+
   const loading = document.querySelectorAll(".loading-message");
 
   async function fetchSeriesSpeaker() {
@@ -15,8 +20,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        listSeriesSpeaker.innerHTML =
-          '<div class="text-center fs-4">No data</div>';
+        seriesSpeaker.style.display = none;
       }
       products.forEach((product) => {
         const markup = `
@@ -73,8 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        listSeriesAmplifier.innerHTML =
-          '<div class="text-center fs-4">No data</div>';
+        seriesAmplifier.style.display = none;
       }
 
       products.forEach((product) => {
@@ -131,8 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        listSeriesMicro.innerHTML =
-          '<div class="text-center fs-4">No data</div>';
+        seriesMicro.style.display = none;
       }
 
       products.forEach((product) => {
@@ -187,8 +189,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        listSeriesMixer.innerHTML =
-          '<div class="text-center fs-4">No data</div>';
+        seriesMicro.style.display = none;
       }
 
       products.forEach((product) => {
