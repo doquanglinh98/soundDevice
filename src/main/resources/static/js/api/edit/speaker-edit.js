@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("suspensionPoint").value =
           product.suspensionPoint || "";
         document.getElementById("gain").value = product.gain || "";
-        document.getElementById("other").value = product.other || "";
+        window.editorOfEditSpeaker.setData(product.other);
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
@@ -177,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
       event.preventDefault();
+      const editorContent = window.editorOfEditSpeaker.getData();
+
       submitButton.disabled = true;
       submitButton.textContent = "Updating...";
 
@@ -186,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data[key] = value;
       });
       data.id = getNumberId;
+      data.other = editorContent;
 
       fetch(`${API_URL}/n9-speaker-series/edit`, {
         method: "PUT",

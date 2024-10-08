@@ -227,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (form) {
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
+      const editorContent = window.editorOfAmplifier.getData();
 
       const data = {
         model: document.getElementById("model").value,
@@ -255,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
         degreeOfSeparation: document.getElementById("degreeOfSeparation").value,
         dissipateHeat: document.getElementById("dissipateHeat").value,
         appearanceVolume: document.getElementById("appearanceVolume").value,
-        other: document.getElementById("other").value,
+        other: editorContent,
       };
 
       console.log(data);

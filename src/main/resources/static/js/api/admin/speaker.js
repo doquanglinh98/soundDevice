@@ -232,11 +232,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
+    const editorContent = window.editorOfSpeaker.getData();
+
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
+    data.other = editorContent;
 
     try {
       const response = await fetch(`${API_URL}/n9-speaker-series/create`, {

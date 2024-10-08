@@ -48,14 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Groups", value: product.groupsMixer },
             { label: "Phantom Power", value: product.phantomPower },
             { label: "USB Player", value: product.usbPlayer },
-            { label: "Other", value: product.other },
           ];
 
           fields.forEach((field) => {
             if (field.value) {
               detailCatalogue += `
                   <p class="text-capitalize m-0 p-0">
-                    <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
+                    <span class="fw-bold">${field.label}</span> : <span>${field.value}</span>
                   </p>
                 `;
             }

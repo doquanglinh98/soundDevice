@@ -189,14 +189,13 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: "Painting Treatment", value: product.paintingTreatment },
             { label: "Suspension Point", value: product.suspensionPoint },
             { label: "Gain", value: product.gain },
-            { label: "Other", value: product.other },
           ];
 
           fields.forEach((field) => {
             if (field.value) {
               detailCatalogue += `
                 <p class="col-6 text-capitalize m-0 p-0">
-                  <span class="fw-semibold">${field.label}</span> : <span>${field.value}</span>
+                  <span class="fw-bold">${field.label}</span> : <span>${field.value}</span>
                 </p>
               `;
             }

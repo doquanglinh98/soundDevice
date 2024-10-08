@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
           product.dissipateHeat || "";
         document.getElementById("appearanceVolume").value =
           product.appearanceVolume || "";
-        document.getElementById("other").value = product.other || "";
+        window.editorOfEditAmplifier.setData(product.other);
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (editForm) {
     editForm.addEventListener("submit", function (event) {
       event.preventDefault();
+      const editorContent = window.editorOfEditAmplifier.getData();
 
       submitButton.disabled = true;
       submitButton.textContent = "Updating...";
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data[key] = value;
       });
       data.id = getNumberId;
+      data.other = editorContent;
 
       fetch(`${API_URL}/ampli/edit`, {
         method: "PUT",

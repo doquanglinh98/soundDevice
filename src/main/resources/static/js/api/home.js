@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        seriesSpeaker.style.display = none;
+        seriesSpeaker.style.display = "none";
       }
       products.forEach((product) => {
         const markup = `
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        seriesAmplifier.style.display = none;
+        seriesAmplifier.style.display = "none";
       }
 
       products.forEach((product) => {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        seriesMicro.style.display = none;
+        seriesMicro.style.display = "none";
       }
 
       products.forEach((product) => {
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        seriesMicro.style.display = none;
+        seriesMicro.style.display = "none";
       }
 
       products.forEach((product) => {
