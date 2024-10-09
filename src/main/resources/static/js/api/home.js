@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await response.json();
       const products = data.content;
       if (products.length === 0) {
-        seriesMicro.style.display = "none";
+        seriesMixer.style.display = "none";
       }
 
       products.forEach((product) => {
