@@ -59,11 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
             }
           });
-          detailCatalogue += `
+          if(product.other){
+            detailCatalogue += `
                 <p class="text-capitalize m-0 p-0">
                   ${product.other}
                 </p>
               `;
+          }
 
           catalogueProduct.innerHTML = detailCatalogue;
         }
