@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     title="${product.seriesName}"
                   >
                     <img
-                      class="lazyload"
+                      class="lazyload h-100"
                       width="200"
                       height="200"
                       src="${product.imgId}"
