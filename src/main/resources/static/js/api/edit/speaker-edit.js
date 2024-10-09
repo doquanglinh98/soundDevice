@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("n9SpeakerSeriesName").value =
           product.n9SpeakerSeriesName || "";
         document.getElementById("imgId").value = product.imgId || "";
+        document.getElementById("description").value = product.description || "";
         document.getElementById("systemDescription").value =
           product.systemDescription || "";
         document.getElementById("tweeter").value = product.tweeter || "";
