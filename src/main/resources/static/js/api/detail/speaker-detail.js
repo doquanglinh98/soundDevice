@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const breadCrumb = document.querySelector(".bread-crumb-name");
         const detail = document.querySelector(".product_getcontent");
         detail.innerHTML = `
-        <p>${product.description || `No description`}</p>
+        <p>${product.systemDescription || `No description`}</p>
         `;
 
         breadCrumb.innerHTML = `
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
           let detailCatalogue = "";
 
           const fields = [
-            { label: "System Description", value: product.systemDescription },
             { label: "Tweeter", value: product.tweeter },
             { label: "Woofer", value: product.woofer },
             { label: "Power", value: product.power },
