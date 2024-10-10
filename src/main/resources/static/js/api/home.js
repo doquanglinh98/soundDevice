@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
       products.forEach((product) => {
         const markup = `
-          <div class="col-12 col-md-4 item">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-4 item">
             <div class="item_product_main">
               <div class="variants wishItem">
                 <div class="product-thumbnail">
