@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                       title="${product.n9SpeakerSeriesName}"></a>
                                   <a class="image_thumb" href="https://tscproaudio.com/detail/speaker/${product.id}"
                                       title="${product.n9SpeakerSeriesName}">
-                                      <img class="lazyload h-100" width="200" height="200"
+                                      <img class="lazyload image-speaker" width="200" height="200"
                                           src="${product.imgId}"
                                           alt="${product.n9SpeakerSeriesName}">
                                   </a>

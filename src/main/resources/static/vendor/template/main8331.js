@@ -17,7 +17,7 @@ function resizeImage() {
 	setTimeout(function(){
 		$('.item_product_main').each(function(){
 			var thumbset = $(this).find('.image_thumb');
-			var wthumb = thumbset.width();
+			var wthumb = thumbset.width() +50;
 			thumbset.css({'height':wthumb+'px'});
 		})
 	},200);
