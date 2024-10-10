@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         data.forEach((product) => {
           const list = `
-                <div class="col-12 col-md-4 col-lg-4 col-xl-4 product-col">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 product-col">
                       <div class="item_product_main">
                           <div class="variants wishItem">
                               <div class="product-thumbnail">
